@@ -1,0 +1,16 @@
+.socials {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  cursor: pointer;
+}
+.link {
+  width: 1.5625rem;
+  height: 1.5625rem;
+  fill: #949f99;
+  transition: all 0.3s;
+
+  &:hover {
+    fill: #458829;
+  }
+}

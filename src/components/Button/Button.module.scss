@@ -1,0 +1,36 @@
+.link {
+  width: 8rem;
+  height: 3rem;
+  background: #639155;
+  border: transparent;
+  outline-color: transparent;
+  outline: none;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background: #4a803a;
+  }
+}
+.borderRadiusLeft {
+  border-radius: 0 0 0 0.625rem;
+}
+.borderRadiusRight {
+  border-radius: 0 0 0.625rem 0;
+}
+.linkAuthorize {
+  width: 11.25rem;
+  font-size: 1rem;
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+  background: transparent;
+  border: 0.125rem solid #fff;
+  border-radius: 2rem;
+
+  &:hover {
+    border: 0.125rem solid #4a803a;
+  }
+}
