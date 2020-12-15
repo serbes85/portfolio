@@ -10,6 +10,7 @@ export const Button: React.FC<ButtonProps> = ({ buttonText, appearance }) => {
     link: true,
     borderRadiusLeft: appearance === "borderRadiusLeft",
     borderRadiusRight: appearance === "borderRadiusRight",
+    borderRight: appearance === "borderRight",
     authorize: appearance === "authorize",
   });
   return <button className={className}>{buttonText}</button>;

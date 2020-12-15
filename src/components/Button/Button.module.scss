@@ -1,6 +1,5 @@
 .link {
-  width: 8rem;
-  height: 3rem;
+  height: 2.875rem;
   background: #639155;
   border: transparent;
   outline-color: transparent;
@@ -8,6 +7,7 @@
   color: #fff;
   text-decoration: none;
   transition: all 0.3s;
+  flex-grow: 1;
   cursor: pointer;
 
   &:hover {
@@ -16,6 +16,10 @@
 }
 .borderRadiusLeft {
   border-radius: 0 0 0 0.625rem;
+  border-right: 0.125rem solid #a0b99e;
+}
+.borderRight {
+  border-right: 0.125rem solid #a0b99e;
 }
 .borderRadiusRight {
   border-radius: 0 0 0.625rem 0;

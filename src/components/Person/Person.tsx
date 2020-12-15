@@ -5,11 +5,11 @@ import styles from "./Person.module.scss";
 export const Person: React.FC = () => {
   return (
     <div className={styles.person}>
-      <div className={styles.personAvatar}>
+      <div className={styles.avatar}>
         <img src={Avatar} alt="Person avatar" />
       </div>
-      <p className={styles.personName}>Бескровный Сергей</p>
-      <p className={styles.personDescription}>Личный сайт веб разработчика</p>
+      <p className={styles.name}>Бескровный Сергей</p>
+      <p className={styles.description}>Личный сайт веб разработчика</p>
     </div>
   );
 };
