@@ -6,9 +6,9 @@ import styles from "./Intro.module.scss";
 
 export const Intro: React.FC = () => {
   const buttons = [
-    <Button buttonText="Мои работы" appearence="left" />,
+    <Button buttonText="Мои работы" appearance="borderRadiusLeft" />,
     <Button buttonText="Обо мне" />,
-    <Button buttonText="Блог" appearence="right" />,
+    <Button buttonText="Блог" appearance="borderRadiusRight" />,
   ];
   const listItems = buttons.map((item, index) => (
     <li className={styles.item} key={index}>
@@ -21,7 +21,7 @@ export const Intro: React.FC = () => {
       <Person />
       <Socials />
       <ul className={styles.buttons}>{listItems}</ul>
-      <Button buttonText="Авторизоваться" appearence="authorize" />
+      <Button buttonText="Авторизоваться" appearance="authorize" />
     </div>
   );
 };

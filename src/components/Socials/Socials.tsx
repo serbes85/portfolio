@@ -1,16 +1,21 @@
 import React from "react";
-import sprite from "../../sprite.svg";
 import styles from "./Socials.module.scss";
+import { Icon } from "../Icon/Icon";
 
 export const Socials: React.FC = () => {
-  const socialsName = [
-    <use xlinkHref={`${sprite}#vk`} />,
-    <use xlinkHref={`${sprite}#github`} />,
-    <use xlinkHref={`${sprite}#in`} />,
+  const socials = [
+    <Icon name="vk" fill="#949f99" size="1.5625rem" className={styles.link} />,
+    <Icon
+      name="github"
+      fill="#949f99"
+      size="1.5625rem"
+      className={styles.link}
+    />,
+    <Icon name="in" fill="#949f99" size="1.5625rem" className={styles.link} />,
   ];
-  const listItems = socialsName.map((item, index) => (
+  const listItems = socials.map((item, index) => (
     <li className={styles.item} key={index}>
-      <svg className={styles.link}>{item}</svg>
+      {item}
     </li>
   ));
   return <ul className={styles.socials}>{listItems}</ul>;
