@@ -2,30 +2,40 @@ import React from "react";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import styles from "./LoginForm.module.scss";
-import classNames from "classnames";
 // import { LoginFormProps } from "./interfaces";
 
 export const LoginForm: React.FC = () => {
   return (
     <form className={styles.form}>
-      <h1 className="title">Авторизуйтесь</h1>
+      <h1 className={styles.title}>Авторизуйтесь</h1>
+      <div className={styles.line}></div>
       <div className={styles.login}>
         <label htmlFor="userName">
-          <Icon name="login" fill="#949f99" size="1.25rem" />
+          <Icon
+            name="login"
+            fill="#949f99"
+            size="1.25rem"
+            className={styles.icon}
+          />
+          <input
+            className={styles.input}
+            name="userName"
+            id="user-name"
+            type="text"
+            placeholder="Логин"
+          />
         </label>
-        <input
-          className={classNames(styles.input)}
-          name="userName"
-          id="user-name"
-          type="text"
-          placeholder="Логин"
-        />
       </div>
       <div className={styles.password}>
         <label htmlFor="userPassword">
-          <Icon name="password" fill="#949f99" size="1.25rem" />
+          <Icon
+            name="password"
+            fill="#949f99"
+            size="1.25rem"
+            className={styles.icon}
+          />
           <input
-            className={classNames(styles.input)}
+            className={styles.input}
             name="userPassword"
             id="user-password"
             type="password"
@@ -33,20 +43,23 @@ export const LoginForm: React.FC = () => {
           />
         </label>
       </div>
-      <div className={styles.radioButtons}>
-        <label>
-          <input type="checkbox" />
-          <span>Я человек</span>
-        </label>
-        <p>Вы точно не робот</p>
-        <label>
-          <input className="with-gap" name="group1" type="radio" />
-          <span>Да</span>
-        </label>
-        <label>
-          <input className="with-gap" name="group1" type="radio" />
-          <span>Не уверен</span>
-        </label>
+      <div className={styles.controlButtons}>
+        <div className={styles.control}>
+          <label htmlFor="human">
+            <input type="checkbox" name="human" />Я человек
+          </label>
+        </div>
+        <p className={styles.text}>Вы точно не робот?</p>
+        <div className={styles.control}>
+          <label htmlFor="yes">
+            <input type="radio" value="yes" name="answer" />
+            Да
+          </label>
+          <label htmlFor="no">
+            <input type="radio" value="no" name="answer" />
+            Не уверен
+          </label>
+        </div>
       </div>
       <div className={styles.buttons}>
         <Button buttonText="На главную" appearance="borderRadiusLeft" />
