@@ -1,14 +1,14 @@
 import React from "react";
+import { Title } from "../Title/Title";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import styles from "./LoginForm.module.scss";
-// import { LoginFormProps } from "./interfaces";
+import { LoginFormProps } from "./interfaces";
 
-export const LoginForm: React.FC = () => {
+export const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
   return (
-    <form className={styles.form}>
-      <h1 className={styles.title}>Авторизуйтесь</h1>
-      <div className={styles.line}></div>
+    <form className={className}>
+      <Title text="Авторизуйтесь" />
       <div className={styles.login}>
         <label htmlFor="userName">
           <Icon

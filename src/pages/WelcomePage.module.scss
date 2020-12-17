@@ -1,0 +1,31 @@
+.card {
+  position: relative;
+  width: 24rem;
+  height: 27.5rem;
+  color: #fff;
+}
+.cardFront,
+.cardBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 48, 40, 0.6);
+  border-radius: 0.625rem;
+}
+.cardFront,
+.cardBack {
+  backface-visibility: hidden;
+  transition: transform 0.3s;
+}
+.cardBack {
+  transform: rotateY(-180deg);
+}
+.card.transform:hover .cardFront {
+  transform: rotateY(-180deg);
+}
+
+.card.transform:hover .cardBack {
+  transform: rotateY(0);
+}
