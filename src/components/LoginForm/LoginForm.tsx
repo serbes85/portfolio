@@ -5,7 +5,10 @@ import { Icon } from "../Icon/Icon";
 import styles from "./LoginForm.module.scss";
 import { LoginFormProps } from "./interfaces";
 
-export const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
+export const LoginForm: React.FC<LoginFormProps> = ({
+  className,
+  handleClickFlipped,
+}) => {
   return (
     <form className={className}>
       <Title text="Авторизуйтесь" />
@@ -62,7 +65,11 @@ export const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
         </div>
       </div>
       <div className={styles.buttons}>
-        <Button buttonText="На главную" appearance="borderRadiusLeft" />
+        <Button
+          buttonText="На главную"
+          appearance="borderRadiusLeft"
+          onClick={handleClickFlipped}
+        />
         <Button buttonText="Войти" appearance="borderRadiusRight" />
       </div>
     </form>

@@ -22,10 +22,9 @@
 .cardBack {
   transform: rotateY(-180deg);
 }
-.card.transform:hover .cardFront {
+.card.flipped .cardFront {
   transform: rotateY(-180deg);
 }
-
-.card.transform:hover .cardBack {
+.card.flipped .cardBack {
   transform: rotateY(0);
 }

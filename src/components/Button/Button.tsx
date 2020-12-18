@@ -5,7 +5,11 @@ import { ButtonProps } from "./interface";
 
 const cx = classNames.bind(styles);
 
-export const Button: React.FC<ButtonProps> = ({ buttonText, appearance }) => {
+export const Button: React.FC<ButtonProps> = ({
+  buttonText,
+  appearance,
+  onClick,
+}) => {
   const className = cx({
     link: true,
     borderRadiusLeft: appearance === "borderRadiusLeft",
@@ -13,5 +17,9 @@ export const Button: React.FC<ButtonProps> = ({ buttonText, appearance }) => {
     borderRight: appearance === "borderRight",
     authorize: appearance === "authorize",
   });
-  return <button className={className}>{buttonText}</button>;
+  return (
+    <button className={className} onClick={onClick}>
+      {buttonText}
+    </button>
+  );
 };
