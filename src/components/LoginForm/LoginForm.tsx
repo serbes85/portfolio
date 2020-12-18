@@ -48,20 +48,32 @@ export const LoginForm: React.FC<LoginFormProps> = ({
       </div>
       <div className={styles.controlButtons}>
         <div className={styles.control}>
-          <label htmlFor="human">
-            <input type="checkbox" name="human" />Я человек
-          </label>
+          <input
+            type="checkbox"
+            className={styles.customCheckbox}
+            name="human"
+            id="human"
+          />
+          <label htmlFor="human">Я человек</label>
         </div>
         <p className={styles.text}>Вы точно не робот?</p>
         <div className={styles.control}>
-          <label htmlFor="yes">
-            <input type="radio" value="yes" name="answer" />
-            Да
-          </label>
-          <label htmlFor="no">
-            <input type="radio" value="no" name="answer" />
-            Не уверен
-          </label>
+          <input
+            type="radio"
+            value="yes"
+            name="answer"
+            id="yes"
+            className={styles.customRadio}
+          />
+          <label htmlFor="yes">Да</label>
+          <input
+            type="radio"
+            value="no"
+            name="answer"
+            id="no"
+            className={styles.customRadio}
+          />
+          <label htmlFor="no"> Не уверен</label>
         </div>
       </div>
       <div className={styles.buttons}>
