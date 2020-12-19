@@ -9,6 +9,7 @@ export const Button: React.FC<ButtonProps> = ({
   buttonText,
   appearance,
   onClick,
+  ...rest
 }) => {
   const className = cx({
     link: true,
@@ -18,7 +19,7 @@ export const Button: React.FC<ButtonProps> = ({
     authorize: appearance === "authorize",
   });
   return (
-    <button className={className} onClick={onClick}>
+    <button {...rest} className={className} onClick={onClick}>
       {buttonText}
     </button>
   );

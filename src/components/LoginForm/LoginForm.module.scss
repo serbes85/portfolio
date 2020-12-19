@@ -47,18 +47,15 @@
   flex-grow: 0;
   border: 1px solid #adb5bd;
   border-radius: 0.25rem;
+  border-color: #4a803a;
   margin-right: 0.5rem;
+  background-color: #4a803a;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 50% 50%;
 }
 .customCheckbox:checked + label::before {
-  border-color: #4a803a;
-  background-color: #4a803a;
   background-image: url(img/check.svg);
-}
-.customCheckbox:not(:disabled):not(:checked) + label:hover::before {
-  border-color: #4a803a;
 }
 .customRadio {
   position: absolute;

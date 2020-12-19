@@ -1,4 +1,4 @@
-import React, { MouseEvent, useState } from "react";
+import React, { useState } from "react";
 import { Intro } from "../components/Intro/Intro";
 import { LoginForm } from "../components/LoginForm/LoginForm";
 import { Button } from "../components/Button/Button";
@@ -10,31 +10,32 @@ const cx = classNames.bind(styles);
 export const WelcomePage: React.FC = () => {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleClickFlipped = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-
-    setIsFlipped(!isFlipped);
+  const handleClickFlippedBack = () => {
+    setIsFlipped(true);
   };
-
+  const handleClickFlippedFont = () => {
+    setIsFlipped(false);
+  };
   const className = cx({
     card: true,
     flipped: isFlipped,
   });
 
   return (
-    <div className="intro">
+    <div className={styles.container}>
+      <div className={styles.dummy} onClick={handleClickFlippedFont} />
       <div className={className}>
         <Intro className={styles.cardFront} />
         <LoginForm
           className={styles.cardBack}
-          handleClickFlipped={handleClickFlipped}
+          handleClickFlippedFont={handleClickFlippedFont}
         />
       </div>
       {!isFlipped && (
         <Button
           buttonText="Авторизоваться"
           appearance="authorize"
-          onClick={handleClickFlipped}
+          onClick={handleClickFlippedBack}
         />
       )}
     </div>

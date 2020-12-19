@@ -39,18 +39,3 @@ h6 {
 p {
   margin: 0px;
 }
-.container {
-  margin: 0 auto;
-}
-.intro {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url("../src/pages/assets/water.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-}
-.title {
-  text-align: center;
-}

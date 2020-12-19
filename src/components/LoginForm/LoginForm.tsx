@@ -7,7 +7,7 @@ import { LoginFormProps } from "./interfaces";
 
 export const LoginForm: React.FC<LoginFormProps> = ({
   className,
-  handleClickFlipped,
+  handleClickFlippedFont,
 }) => {
   return (
     <form className={className}>
@@ -78,9 +78,10 @@ export const LoginForm: React.FC<LoginFormProps> = ({
       </div>
       <div className={styles.buttons}>
         <Button
+          type="button"
           buttonText="На главную"
           appearance="borderRadiusLeft"
-          onClick={handleClickFlipped}
+          onClick={handleClickFlippedFont}
         />
         <Button buttonText="Войти" appearance="borderRadiusRight" />
       </div>
