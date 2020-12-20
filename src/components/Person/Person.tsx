@@ -8,8 +8,8 @@ export const Person: React.FC = () => {
       <div className={styles.avatar}>
         <img src={Avatar} alt="Person avatar" />
       </div>
-      <p className={styles.name}>Бескровный Сергей</p>
-      <p className={styles.description}>Личный сайт веб разработчика</p>
+      <span className={styles.name}>Бескровный Сергей</span>
+      <span className={styles.description}>Личный сайт веб разработчика</span>
     </div>
   );
 };

@@ -8,13 +8,15 @@ import { IntroProps } from "./interfaces";
 export const Intro: React.FC<IntroProps> = ({ className }) => {
   return (
     <div className={className}>
-      <Person />
-      <Socials />
-      <div className={styles.buttons}>
+      <div className={styles.hero}>
+        <Person />
+        <Socials />
+      </div>
+      <nav className={styles.nav}>
         <Button buttonText="Мои работы" appearance="borderRadiusLeft" />
         <Button buttonText="Обо мне" appearance="borderRight" />
         <Button buttonText="Блог" appearance="borderRadiusRight" />
-      </div>
+      </nav>
     </div>
   );
 };

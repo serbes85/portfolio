@@ -17,7 +17,7 @@
 .card {
   position: relative;
   width: 24rem;
-  min-height: 27.4rem;
+  min-height: 26rem;
   height: 0.063rem;
   color: #fff;
 }
@@ -34,7 +34,7 @@
 .cardFront,
 .cardBack {
   backface-visibility: hidden;
-  transition: transform 0.3s;
+  transition: all 0.3s;
 }
 .cardBack {
   transform: rotateY(-180deg);
