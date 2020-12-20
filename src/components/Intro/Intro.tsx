@@ -1,9 +1,9 @@
 import React from "react";
+import { IntroProps } from "./interfaces";
 import { Socials } from "../Socials/Socials";
 import { Person } from "../Person/Person";
 import { Button } from "../Button/Button";
 import styles from "./Intro.module.scss";
-import { IntroProps } from "./interfaces";
 
 export const Intro: React.FC<IntroProps> = ({ className }) => {
   return (

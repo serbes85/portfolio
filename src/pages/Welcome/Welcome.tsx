@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Intro } from "../components/Intro/Intro";
-import { LoginForm } from "../components/LoginForm/LoginForm";
-import { Button } from "../components/Button/Button";
-import styles from "./WelcomePage.module.scss";
+import { Intro } from "../../components/Intro/Intro";
+import { LoginForm } from "../../components/LoginForm/LoginForm";
+import { Button } from "../../components/Button/Button";
+import styles from "./Welcome.module.scss";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-export const WelcomePage: React.FC = () => {
+export const Welcome: React.FC = () => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClickFlippedBack = () => {

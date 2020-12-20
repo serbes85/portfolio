@@ -1,5 +1,4 @@
 .link {
-  height: 2.875rem;
   background: #639155;
   border: transparent;
   outline-color: transparent;
@@ -8,6 +7,7 @@
   text-decoration: none;
   transition: all 0.3s;
   flex-grow: 1;
+  padding: 0.625rem 1.5rem;
   cursor: pointer;
 
   &:hover {

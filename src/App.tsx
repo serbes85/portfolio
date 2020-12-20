@@ -1,8 +1,8 @@
 import React from "react";
-import { WelcomePage } from "./pages/WelcomePage";
+import { Welcome } from "./pages/Welcome/Welcome";
 
 const App: React.FC = () => {
-  return <WelcomePage />;
+  return <Welcome />;
 };
 
 export default App;
