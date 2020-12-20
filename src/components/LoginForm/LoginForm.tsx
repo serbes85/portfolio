@@ -78,7 +78,6 @@ export const LoginForm: React.FC<LoginFormProps> = ({
           </div>
         </div>
       </div>
-
       <nav className={styles.nav}>
         <Button
           type="button"
