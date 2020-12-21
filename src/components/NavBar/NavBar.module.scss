@@ -1,0 +1,27 @@
+.list {
+  display: flex;
+  border-bottom-left-radius: 0.625rem;
+  border-bottom-right-radius: 0.625rem;
+  overflow: hidden;
+}
+.item {
+  flex-grow: 1;
+  border-right: 0.125rem solid #a0b99e;
+  text-align: center;
+
+  &:last-child {
+    border-right: 0;
+  }
+}
+.link {
+  display: block;
+  background: #639155;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.625rem 1.5rem;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #4a803a;
+  }
+}
