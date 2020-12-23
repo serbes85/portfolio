@@ -1,12 +1,25 @@
 .socials {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
+.item {
+  margin-right: 1.875rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
 .link {
+  fill: #949f99;
   transition: all 0.3s;
 
   &:hover {
     fill: #458829;
   }
+}
+.white {
+  fill: #fff;
 }

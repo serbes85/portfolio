@@ -1,17 +1,20 @@
 import React from "react";
-import styles from "./Socials.module.scss";
 import { Icon } from "../Icon/Icon";
+import classNames from "classnames/bind";
+import styles from "./Socials.module.scss";
+import { SocialsProps } from "./interfaces";
 
-export const Socials: React.FC = () => {
+const cx = classNames.bind(styles);
+
+export const Socials: React.FC<SocialsProps> = ({ fill }) => {
+  const className = cx({
+    link: true,
+    white: fill === "white",
+  });
   const socials = [
-    <Icon name="vk" fill="#949f99" size="1.5625rem" className={styles.link} />,
-    <Icon
-      name="github"
-      fill="#949f99"
-      size="1.5625rem"
-      className={styles.link}
-    />,
-    <Icon name="in" fill="#949f99" size="1.5625rem" className={styles.link} />,
+    <Icon name="vk" size="1.5625rem" className={className} />,
+    <Icon name="github" size="1.5625rem" className={className} />,
+    <Icon name="in" size="1.5625rem" className={className} />,
   ];
   const listItems = socials.map((item, index) => (
     <li className={styles.item} key={index}>
