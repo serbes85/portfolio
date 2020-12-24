@@ -1,6 +1,7 @@
 import React from "react";
-import { Person } from "../Person/Person";
+import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 import { Socials } from "../Socials/Socials";
+import { Person } from "../Person/Person";
 import { Icon } from "../Icon/Icon";
 import styles from "./Header.module.scss";
 
@@ -9,12 +10,8 @@ export const Header: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.content}>
         <Socials fill="white" />
-        <div className={styles.burger}>
-          <div className={styles.line} />
-          <div className={styles.line} />
-          <div className={styles.line} />
-        </div>
       </div>
+      <BurgerMenu />
       <Person />
       <Icon name="arrow-down" fill="white" size="1.5625rem" />
     </header>
