@@ -2,8 +2,9 @@ import React from "react";
 import { Title } from "../Title/Title";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
-import styles from "./CardAuth.module.scss";
+import { ControlButtons } from "../ControlButtons/ControlButtons";
 import { CardAuthProps } from "./interfaces";
+import styles from "./CardAuth.module.scss";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
@@ -54,36 +55,7 @@ export const CardAuth: React.FC<CardAuthProps> = ({
             />
           </label>
         </div>
-        <div className={styles.controlButtons}>
-          <div className={styles.control}>
-            <input
-              type="checkbox"
-              className={styles.customCheckbox}
-              name="human"
-              id="human"
-            />
-            <label htmlFor="human">Я человек</label>
-          </div>
-          <span className={styles.text}>Вы точно не робот?</span>
-          <div className={styles.control}>
-            <input
-              type="radio"
-              value="yes"
-              name="answer"
-              id="yes"
-              className={styles.customRadio}
-            />
-            <label htmlFor="yes">Да</label>
-            <input
-              type="radio"
-              value="no"
-              name="answer"
-              id="no"
-              className={styles.customRadio}
-            />
-            <label htmlFor="no"> Не уверен</label>
-          </div>
-        </div>
+        <ControlButtons />
       </div>
       <nav className={styles.nav}>
         <Button
