@@ -1,19 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { links } from "../../links";
+import { NavBarProps, LinkData } from "./interfaces";
 import styles from "./NavBar.module.scss";
 
-export const NavBar: React.FC = () => {
-  const linksList = links.map((item) => (
-    <li key={item.id} className={styles.item}>
-      <Link to={item.path} className={styles.link}>
-        <span>{item.name}</span>
+const getLinkList = (links: LinkData[]) => {
+  return links.map(({ id, path, name }) => (
+    <li key={id} className={styles.item}>
+      <Link to={path} className={styles.link}>
+        <span>{name}</span>
       </Link>
     </li>
   ));
+};
+
+export const NavBar: React.FC<NavBarProps> = ({ links }) => {
   return (
     <nav className={styles.nav}>
-      <ul className={styles.list}>{linksList}</ul>
+      <ul className={styles.list}>{getLinkList(links)}</ul>
     </nav>
   );
 };

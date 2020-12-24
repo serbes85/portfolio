@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar } from "../Avatar/Avatar";
+import { Person } from "../Person/Person";
 import { Socials } from "../Socials/Socials";
 import { Icon } from "../Icon/Icon";
 import styles from "./Header.module.scss";
@@ -7,7 +7,7 @@ import styles from "./Header.module.scss";
 export const Header: React.FC = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.links}>
+      <div className={styles.content}>
         <Socials fill="white" />
         <div className={styles.burger}>
           <div className={styles.line} />
@@ -15,8 +15,8 @@ export const Header: React.FC = () => {
           <div className={styles.line} />
         </div>
       </div>
-      <Avatar />
-      <Icon name="arrow-down" size="1.5625rem" />
+      <Person />
+      <Icon name="arrow-down" fill="white" size="1.5625rem" />
     </header>
   );
 };
