@@ -7,13 +7,13 @@ const cx = classNames.bind(styles);
 export const BurgerMenu: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
 
-  const hahdleClickIsActive = () => {
+  const hahdleClickSetActiveClass = () => {
     setIsActive(!isActive);
   };
   const className = cx({ burgerMenu: true, active: isActive });
 
   return (
-    <div className={className} onClick={hahdleClickIsActive}>
+    <div className={className} onClick={hahdleClickSetActiveClass}>
       <span className={styles.burgerMenuLine}></span>
     </div>
   );

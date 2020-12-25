@@ -1,9 +1,9 @@
 import React from "react";
-import { Title } from "../Title/Title";
-import { Button } from "../Button/Button";
-import { Icon } from "../Icon/Icon";
-import { ControlButtons } from "../ControlButtons/ControlButtons";
 import { CardAuthProps } from "./interfaces";
+import { Title } from "../Title/Title";
+import { LoginForm } from "../LoginForm/LoginForm";
+import { ControlButtons } from "../ControlButtons/ControlButtons";
+import { Button } from "../Button/Button";
 import styles from "./CardAuth.module.scss";
 import classNames from "classnames/bind";
 
@@ -18,43 +18,10 @@ export const CardAuth: React.FC<CardAuthProps> = ({
     flipped: isFlipped,
   });
   return (
-    <form className={className}>
+    <div className={className}>
       <div className={styles.auth}>
         <Title text="Авторизуйтесь" />
-        <div className={styles.login}>
-          <label htmlFor="userName">
-            <Icon
-              name="login"
-              fill="#949f99"
-              size="1.25rem"
-              className={styles.icon}
-            />
-            <input
-              className={styles.input}
-              name="userName"
-              id="user-name"
-              type="text"
-              placeholder="Логин"
-            />
-          </label>
-        </div>
-        <div className={styles.password}>
-          <label htmlFor="userPassword">
-            <Icon
-              name="password"
-              fill="#949f99"
-              size="1.25rem"
-              className={styles.icon}
-            />
-            <input
-              className={styles.input}
-              name="userPassword"
-              id="user-password"
-              type="password"
-              placeholder="Пароль"
-            />
-          </label>
-        </div>
+        <LoginForm />
         <ControlButtons />
       </div>
       <nav className={styles.nav}>
@@ -66,6 +33,6 @@ export const CardAuth: React.FC<CardAuthProps> = ({
         />
         <Button buttonText="Войти" appearance="borderRadiusRight" />
       </nav>
-    </form>
+    </div>
   );
 };

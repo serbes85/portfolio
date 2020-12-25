@@ -3,8 +3,8 @@ import styles from "./ControlButtons.module.scss";
 
 export const ControlButtons: React.FC = () => {
   return (
-    <div className={styles.controlButtons}>
-      <div className={styles.control}>
+    <div className={styles.control}>
+      <div className={styles.controlButton}>
         <input
           type="checkbox"
           className={styles.customCheckbox}
@@ -13,8 +13,8 @@ export const ControlButtons: React.FC = () => {
         />
         <label htmlFor="human">Я человек</label>
       </div>
-      <span className={styles.text}>Вы точно не робот?</span>
-      <div className={styles.control}>
+      <span className={styles.controlText}>Вы точно не робот?</span>
+      <div className={styles.controlButton}>
         <input
           type="radio"
           value="yes"

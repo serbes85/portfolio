@@ -1,9 +1,9 @@
-.controlButtons {
+.control {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.control {
+.controlButton {
   display: flex;
 }
 .customCheckbox {
@@ -34,6 +34,9 @@
 }
 .customCheckbox:checked + label::before {
   background-image: url(img/check.svg);
+}
+.controlText {
+  margin: 1.25rem 0 1.25rem 0;
 }
 .customRadio {
   position: absolute;
@@ -74,7 +77,4 @@
 }
 .customRadio:not(:disabled):not(:checked) + label:hover::before {
   border-color: #4a803a;
-}
-.text {
-  margin: 1.25rem 0 1.25rem 0;
 }

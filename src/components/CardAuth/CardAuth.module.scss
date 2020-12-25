@@ -4,6 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  font-family: "Roboto";
   background-color: rgba(26, 48, 40, 0.6);
   border-top-left-radius: 0.625rem;
   border-top-right-radius: 0.625rem;
@@ -15,38 +16,11 @@
 .cardAuth {
   transform: rotateY(-180deg);
 }
-.flipped {
-  transform: rotateY(0);
-}
-
-////////////////
 .auth {
-  font-family: "Roboto";
   padding: 1.7rem 1.25rem;
 }
-
-.login {
-  position: relative;
-}
-.password {
-  position: relative;
-}
-.icon {
-  position: absolute;
-  top: 0.6rem;
-  left: 1rem;
-}
-.input {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  font-family: "Roboto";
-  border-radius: 1.25rem;
-  border-color: transparent;
-  outline: none;
-  background-color: #fff;
-  margin-bottom: 1.25rem;
-  padding: 0.625rem 2.5rem;
+.flipped {
+  transform: rotateY(0);
 }
 .nav {
   display: flex;

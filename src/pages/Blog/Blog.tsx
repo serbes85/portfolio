@@ -1,3 +1,3 @@
 import React from "react";
 
-export const Blog: React.FC = () => <p>Blog</p>;
+export const Blog: React.FC = () => <h1>Блог</h1>;
