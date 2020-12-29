@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { FC } from "react";
+import { BurgerMenuProps } from "./interfaces";
 import styles from "./BurgerMenu.module.scss";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-export const BurgerMenu: React.FC = () => {
-  const [isActive, setIsActive] = useState(false);
-
-  const hahdleClickSetActiveClass = () => {
-    setIsActive(!isActive);
-  };
+export const BurgerMenu: FC<BurgerMenuProps> = ({
+  isActive,
+  hahdleClickSetActiveClass,
+}) => {
   const className = cx({ burgerMenu: true, active: isActive });
 
   return (

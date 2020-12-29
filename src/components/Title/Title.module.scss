@@ -1,6 +1,7 @@
 .title {
   font-family: "Roboto";
   font-size: 2.25rem;
+  text-transform: uppercase;
   text-align: center;
   color: #fff;
   margin-bottom: 2rem;
@@ -8,9 +9,9 @@
 .title:after {
   content: " ";
   display: block;
-  width: 5.625rem;
+  margin: 1.75rem auto;
+  width: 7rem;
   border: 0.125rem solid;
-  margin: 1.75rem 7.5rem 1.75rem 7.5rem;
 }
 .black {
   color: #000;

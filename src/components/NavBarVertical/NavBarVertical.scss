@@ -1,0 +1,32 @@
+.NavBarVertical .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow: hidden;
+  height: 100vh;
+}
+.NavBarVertical .item {
+  text-align: center;
+}
+.NavBarVertical .link {
+  display: block;
+  font-size: 4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+}
+.NavBarVertical .text {
+  position: relative;
+
+  &:hover:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    margin: 3rem 0rem;
+    width: 5.625rem;
+    border: 0.125rem solid;
+  }
+}

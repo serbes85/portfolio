@@ -4,5 +4,5 @@ export type LinkData = {
     name: string;
   };
   export interface NavBarProps {
-    links: LinkData[];
+      links: LinkData[];
   }
