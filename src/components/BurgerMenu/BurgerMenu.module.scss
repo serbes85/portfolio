@@ -1,36 +1,51 @@
-.burgerMenu {
+.button {
+  position: fixed;
+  top: 2.55rem;
+  right: 1.875rem;
+  width: 2.5rem;
+  height: 2.25rem;
+  border: transparent;
+  outline-color: transparent;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0);
   z-index: 30;
+  transition: 0.3s;
   cursor: pointer;
 }
-.burgerMenuLine:before,
-.burgerMenuLine:after,
-.burgerMenuLine {
+.line:before,
+.line:after,
+.line {
   position: absolute;
   width: 2.5rem;
   height: 0.375rem;
   background-color: #fff;
   transition: 0.3s;
 }
-.burgerMenuLine {
-  top: 3.5rem;
-  right: 1.75rem;
+.line {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.burgerMenuLine:before {
+.line:before {
+  position: absolute;
+  top: 0.875rem;
+  left: 0;
   content: "";
-  top: -1rem;
 }
-.burgerMenuLine:after {
+.line:after {
+  position: absolute;
+  bottom: 0.875rem;
+  left: 0;
   content: "";
-  top: 1rem;
 }
-.burgerMenu.active .burgerMenuLine {
+.button.active .line {
   background-color: transparent;
 }
-.burgerMenu.active .burgerMenuLine:before {
+.button.active .line:before {
   top: 0;
   transform: rotate(45deg);
 }
-.burgerMenu.active .burgerMenuLine:after {
+.button.active .line:after {
   top: 0;
   transform: rotate(-45deg);
 }
