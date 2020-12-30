@@ -1,9 +1,32 @@
-.nav {
-  position: fixed;
+.modal {
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 20;
+  overflow: hidden;
+}
+.left,
+.right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background-color: rgba(126, 168, 110, 0.8);
+  z-index: -1;
+  transition: 1s;
+}
+.left {
+  transform: translateX(-100%);
+}
+.right {
+  transform: translateX(100%);
+}
+.left.active {
+  transform: translateX(-50%);
+}
+.right.active {
+  transform: translateX(50%);
 }

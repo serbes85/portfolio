@@ -1,9 +1,10 @@
 export type SocialsData = {
     id: number;
-    socialIcon: JSX.Element;
+    name: string;
     link: string;
 }
 
 export interface SocialsProps{
+    socials:SocialsData[];
     fill?:  "white"
 }
