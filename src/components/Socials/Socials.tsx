@@ -2,9 +2,19 @@ import React from "react";
 import { Icon } from "../Icon/Icon";
 import classNames from "classnames/bind";
 import styles from "./Socials.module.scss";
-import { SocialsProps } from "./interfaces";
+import { SocialsProps, SocialsData } from "./interfaces";
 
 const cx = classNames.bind(styles);
+
+const getSocialList = (socials: SocialsData[]) => {
+  return socials.map(({ id, socialIcon, link }) => (
+    <li className={styles.item} key={id}>
+      <a target="_blank" rel="noopener noreferrer" href={link}>
+        {socialIcon}
+      </a>
+    </li>
+  ));
+};
 
 export const Socials: React.FC<SocialsProps> = ({ fill }) => {
   const className = cx({
@@ -12,14 +22,24 @@ export const Socials: React.FC<SocialsProps> = ({ fill }) => {
     white: fill === "white",
   });
   const socials = [
-    <Icon name="vk" size="1.5625rem" className={className} />,
-    <Icon name="github" size="1.5625rem" className={className} />,
-    <Icon name="in" size="1.5625rem" className={className} />,
+    {
+      id: 0,
+      socialIcon: <Icon name="vk" size="1.5625rem" className={className} />,
+      link: "https://vk.com/id90801984",
+    },
+    {
+      id: 1,
+      socialIcon: <Icon name="github" size="1.5625rem" className={className} />,
+      link: "https://github.com/serbes85",
+    },
+    {
+      id: 2,
+      socialIcon: (
+        <Icon name="telegram" size="1.5625rem" className={className} />
+      ),
+      link: "https://t.me/serbes85",
+    },
   ];
-  const listItems = socials.map((item, index) => (
-    <li className={styles.item} key={index}>
-      {item}
-    </li>
-  ));
-  return <ul className={styles.socials}>{listItems}</ul>;
+
+  return <ul className={styles.socials}>{getSocialList(socials)}</ul>;
 };
