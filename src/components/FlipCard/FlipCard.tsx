@@ -1,10 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 import { CardPerson } from "../CardPerson/CardPerson";
 import { CardAuth } from "../CardAuth/CardAuth";
 import { FlipCardProps } from "./interfaces";
 import styles from "./FlipCard.module.scss";
 
-export const FlipCard: React.FC<FlipCardProps> = ({
+export const FlipCard: FC<FlipCardProps> = ({
   isFlipped,
   handleClickFlippedFont,
 }) => {

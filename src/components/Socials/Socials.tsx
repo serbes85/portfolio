@@ -1,8 +1,8 @@
-import React from "react";
+import React, { FC } from "react";
 import { Icon } from "../Icon/Icon";
 import classNames from "classnames/bind";
-import styles from "./Socials.module.scss";
 import { SocialsProps, SocialsData } from "./interfaces";
+import styles from "./Socials.module.scss";
 
 const cx = classNames.bind(styles);
 
@@ -16,7 +16,7 @@ const getSocialList = (socials: SocialsData[]) => {
   ));
 };
 
-export const Socials: React.FC<SocialsProps> = ({ fill }) => {
+export const Socials: FC<SocialsProps> = ({ fill }) => {
   const className = cx({
     link: true,
     white: fill === "white",

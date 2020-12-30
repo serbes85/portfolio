@@ -19,6 +19,26 @@
 .auth {
   padding: 1.9rem 1.25rem;
 }
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.login,
+.password {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeebdf;
+  border-top-left-radius: 1.25rem;
+  border-bottom-left-radius: 1.25rem;
+  padding: 0.625rem 0.625rem;
+}
 .control {
   display: flex;
   flex-direction: column;
