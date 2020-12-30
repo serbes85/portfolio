@@ -6,8 +6,6 @@ import { Person } from "../Person/Person";
 import { Icon } from "../Icon/Icon";
 import styles from "./Header.module.scss";
 
-import { socials } from "./constants";
-
 export const Header: FC = () => {
   const [isActive, setIsActive] = useState(false);
 
@@ -19,7 +17,7 @@ export const Header: FC = () => {
     <header className={styles.header}>
       {isActive && <ModalWindow isActive={isActive} />}
       <div className={styles.content}>
-        <Socials socials={socials} fill="white" />
+        <Socials fill="white" />
         <BurgerMenu
           isActive={isActive}
           hahdleClickSetActiveClass={hahdleClickSetActiveClass}

@@ -7,7 +7,7 @@ import { CardPersonProps } from "./interfaces";
 import styles from "./CardPerson.module.scss";
 import classNames from "classnames/bind";
 
-import { links, socials } from "./constants";
+import { links } from "./constants";
 
 const cx = classNames.bind(styles);
 
@@ -21,7 +21,7 @@ export const CardPerson: React.FC<CardPersonProps> = ({ isFlipped }) => {
     <div className={className}>
       <div className={styles.hero}>
         <Person />
-        <Socials socials={socials} />
+        <Socials />
       </div>
       <NavBarHorizontal
         links={links}

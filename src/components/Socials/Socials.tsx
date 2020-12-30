@@ -4,6 +4,8 @@ import { SocialsProps, SocialsData } from "./interfaces";
 import styles from "./Socials.module.scss";
 import classNames from "classnames/bind";
 
+import { socials } from "./constants";
+
 const cx = classNames.bind(styles);
 
 const getSocialList = (socials: SocialsData[], className: string) => {
@@ -16,7 +18,7 @@ const getSocialList = (socials: SocialsData[], className: string) => {
   ));
 };
 
-export const Socials: FC<SocialsProps> = ({ socials, fill }) => {
+export const Socials: FC<SocialsProps> = ({ fill }) => {
   const className = cx({
     link: true,
     white: fill === "white",

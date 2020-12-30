@@ -4,7 +4,6 @@ export type SocialsData = {
     link: string;
 }
 
-export interface SocialsProps{
-    socials:SocialsData[];
+export interface SocialsProps {
     fill?:  "white"
 }
