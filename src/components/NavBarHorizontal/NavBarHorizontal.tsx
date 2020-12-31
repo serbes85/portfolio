@@ -1,10 +1,20 @@
 import React, { FC } from "react";
-import { NavBarHorizontalProps } from "./interfaces";
-import "./NavBarHorizontal.scss";
+import { Link } from "react-router-dom";
+import { LinkData } from "./interfaces";
+import styles from "./NavBarHorizontal.module.scss";
 
-export const NavBarHorizontal: FC<NavBarHorizontalProps> = ({
-  render,
-  links,
-}) => {
-  return <nav className="NavBarHorizontal">{render(links)}</nav>;
+import { links } from "./constants";
+
+const getLinkList = (links: LinkData[]) => {
+  return links.map(({ id, path, name }) => (
+    <li key={id} className={styles.item}>
+      <Link to={path} className={styles.link}>
+        <span className={styles.text}>{name}</span>
+      </Link>
+    </li>
+  ));
+};
+
+export const NavBarHorizontal: FC = () => {
+  return <ul className={styles.list}>{getLinkList(links)}</ul>;
 };

@@ -1,14 +1,14 @@
-.NavBarVertical .list {
+.list {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   overflow: hidden;
   height: 100vh;
 }
-.NavBarVertical .item {
+.item {
   text-align: center;
 }
-.NavBarVertical .link {
+.link {
   display: block;
   font-family: "Sansus-Webissimo";
   font-size: 4rem;
@@ -17,7 +17,7 @@
   color: #fff;
   text-decoration: none;
 }
-.NavBarVertical .text {
+.text {
   position: relative;
 
   &:hover:after {

@@ -1,11 +1,11 @@
-.NavBarHorizontal .list {
+.list {
   display: flex;
   border-bottom-left-radius: 0.625rem;
   border-bottom-right-radius: 0.625rem;
   font-family: "Roboto";
   overflow: hidden;
 }
-.NavBarHorizontal .item {
+.item {
   flex-grow: 1;
   border-right: 0.125rem solid #a0b99e;
   text-align: center;
@@ -14,7 +14,7 @@
     border-right: 0;
   }
 }
-.NavBarHorizontal .link {
+.link {
   display: block;
   background: #639155;
   color: #fff;

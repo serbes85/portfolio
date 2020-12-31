@@ -1,11 +1,8 @@
 import React, { FC } from "react";
-import { NavBar } from "../NavBar/NavBar";
 import { NavBarVertical } from "../NavBarVertical/NavBarVertical";
 import { ModalWindowProps } from "./interfaces";
 import classNames from "classnames/bind";
 import styles from "./ModalWindow.module.scss";
-
-import { links } from "./constants";
 
 const cx = classNames.bind(styles);
 
@@ -22,10 +19,7 @@ export const ModalWindow: FC<ModalWindowProps> = ({ isActive }) => {
   return (
     <div className={styles.modal}>
       <div className={left}></div>
-      <NavBarVertical
-        links={links}
-        render={(links) => <NavBar links={links} />}
-      />
+      <NavBarVertical />
       <div className={right}></div>
     </div>
   );
