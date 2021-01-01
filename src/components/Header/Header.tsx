@@ -15,7 +15,7 @@ export const Header: FC = () => {
 
   return (
     <header className={styles.header}>
-      {isActive && <ModalWindow isActive={isActive} />}
+      <ModalWindow isActive={isActive} />
       <div className={styles.content}>
         <Socials fill="white" />
         <BurgerMenu

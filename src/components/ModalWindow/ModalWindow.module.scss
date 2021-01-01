@@ -11,22 +11,60 @@
 .right {
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   background-color: rgba(126, 168, 110, 0.8);
   z-index: -1;
-  transition: 1s;
 }
-.left {
+//animation for left part ModalWindow
+.left.enter {
   transform: translateX(-100%);
 }
-.right {
-  transform: translateX(100%);
+.left.enter.enterActive {
+  transform: translateX(-50%);
+  transition: transform 1000ms;
 }
-.left.active {
+.left.enterDone {
   transform: translateX(-50%);
 }
-.right.active {
+.left.exit {
+  transform: translateX(-50%);
+}
+.left.exit.exitActive {
+  transform: translateX(-100%);
+  transition: transform 1000ms;
+}
+//animation for right part ModalWindow
+.right.enter {
+  transform: translateX(100%);
+}
+.right.enter.enterActive {
   transform: translateX(50%);
+  transition: transform 1000ms;
+}
+.right.enterDone {
+  transform: translateX(50%);
+}
+.right.exit {
+  transform: translateX(50%);
+}
+.right.exit.exitActive {
+  transform: translateX(100%);
+  transition: transform 1000ms;
+}
+//animation for VerticalNavBar
+.enter {
+  transform: translateY(-100%);
+}
+.enterActive {
+  transform: translateY(0);
+  transition: transform 1000ms;
+}
+.exit {
+  transform: translateY(0);
+}
+.exitActive {
+  transform: translateY(-100%);
+  transition: transform 1000ms;
 }
