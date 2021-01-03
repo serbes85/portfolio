@@ -1,15 +1,14 @@
-import React from "react";
-import Avatar from "./assets/MyAvatar.png";
+import React, { FC } from "react";
+import { Avatar } from "../Avatar/Avatar";
+import { PersonProps } from "./interfaces";
 import styles from "./Person.module.scss";
 
-export const Person: React.FC = () => {
+export const Person: FC<PersonProps> = ({ description }) => {
   return (
     <div className={styles.person}>
-      <div className={styles.avatar}>
-        <img src={Avatar} alt="Person avatar" />
-      </div>
+      <Avatar />
       <span className={styles.name}>Бескровный Сергей</span>
-      <span className={styles.description}>Личный сайт веб разработчика</span>
+      <span className={styles.description}>{description}</span>
     </div>
   );
 };

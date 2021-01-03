@@ -17,6 +17,7 @@ export const Button: React.FC<ButtonProps> = ({
     borderRadiusRight: appearance === "borderRadiusRight",
     borderRight: appearance === "borderRight",
     authorize: appearance === "authorize",
+    view: appearance === "view",
   });
   return (
     <button {...rest} className={className} onClick={onClick}>

@@ -1,5 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
+import { Hero } from "../../components/Hero/Hero";
+import styles from "./Blog.module.scss";
 
-export const Blog: React.FC = () => {
-  return <h1 style={{ textAlign: "center" }}>BLOG</h1>;
+export const Blog: FC = () => {
+  return (
+    <div className={styles.container}>
+      <Hero description={"Статьи, которые я написал"} />
+    </div>
+  );
 };
