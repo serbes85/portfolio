@@ -1,0 +1,11 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: inset 0 -2rem 2rem 0rem rgba(0, 0, 0, 0.7);
+  background: url("../../img/water.jpg") 0 0 no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}

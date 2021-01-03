@@ -1,6 +1,6 @@
 import React from "react";
-import { Header } from "../../components/Header/Header";
+import { Hero } from "../../components/Hero/Hero";
 
 export const Works: React.FC = () => {
-  return <Header />;
+  return <Hero />;
 };
