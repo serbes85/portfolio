@@ -1,5 +1,24 @@
-import React from "react";
+import React, { FC } from "react";
+import { Hero } from "../../components/Hero/Hero";
+import styles from "./About.module.scss";
 
-export const About: React.FC = () => (
-  <h1 style={{ textAlign: "center" }}>Обо мне</h1>
-);
+import portfolio from "./assets/portfolio_header.svg";
+
+export const About: FC = () => {
+  return (
+    <div className={styles.container}>
+      <Hero
+        title="Бескровный Сергей"
+        description="Личный сайт веб разработчика"
+        url={portfolio}
+        imgDescription="portfolio"
+        size="high"
+        position="center"
+      />
+      <section className={styles.about}>
+        <div className={styles.left}></div>
+        <div className={styles.right}></div>
+      </section>
+    </div>
+  );
+};
