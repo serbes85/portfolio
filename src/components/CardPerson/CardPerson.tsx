@@ -17,7 +17,10 @@ export const CardPerson: React.FC<CardPersonProps> = ({ isFlipped }) => {
   return (
     <div className={className}>
       <div className={styles.hero}>
-        <Person description={"Личный сайт веб разработчика"} />
+        <Person
+          description="Личный сайт веб разработчика"
+          title="Бескровный Сергей"
+        />
         <Socials />
       </div>
       <NavBarHorizontal />

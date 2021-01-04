@@ -1,4 +1,8 @@
 .works {
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
   height: 100vh;
 }
 .description {
@@ -12,6 +16,7 @@
   justify-content: center;
   align-items: center;
   width: 50%;
+  flex-grow: 1;
   background-color: #ebefe2;
 }
 .technologies {
@@ -25,6 +30,7 @@
   align-items: center;
   justify-content: center;
   width: 50%;
+  flex-grow: 1;
   background-color: #e1e4d7;
 }
 .img {

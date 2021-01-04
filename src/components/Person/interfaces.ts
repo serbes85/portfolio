@@ -1,4 +1,6 @@
 export interface PersonProps {
-    description?: string;
+    title: string;
+    description: string;
+    render?(title: string, description: string): JSX.Element;
        
 }

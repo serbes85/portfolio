@@ -9,3 +9,10 @@
   background-position: center;
   height: 100vh;
 }
+.arrowDown {
+  cursor: pointer;
+
+  &:hover {
+    fill: #e1e4d7;
+  }
+}
