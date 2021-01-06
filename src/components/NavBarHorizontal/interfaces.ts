@@ -4,3 +4,9 @@ export type LinkData = {
     name: string;
 };
  
+export interface NavBarHorizontalProps {
+    links: LinkData[];
+    appearance?: "withoutBackground";
+    border?: "withoutBorderRight";
+    hover?:"hoverGreen" | "hoverGray";
+} 

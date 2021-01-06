@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Hero } from "../../components/Hero/Hero";
+import { HeroSection } from "../../components/HeroSection/HeroSection";
 import { Title } from "../../components/Title/Title";
 import styles from "./Blog.module.scss";
 
@@ -17,7 +17,7 @@ export const Blog: FC = () => {
 
   return (
     <div className={styles.container}>
-      <Hero
+      <HeroSection
         title="Блог"
         description="Статьи, которые я написал"
         render={renderProps}

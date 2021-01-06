@@ -11,15 +11,17 @@
     margin-right: 0;
   }
 }
-
 .link {
-  fill: #949f99;
+  fill: #9c9fa0;
   transition: all 0.3s;
 
   &:hover {
     fill: #458829;
   }
 }
-.white {
+.fillWhite {
+  fill: #fff;
+}
+.hoverWhite:hover {
   fill: #fff;
 }

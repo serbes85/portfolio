@@ -10,7 +10,7 @@ export const Header: FC<HeaderProps> = ({
 }) => {
   return (
     <header className={styles.header}>
-      <Socials fill="white" />
+      <Socials fill="fillWhite" />
       <BurgerMenu
         isActive={isActive}
         hahdleClickSetActiveClass={hahdleClickSetActiveClass}

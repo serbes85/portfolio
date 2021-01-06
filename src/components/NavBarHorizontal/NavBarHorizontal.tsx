@@ -1,20 +1,48 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import { LinkData } from "./interfaces";
+import { LinkData, NavBarHorizontalProps } from "./interfaces";
 import styles from "./NavBarHorizontal.module.scss";
+import classNames from "classnames/bind";
 
-import { links } from "./constants";
+const cx = classNames.bind(styles);
 
-const getLinkList = (links: LinkData[]) => {
+const getLinkList = (
+  links: LinkData[],
+  withoutBorder: string,
+  withHover: string
+) => {
   return links.map(({ id, path, name }) => (
-    <li key={id} className={styles.item}>
-      <Link to={path} className={styles.link}>
+    <li key={id} className={withoutBorder}>
+      <Link to={path} className={withHover}>
         <span className={styles.text}>{name}</span>
       </Link>
     </li>
   ));
 };
 
-export const NavBarHorizontal: FC = () => {
-  return <ul className={styles.list}>{getLinkList(links)}</ul>;
+export const NavBarHorizontal: FC<NavBarHorizontalProps> = ({
+  links,
+  appearance,
+  border,
+  hover,
+}) => {
+  const className = cx({
+    list: true,
+    withoutBackground: appearance === "withoutBackground",
+  });
+  const withoutBorder = cx({
+    item: true,
+    withoutBorderRight: border === "withoutBorderRight",
+  });
+  const withHover = cx({
+    link: true,
+    hoverGreen: hover === "hoverGreen",
+    hoverGray: hover === "hoverGray",
+  });
+
+  return (
+    <ul className={className}>
+      {getLinkList(links, withoutBorder, withHover)}
+    </ul>
+  );
 };

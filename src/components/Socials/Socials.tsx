@@ -18,10 +18,11 @@ const getSocialList = (socials: SocialsData[], className: string) => {
   ));
 };
 
-export const Socials: FC<SocialsProps> = ({ fill }) => {
+export const Socials: FC<SocialsProps> = ({ fill, hover }) => {
   const className = cx({
     link: true,
-    white: fill === "white",
+    fillWhite: fill === "fillWhite",
+    hoverWhite: hover === "hoverWhite",
   });
 
   return (

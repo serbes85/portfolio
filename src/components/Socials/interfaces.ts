@@ -5,5 +5,6 @@ export type SocialsData = {
 }
 
 export interface SocialsProps {
-    fill?:  "white"
+    fill?:  "fillWhite";
+    hover?: "hoverWhite";
 }

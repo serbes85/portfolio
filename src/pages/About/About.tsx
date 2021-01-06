@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Hero } from "../../components/Hero/Hero";
+import { HeroSection } from "../../components/HeroSection/HeroSection";
 import styles from "./About.module.scss";
 
 import portfolio from "./assets/portfolio_header.svg";
@@ -7,7 +7,7 @@ import portfolio from "./assets/portfolio_header.svg";
 export const About: FC = () => {
   return (
     <div className={styles.container}>
-      <Hero
+      <HeroSection
         title="Бескровный Сергей"
         description="Личный сайт веб разработчика"
         url={portfolio}

@@ -1,9 +1,10 @@
 .list {
   display: flex;
+  background: #639155;
   border-bottom-left-radius: 0.625rem;
   border-bottom-right-radius: 0.625rem;
-  font-family: "Roboto";
   overflow: hidden;
+  color: #fff;
 }
 .item {
   flex-grow: 1;
@@ -16,13 +17,26 @@
 }
 .link {
   display: block;
-  background: #639155;
-  color: #fff;
-  text-decoration: none;
-  padding: 0.625rem 1.5rem;
+  padding: 0.625rem 0;
+  font-family: "Roboto";
   transition: all 0.3s;
+}
+.hoverGreen:hover {
+  background: #4a803a;
+}
+.hoverGray:hover {
+  opacity: 0.7;
+}
+.withoutBackground {
+  background: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.withoutBorderRight {
+  border-right: none;
+  margin-right: 2.5rem;
 
-  &:hover {
-    background: #4a803a;
+  &:last-child {
+    margin-right: 0;
   }
 }

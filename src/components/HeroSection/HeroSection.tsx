@@ -5,9 +5,9 @@ import { BackgroundTitle } from "../BackgroundTitle/BackgroundTitle";
 import { Icon } from "../Icon/Icon";
 import { ModalWindow } from "../ModalWindow/ModalWindow";
 import { HeroProps } from "./interfaces";
-import styles from "./Hero.module.scss";
+import styles from "./HeroSection.module.scss";
 
-export const Hero: FC<HeroProps> = ({
+export const HeroSection: FC<HeroProps> = ({
   title,
   description,
   url,
