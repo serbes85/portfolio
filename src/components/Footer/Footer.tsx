@@ -13,7 +13,7 @@ export const Footer: FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.row}>
-        <div className={styles.links}>
+        <div className={styles.left}>
           <NavBarHorizontal
             links={links}
             appearance="withoutBackground"
@@ -22,12 +22,10 @@ export const Footer: FC = () => {
           />
           <Socials hover="hoverWhite" />
         </div>
-        <div className={styles.text}>
-          <p>
-            Всегда пишите код так, будто сопровождать его будет склонный к
-            насилию психопат, который знает, где вы живете.
-          </p>
-          <p>&mdash; Martin Golding</p>
+        <div className={styles.right}>
+          Всегда пишите код так, будто сопровождать его будет склонный к насилию
+          психопат, который знает, где вы живете.
+          <span>&mdash; Martin Golding</span>
         </div>
       </div>
       <div className={cx("row", "backgroundGreen")}>

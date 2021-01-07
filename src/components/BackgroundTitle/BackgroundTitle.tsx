@@ -13,6 +13,7 @@ export const BackgroundTitle: FC<BackgroundTitleProps> = ({
 }) => {
   const className = cx({
     title: true,
+    small: size === "small",
     medium: size === "medium",
     high: size === "high",
     center: position === "center",
