@@ -18,6 +18,7 @@ export const Works: FC = () => {
           title="Бескровный Сергей"
           description="Личный сайт веб разработчика"
           url={portfolio}
+          size="high"
           imgDescription="portfolio"
           position="center"
         />
@@ -26,6 +27,7 @@ export const Works: FC = () => {
             <BackgroundTitle
               url={works}
               imgDescription="title works"
+              size="small"
               position="center"
             />
             <Title size="highFontSize" color="black" text="Мои работы" />

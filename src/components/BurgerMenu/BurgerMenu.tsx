@@ -12,7 +12,11 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({
   const className = cx({ button: true, active: isActive });
 
   return (
-    <button className={className} onClick={hahdleClickSetActiveClass}>
+    <button
+      type="button"
+      className={className}
+      onClick={hahdleClickSetActiveClass}
+    >
       <div className={styles.line}></div>
     </button>
   );

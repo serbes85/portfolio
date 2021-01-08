@@ -24,7 +24,8 @@ export const Blog: FC = () => {
           description="Статьи, которые я написал"
           render={renderProps}
           url={blog}
-          position="nocenter"
+          size="medium"
+          position="center"
           imgDescription="blog"
         />
         <section className={styles.blog}>

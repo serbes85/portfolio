@@ -13,15 +13,18 @@ export const BackgroundTitle: FC<BackgroundTitleProps> = ({
 }) => {
   const className = cx({
     title: true,
-    small: size === "small",
-    medium: size === "medium",
-    high: size === "high",
     center: position === "center",
     nocenter: position === "nocenter",
   });
+  const img = cx({
+    img: true,
+    high: size === "high",
+    medium: size === "medium",
+    small: size === "small",
+  });
   return (
     <div className={className}>
-      <img src={url} alt={imgDescription} />
+      <img className={img} src={url} alt={imgDescription} />
     </div>
   );
 };
