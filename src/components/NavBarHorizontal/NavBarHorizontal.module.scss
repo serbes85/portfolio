@@ -1,5 +1,6 @@
 .list {
   display: flex;
+  flex-flow: wrap;
   background: #639155;
   border-bottom-left-radius: 0.625rem;
   border-bottom-right-radius: 0.625rem;

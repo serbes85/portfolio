@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2rem;
+  padding: 1rem;
 }
 .row.backgroundGreen {
   background: #628c54;
@@ -17,6 +17,10 @@
   align-items: flex-start;
   flex: 1 1 auto;
   width: 50%;
+  padding: 0rem 2rem;
+}
+.left {
+  border-right: 0.063rem solid white;
 }
 .right {
   font-family: "Roboto-BoldItalic";

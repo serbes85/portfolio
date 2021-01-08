@@ -25,7 +25,5 @@ export const Socials: FC<SocialsProps> = ({ fill, hover }) => {
     hoverWhite: hover === "hoverWhite",
   });
 
-  return (
-    <ul className={styles.socials}>{getSocialList(socials, className)}</ul>
-  );
+  return <ul className={styles.list}>{getSocialList(socials, className)}</ul>;
 };
