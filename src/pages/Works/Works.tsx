@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { HeroSection } from "../../components/HeroSection/HeroSection";
+import { Triangle } from "../../components/Triangle/Triangle";
 import { Title } from "../../components/Title/Title";
 import { BackgroundTitle } from "../../components/BackgroundTitle/BackgroundTitle";
 import { Button } from "../../components/Button/Button";
@@ -23,6 +24,20 @@ export const Works: FC = () => {
           position="center"
         />
         <section className={styles.works}>
+          <Triangle
+            name="triangle"
+            position="left"
+            fill="#f8f9f5"
+            width="100%"
+            height="270px"
+          />
+          <Triangle
+            name="triangle"
+            position="right"
+            fill="#f8f9f5"
+            width="100%"
+            height="270px"
+          />
           <div className={styles.title}>
             <BackgroundTitle
               url={works}

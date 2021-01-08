@@ -1,0 +1,12 @@
+.triangle {
+  position: absolute;
+  top: -120px;
+  width: 50%;
+}
+.left {
+  left: 0;
+}
+.right {
+  transform: rotateY(180deg);
+  right: 0;
+}

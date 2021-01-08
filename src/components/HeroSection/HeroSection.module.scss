@@ -10,6 +10,7 @@
   height: 100vh;
 }
 .arrowDown {
+  z-index: 1;
   cursor: pointer;
 
   &:hover {

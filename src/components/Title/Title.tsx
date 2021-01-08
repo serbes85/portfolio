@@ -14,5 +14,6 @@ export const Title: React.FC<TitleProps> = ({ text, size, color }) => {
     black: color === "black",
     gray: color === "gray",
   });
+
   return <h1 className={className}>{text}</h1>;
 };

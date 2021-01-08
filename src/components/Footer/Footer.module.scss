@@ -1,22 +1,22 @@
 .footer {
-  background: rgba(54, 61, 64, 0.6);
+  background: rgba(#363d43, 0.6);
 }
 .row {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem;
-}
-.row.backgroundGreen {
-  background: #628c54;
+
+  &.backgroundGreen {
+    background: #628c54;
+  }
 }
 .left,
 .right {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  flex: 1 1 auto;
-  width: 50%;
+  flex: 1 1 50%;
   padding: 0rem 2rem;
 }
 .left {
