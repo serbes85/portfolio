@@ -10,7 +10,9 @@ export const Blog: FC = () => {
   const renderProps = (title: string, description: string) => {
     return (
       <>
-        <Title size="highFontSize" text={title} />
+        <div className={styles.blogTitle}>
+          <Title size="highFontSize" text={title} />
+        </div>
         <span>{description}</span>
       </>
     );

@@ -7,14 +7,19 @@
 .main {
   flex: 1 0 auto;
 }
+.section {
+  height: 100vh;
+}
 .works {
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 100vh;
 }
-.title {
+.worksTitle {
   position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #f8f9f5;
 }
 .row {
   display: flex;
@@ -33,6 +38,9 @@
 .left {
   background-color: #ebefe2;
 }
+.leftTitle {
+  margin-bottom: 2rem;
+}
 .right {
   background-color: #e1e4d7;
 }
@@ -43,9 +51,9 @@
   margin-bottom: 2rem;
 }
 .imgWrapper {
-  width: 100%;
+  padding: 1rem;
   text-align: center;
 }
 .img {
-  width: 95%;
+  width: 100%;
 }

@@ -29,18 +29,15 @@ export const HeroSection: FC<HeroProps> = ({
         hahdleClickSetActiveClass={hahdleClickSetActiveClass}
       />
       <Person title={title} description={description} render={render} />
-      <BackgroundTitle
-        url={url}
-        imgDescription={imgDescription}
-        size={size}
-        position={position}
-      />
-      <Icon
-        className={styles.arrowDown}
-        name="arrow-down"
-        fill="white"
-        size="1.5625rem"
-      />
+      <BackgroundTitle url={url} imgDescription={imgDescription} size={size} />
+      <button className={styles.arrow}>
+        <Icon
+          className={styles.down}
+          name="arrow-down"
+          fill="white"
+          size="1.5625rem"
+        />
+      </button>
       <ModalWindow isActive={isActive} />
     </section>
   );

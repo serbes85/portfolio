@@ -9,10 +9,13 @@
   background-position: center;
   height: 100vh;
 }
-.arrowDown {
-  z-index: 1;
-  cursor: pointer;
-
+.arrow {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 2.5rem;
+  z-index: 2;
+}
+.down {
   &:hover {
     fill: #e1e4d7;
   }

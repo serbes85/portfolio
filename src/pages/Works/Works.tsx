@@ -6,10 +6,13 @@ import { BackgroundTitle } from "../../components/BackgroundTitle/BackgroundTitl
 import { Button } from "../../components/Button/Button";
 import { Footer } from "../../components/Footer/Footer";
 import styles from "./Works.module.scss";
+import classNames from "classnames/bind";
 
 import portfolio from "./assets/portfolio_header.svg";
 import works from "./assets/works_header.svg";
 import orderTaxi from "./assets/orderTaxi.png";
+
+const cx = classNames.bind(styles);
 
 export const Works: FC = () => {
   return (
@@ -23,37 +26,26 @@ export const Works: FC = () => {
           imgDescription="portfolio"
           position="center"
         />
-        <section className={styles.works}>
+        <section className={cx("section", "works")}>
           <Triangle
             name="triangle"
-            position="left"
             fill="#f8f9f5"
             width="100%"
-            height="270px"
+            height="120px"
           />
-          <Triangle
-            name="triangle"
-            position="right"
-            fill="#f8f9f5"
-            width="100%"
-            height="270px"
-          />
-          <div className={styles.title}>
-            <BackgroundTitle
-              url={works}
-              imgDescription="title works"
-              size="small"
-              position="center"
-            />
+          <div className={styles.worksTitle}>
+            <BackgroundTitle url={works} imgDescription="title works" />
             <Title size="highFontSize" color="black" text="Мои работы" />
           </div>
           <div className={styles.row}>
             <div className={styles.left}>
-              <Title
-                size="mediumFontSize"
-                color="gray"
-                text="Приложение для заказа такси"
-              />
+              <div className={styles.leftTitle}>
+                <Title
+                  size="mediumFontSize"
+                  color="gray"
+                  text="Приложение для заказа такси"
+                />
+              </div>
               <span className={styles.description}>
                 React, Redux, Redux-Form, Redux-Saga, MaterialUI
               </span>
