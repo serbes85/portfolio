@@ -1,6 +1,7 @@
 import React from "react";
 import { Title } from "../Title/Title";
 import { InputField } from "../InputField/InputField";
+import { TextArea } from "../TextArea/TextArea";
 import { Button } from "../Button/Button";
 import styles from "./CardFeedback.module.scss";
 
@@ -32,6 +33,7 @@ export const CardFeedback: React.FC = () => {
               appearance="borderRadiusLeft"
             />
           </div>
+          <TextArea id="message" name="message" placeholder="Ваше сообщение" />
         </form>
       </div>
       <div className={styles.controls}>

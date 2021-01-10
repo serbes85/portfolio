@@ -6,6 +6,7 @@ import { BackgroundTitle } from "../../components/BackgroundTitle/BackgroundTitl
 import { Button } from "../../components/Button/Button";
 import { Comments } from "../../components/Comments/Comments";
 import { CardFeedback } from "../../components/CardFeedback/CardFeedback";
+import { Icon } from "../../components/Icon/Icon";
 import { Footer } from "../../components/Footer/Footer";
 import styles from "./Works.module.scss";
 import classNames from "classnames/bind";
@@ -86,6 +87,14 @@ export const Works: FC = () => {
             <div className={styles.feedbackForm}>
               <CardFeedback />
             </div>
+            <button type="button" className={styles.arrow}>
+              <Icon
+                className={styles.up}
+                name="arrow-up"
+                fill="white"
+                size="1.5625rem"
+              />
+            </button>
           </div>
         </section>
       </main>

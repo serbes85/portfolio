@@ -7,9 +7,6 @@
 .main {
   flex: 1 0 auto;
 }
-.section {
-  min-height: 100vh;
-}
 //section__works
 .works {
   display: flex;
@@ -90,7 +87,8 @@
   position: relative;
 }
 .aboutTitle {
-  padding-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   position: relative;
 }
 .elementBg {
@@ -103,4 +101,19 @@
 .comments {
   margin-left: 15%;
   margin-right: 15%;
+  margin-bottom: 5%;
+}
+.feedbackForm {
+  margin-bottom: 10rem;
+}
+.arrow {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 2.5rem;
+  z-index: 2;
+}
+.up {
+  &:hover {
+    fill: #e1e4d7;
+  }
 }

@@ -14,7 +14,8 @@
 .text {
   color: #5d5a55;
   text-align: left;
-  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 
   &:before {
     content: "";
@@ -23,7 +24,7 @@
     height: 5rem;
     position: absolute;
     top: 0;
-    left: 1rem;
+    left: 0;
   }
 }
 .title {
