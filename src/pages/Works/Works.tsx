@@ -5,6 +5,7 @@ import { Title } from "../../components/Title/Title";
 import { BackgroundTitle } from "../../components/BackgroundTitle/BackgroundTitle";
 import { Button } from "../../components/Button/Button";
 import { Comments } from "../../components/Comments/Comments";
+import { CardFeedback } from "../../components/CardFeedback/CardFeedback";
 import { Footer } from "../../components/Footer/Footer";
 import styles from "./Works.module.scss";
 import classNames from "classnames/bind";
@@ -17,6 +18,7 @@ import about from "./assets/header/about.svg";
 //img__prj
 import orderTaxi from "./assets/prj/orderTaxi.png";
 //background
+import bg from "./assets/bg/bg-about.png";
 import list2 from "./assets/bg/list2.png";
 
 const cx = classNames.bind(styles);
@@ -65,16 +67,26 @@ export const Works: FC = () => {
           </div>
         </section>
         <section className={cx("section", "about")}>
-          <div className={styles.aboutTitle}>
+          <div className={styles.background}>
+            <img className={styles.imgBackground} src={bg} alt="background" />
             <img src={list2} className={styles.elementBg} alt="list" />
-            <BackgroundTitle url={about} imgDescription="title about" />
-            <Title
-              size="highFontSize"
-              color="black"
-              text="Что обо мне говорят"
-            />
           </div>
-          <Comments comments={comments} />
+          <div className={styles.feedback}>
+            <div className={styles.aboutTitle}>
+              <BackgroundTitle url={about} imgDescription="title about" />
+              <Title
+                size="highFontSize"
+                color="black"
+                text="Что обо мне говорят"
+              />
+            </div>
+            <div className={styles.comments}>
+              <Comments comments={comments} />
+            </div>
+            <div className={styles.feedbackForm}>
+              <CardFeedback />
+            </div>
+          </div>
         </section>
       </main>
       <Footer />
