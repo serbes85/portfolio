@@ -15,7 +15,6 @@ export const About: FC = () => {
           url={portfolio}
           imgDescription="portfolio"
           size="high"
-          position="center"
         />
         <section className={styles.about}>
           <div className={styles.left}></div>

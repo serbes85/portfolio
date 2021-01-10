@@ -1,11 +1,11 @@
 import React, { FC } from "react";
-import Photo from "./assets/MyAvatar.png";
+import { AvatarProps } from "./interfaces";
 import styles from "./Avatar.module.scss";
 
-export const Avatar: FC = () => {
+export const Avatar: FC<AvatarProps> = ({ url }) => {
   return (
     <div className={styles.avatar}>
-      <img src={Photo} alt="Person avatar" />
+      <img className={styles.img} src={url} alt="Person avatar" />
     </div>
   );
 };

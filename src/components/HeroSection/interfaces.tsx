@@ -4,6 +4,5 @@ export interface HeroProps {
   url: string;
   imgDescription: string;
   size?: "high" | "medium" | "small";
-  position?: "center" | "nocenter";
   render?(title: string, description: string): JSX.Element;
 }

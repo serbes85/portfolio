@@ -1,0 +1,31 @@
+.list {
+  display: flex;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+.comment {
+  font-family: "Roboto-BoldItalic";
+  text-align: center;
+  position: relative;
+}
+.text {
+  color: #5d5a55;
+  padding: 1rem 2rem;
+
+  &:before {
+    content: "";
+    background: url("./img/marks.png") 0 0 no-repeat;
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: 0;
+    left: 6rem;
+  }
+}
+.title {
+  color: #639155;
+}

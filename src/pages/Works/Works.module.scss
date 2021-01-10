@@ -10,6 +10,7 @@
 .section {
   height: 100vh;
 }
+//section__works
 .works {
   display: flex;
   flex-direction: column;
@@ -56,4 +57,23 @@
 }
 .img {
   width: 100%;
+}
+//section__about
+.about {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #f4f5f0;
+}
+.aboutTitle {
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.elementBg {
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
 }

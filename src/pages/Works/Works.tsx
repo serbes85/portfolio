@@ -4,13 +4,20 @@ import { Triangle } from "../../components/Triangle/Triangle";
 import { Title } from "../../components/Title/Title";
 import { BackgroundTitle } from "../../components/BackgroundTitle/BackgroundTitle";
 import { Button } from "../../components/Button/Button";
+import { Comments } from "../../components/Comments/Comments";
 import { Footer } from "../../components/Footer/Footer";
 import styles from "./Works.module.scss";
 import classNames from "classnames/bind";
 
-import portfolio from "./assets/portfolio_header.svg";
-import works from "./assets/works_header.svg";
-import orderTaxi from "./assets/orderTaxi.png";
+import { comments } from "./constants";
+//img__header
+import portfolio from "./assets/header/portfolio.svg";
+import works from "./assets/header/works.svg";
+import about from "./assets/header/about.svg";
+//img__prj
+import orderTaxi from "./assets/prj/orderTaxi.png";
+//background
+import list2 from "./assets/bg/list2.png";
 
 const cx = classNames.bind(styles);
 
@@ -24,7 +31,6 @@ export const Works: FC = () => {
           url={portfolio}
           size="high"
           imgDescription="portfolio"
-          position="center"
         />
         <section className={cx("section", "works")}>
           <Triangle
@@ -57,6 +63,18 @@ export const Works: FC = () => {
               </div>
             </div>
           </div>
+        </section>
+        <section className={cx("section", "about")}>
+          <div className={styles.aboutTitle}>
+            <img src={list2} className={styles.elementBg} alt="list" />
+            <BackgroundTitle url={about} imgDescription="title about" />
+            <Title
+              size="highFontSize"
+              color="black"
+              text="Что обо мне говорят"
+            />
+          </div>
+          <Comments comments={comments} />
         </section>
       </main>
       <Footer />

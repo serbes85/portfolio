@@ -3,6 +3,8 @@ import { Avatar } from "../Avatar/Avatar";
 import { PersonProps } from "./interfaces";
 import styles from "./Person.module.scss";
 
+import avatar from "./assets/MyAvatar.png";
+
 const defaultRender = (title: string, description: string) => (
   <>
     <span className={styles.title}>{title}</span>
@@ -13,7 +15,7 @@ const defaultRender = (title: string, description: string) => (
 export const Person: FC<PersonProps> = ({ title, description, render }) => {
   return (
     <div className={styles.person}>
-      <Avatar />
+      <Avatar url={avatar} />
       {render && render(title, description)}
     </div>
   );
