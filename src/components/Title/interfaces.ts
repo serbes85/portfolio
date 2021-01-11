@@ -1,6 +1,7 @@
 export interface TitleProps {
-    text: string;
+    textTop: string;
+    textBottom?: string;
     size?: "smallFontSize" | "mediumFontSize" | "highFontSize";
     color?: "black" | "gray";
-    
+
 }

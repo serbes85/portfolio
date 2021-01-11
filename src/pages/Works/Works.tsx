@@ -44,15 +44,15 @@ export const Works: FC = () => {
           />
           <div className={styles.worksTitle}>
             <BackgroundTitle url={works} imgDescription="title works" />
-            <Title size="highFontSize" color="black" text="Мои работы" />
+            <Title textTop="Мои работы" size="highFontSize" color="black" />
           </div>
           <div className={styles.row}>
             <div className={styles.left}>
               <div className={styles.leftTitle}>
                 <Title
+                  textTop="Приложение для заказа такси"
                   size="mediumFontSize"
                   color="gray"
-                  text="Приложение для заказа такси"
                 />
               </div>
               <span className={styles.description}>
@@ -78,7 +78,8 @@ export const Works: FC = () => {
               <Title
                 size="highFontSize"
                 color="black"
-                text="Что обо мне говорят"
+                textTop="Что обо мне "
+                textBottom="говорят"
               />
             </div>
             <div className={styles.comments}>

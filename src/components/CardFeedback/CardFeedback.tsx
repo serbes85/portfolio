@@ -10,7 +10,11 @@ export const CardFeedback: React.FC = () => {
     <div className={styles.cardFeedback}>
       <div className={styles.feedback}>
         <div className={styles.title}>
-          <Title size="mediumFontSize" text="Связаться со мной" color="black" />
+          <Title
+            size="mediumFontSize"
+            textTop="Связаться со мной"
+            color="black"
+          />
         </div>
         <form className={styles.form}>
           <div className={styles.name}>

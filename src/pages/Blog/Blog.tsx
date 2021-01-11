@@ -11,7 +11,7 @@ export const Blog: FC = () => {
     return (
       <>
         <div className={styles.blogTitle}>
-          <Title size="highFontSize" text={title} />
+          <Title size="highFontSize" textTop={title} />
         </div>
         <span>{description}</span>
       </>
