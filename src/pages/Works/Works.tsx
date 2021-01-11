@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { HeroSection } from "../../components/HeroSection/HeroSection";
-import { Triangle } from "../../components/Triangle/Triangle";
+import { TriangleLeft } from "../../components/TriangleLeft/TriangleLeft";
+import { TriangleRight } from "../../components/TriangleRight/TriangleRight";
 import { Title } from "../../components/Title/Title";
 import { BackgroundTitle } from "../../components/BackgroundTitle/BackgroundTitle";
 import { Button } from "../../components/Button/Button";
@@ -36,15 +37,24 @@ export const Works: FC = () => {
           imgDescription="portfolio"
         />
         <section className={cx("section", "works")}>
-          <Triangle
-            name="triangle"
-            fill="#f8f9f5"
-            width="100%"
-            height="120px"
-          />
+          <div className={styles.triangles}>
+            <TriangleLeft
+              name="triangle"
+              fill="#f8f9f5"
+              width="100%"
+              height="120px"
+            />
+            <TriangleRight
+              name="triangle"
+              fill="#f8f9f5"
+              width="100%"
+              height="120px"
+            />
+          </div>
+
           <div className={styles.worksTitle}>
-            <BackgroundTitle url={works} imgDescription="title works" />
             <Title textTop="Мои работы" size="highFontSize" color="black" />
+            <BackgroundTitle url={works} imgDescription="title works" />
           </div>
           <div className={styles.row}>
             <div className={styles.left}>
@@ -74,13 +84,13 @@ export const Works: FC = () => {
           </div>
           <div className={styles.feedback}>
             <div className={styles.aboutTitle}>
-              <BackgroundTitle url={about} imgDescription="title about" />
               <Title
                 size="highFontSize"
                 color="black"
                 textTop="Что обо мне "
                 textBottom="говорят"
               />
+              <BackgroundTitle url={about} imgDescription="title about" />
             </div>
             <div className={styles.comments}>
               <Comments comments={comments} />

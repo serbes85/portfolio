@@ -60,6 +60,7 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  background-color: #f4f5f0;
 }
 .background {
   position: absolute;
@@ -68,7 +69,6 @@
   bottom: 0;
   right: 0;
   min-width: 900px;
-  z-index: -1;
 }
 .imgBackground {
   position: absolute;

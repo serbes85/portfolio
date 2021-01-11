@@ -1,4 +1,4 @@
-export interface TriangleProps{
+export interface TriangleLeftProps {
     name?: string;
     width?: string;
     height?: string;
