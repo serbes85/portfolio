@@ -3,10 +3,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   background-color: rgba(26, 48, 40, 0.6);
-  border-top-left-radius: 0.625rem;
-  border-top-right-radius: 0.625rem;
+  border-radius: 0.625rem;
 }
 .cardFront {
   backface-visibility: hidden;
@@ -14,6 +12,9 @@
 }
 .hero {
   padding: 2rem 1.5rem;
+}
+.person {
+  margin-bottom: 2rem;
 }
 .flipped {
   transform: rotateY(-180deg);

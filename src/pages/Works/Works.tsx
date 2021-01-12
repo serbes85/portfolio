@@ -69,7 +69,8 @@ export const Works: FC = () => {
             <div className={styles.left}>
               <div className={styles.leftTitle}>
                 <Title
-                  textTop="Приложение для заказа такси"
+                  textTop="Приложение для заказа"
+                  textBottom="такси"
                   size="mediumFontSize"
                   color="gray"
                 />

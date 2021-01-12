@@ -19,13 +19,17 @@ export const CardPerson: React.FC<CardPersonProps> = ({ isFlipped }) => {
   return (
     <div className={className}>
       <div className={styles.hero}>
-        <Person
-          description="Личный сайт веб разработчика"
-          title="Бескровный Сергей"
-        />
+        <div className={styles.person}>
+          <Person
+            description="Личный сайт веб разработчика"
+            title="Бескровный Сергей"
+          />
+        </div>
         <Socials />
       </div>
-      <NavBarHorizontal links={links} hover="hoverGreen" />
+      <nav className={styles.nav}>
+        <NavBarHorizontal links={links} hover="hoverGreen" />
+      </nav>
     </div>
   );
 };
