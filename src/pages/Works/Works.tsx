@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useRef } from "react";
 import { HeroSection } from "../../components/HeroSection/HeroSection";
 import { TriangleLeft } from "../../components/TriangleLeft/TriangleLeft";
 import { TriangleRight } from "../../components/TriangleRight/TriangleRight";
@@ -26,6 +26,15 @@ import list2 from "./assets/bg/list2.png";
 const cx = classNames.bind(styles);
 
 export const Works: FC = () => {
+  const section = useRef<null | HTMLElement>(null);
+
+  const scrollToSection = () => {
+    section.current?.scrollIntoView({
+      block: "center",
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className={styles.wrapper}>
       <main className={styles.main}>
@@ -35,8 +44,9 @@ export const Works: FC = () => {
           url={portfolio}
           size="high"
           imgDescription="portfolio"
+          scrollToSection={scrollToSection}
         />
-        <section className={cx("section", "works")}>
+        <section className={cx("section", "works")} ref={section}>
           <div className={styles.triangles}>
             <TriangleLeft
               name="triangle"
@@ -51,7 +61,6 @@ export const Works: FC = () => {
               height="120px"
             />
           </div>
-
           <div className={styles.worksTitle}>
             <Title textTop="Мои работы" size="highFontSize" color="black" />
             <BackgroundTitle url={works} imgDescription="title works" />
@@ -98,7 +107,11 @@ export const Works: FC = () => {
             <div className={styles.feedbackForm}>
               <CardFeedback />
             </div>
-            <button type="button" className={styles.arrow}>
+            <button
+              type="button"
+              className={styles.arrow}
+              onClick={scrollToSection}
+            >
               <Icon
                 className={styles.up}
                 name="arrow-up"

@@ -14,6 +14,7 @@ export const HeroSection: FC<HeroProps> = ({
   imgDescription,
   size,
   render,
+  scrollToSection,
 }) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -29,7 +30,7 @@ export const HeroSection: FC<HeroProps> = ({
       />
       <Person title={title} description={description} render={render} />
       <BackgroundTitle url={url} imgDescription={imgDescription} size={size} />
-      <button type="button" className={styles.arrow}>
+      <button type="button" className={styles.arrow} onClick={scrollToSection}>
         <Icon
           className={styles.down}
           name="arrow-down"

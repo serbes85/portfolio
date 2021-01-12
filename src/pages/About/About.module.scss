@@ -7,3 +7,24 @@
 .main {
   flex: 1 0 auto;
 }
+.section {
+  min-height: 100vh;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+}
+.title {
+  display: flex;
+}
+.titleLeft {
+  width: 100%;
+  background-color: #ebefe2;
+  position: relative;
+}
+.titleRight {
+  width: 100%;
+  background-color: #f4f5f0;
+}

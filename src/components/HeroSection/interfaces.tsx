@@ -5,4 +5,5 @@ export interface HeroProps {
   imgDescription: string;
   size?: "high" | "medium" | "small";
   render?(title: string, description: string): JSX.Element;
+  scrollToSection?(): void;
 }

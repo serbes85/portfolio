@@ -4,13 +4,18 @@
   min-height: 100vh;
 }
 .main {
+  height: 100%;
   flex: 1 0 auto;
+}
+.section {
+  min-height: 100vh;
 }
 //section__works
 .works {
   display: flex;
   flex-direction: column;
   position: relative;
+  height: 100vh;
 }
 .worksTitle {
   position: relative;
@@ -114,4 +119,7 @@
   &:hover {
     fill: #e1e4d7;
   }
+}
+.active {
+  transform: translateY(100%);
 }
