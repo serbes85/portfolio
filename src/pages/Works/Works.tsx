@@ -41,9 +41,9 @@ export const Works: FC = () => {
         <HeroSection
           title="Бескровный Сергей"
           description="Личный сайт веб разработчика"
-          url={portfolio}
+          backgroundUrl={portfolio}
+          backgroundTitle="portfolio"
           size="high"
-          imgDescription="portfolio"
           scrollToSection={scrollToSection}
         />
         <section className={cx("section", "works")} ref={section}>
@@ -62,8 +62,8 @@ export const Works: FC = () => {
             />
           </div>
           <div className={styles.worksTitle}>
-            <Title textTop="Мои работы" size="highFontSize" color="black" />
-            <BackgroundTitle url={works} imgDescription="title works" />
+            <Title textTop="Мои работы" size="high" color="black" />
+            <BackgroundTitle backgroundUrl={works} backgroundTitle="works" />
           </div>
           <div className={styles.row}>
             <div className={styles.left}>
@@ -71,7 +71,7 @@ export const Works: FC = () => {
                 <Title
                   textTop="Приложение для заказа"
                   textBottom="такси"
-                  size="mediumFontSize"
+                  size="medium"
                   color="gray"
                 />
               </div>
@@ -95,12 +95,12 @@ export const Works: FC = () => {
           <div className={styles.feedback}>
             <div className={styles.aboutTitle}>
               <Title
-                size="highFontSize"
+                size="high"
                 color="black"
                 textTop="Что обо мне "
                 textBottom="говорят"
               />
-              <BackgroundTitle url={about} imgDescription="title about" />
+              <BackgroundTitle backgroundUrl={about} backgroundTitle="about" />
             </div>
             <div className={styles.comments}>
               <Comments comments={comments} />

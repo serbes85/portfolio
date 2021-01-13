@@ -6,8 +6,8 @@ import styles from "./BackgroundTitle.module.scss";
 const cx = classNames.bind(styles);
 
 export const BackgroundTitle: FC<BackgroundTitleProps> = ({
-  url,
-  imgDescription,
+  backgroundUrl,
+  backgroundTitle,
   size,
 }) => {
   const img = cx({
@@ -16,5 +16,5 @@ export const BackgroundTitle: FC<BackgroundTitleProps> = ({
     medium: size === "medium",
     small: size === "small",
   });
-  return <img className={img} src={url} alt={imgDescription} />;
+  return <img className={img} src={backgroundUrl} alt={backgroundTitle} />;
 };

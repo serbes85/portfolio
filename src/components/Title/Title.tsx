@@ -17,9 +17,9 @@ export const Title: React.FC<TitleProps> = ({
     gray: color === "gray",
   });
   const className = cx({
-    mediumFontSize: size === "mediumFontSize",
-    smallFontSize: size === "smallFontSize",
-    highFontSize: size === "highFontSize",
+    medium: size === "medium",
+    small: size === "small",
+    high: size === "high",
   });
 
   return (

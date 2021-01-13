@@ -4,12 +4,12 @@ import { CommentsData, CommentsProps } from "./interfaces";
 import styles from "./Comments.module.scss";
 
 const getCommentsList = (comments: CommentsData[]) => {
-  return comments.map(({ id, url, title, text }) => (
+  return comments.map(({ id, avatarUrl, name, text }) => (
     <li key={id} className={styles.item}>
-      <Avatar url={url} />
+      <Avatar avatarUrl={avatarUrl} name={name} />
       <div className={styles.comment}>
         <p className={styles.text}>{text}</p>
-        <p className={styles.title}>{title}</p>
+        <p className={styles.title}>{name}</p>
       </div>
     </li>
   ));

@@ -1,7 +1,7 @@
 export type CommentsData = {
-    id: number; 
-    url: string;
-    title: string;
+    id: number;
+    avatarUrl: string;
+    name: string;
     text: string;
 }
 

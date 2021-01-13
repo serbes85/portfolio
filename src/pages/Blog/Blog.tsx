@@ -4,14 +4,15 @@ import { Title } from "../../components/Title/Title";
 import { Footer } from "../../components/Footer/Footer";
 import styles from "./Blog.module.scss";
 
-import blog from "./assets/blog_header.svg";
+//img__header
+import blog from "./assets/header/blog.svg";
 
 export const Blog: FC = () => {
   const renderProps = (title: string, description: string) => {
     return (
       <>
         <div className={styles.blogTitle}>
-          <Title size="highFontSize" textTop={title} />
+          <Title size="high" textTop={title} />
         </div>
         <span>{description}</span>
       </>
@@ -25,9 +26,9 @@ export const Blog: FC = () => {
           title="Блог"
           description="Статьи, которые я написал"
           render={renderProps}
-          url={blog}
+          backgroundUrl={blog}
+          backgroundTitle="blog"
           size="medium"
-          imgDescription="blog"
         />
         <section className={styles.blog}>
           <article></article>

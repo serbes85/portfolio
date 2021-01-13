@@ -15,7 +15,7 @@ const defaultRender = (title: string, description: string) => (
 export const Person: FC<PersonProps> = ({ title, description, render }) => {
   return (
     <div className={styles.person}>
-      <Avatar url={avatar} />
+      <Avatar avatarUrl={avatar} name={title} />
       {render && render(title, description)}
     </div>
   );

@@ -1,5 +1,5 @@
 export interface BackgroundTitleProps {
-    url: string;
-    imgDescription?: string;
-    size?: "high" | "medium" | "small"   ;
+    backgroundUrl: string;
+    backgroundTitle?: string;
+    size?: "high" | "medium" | "small";
 }

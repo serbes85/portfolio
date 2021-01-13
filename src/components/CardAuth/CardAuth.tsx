@@ -24,7 +24,7 @@ export const CardAuth: React.FC<CardAuthProps> = ({
     <div className={className}>
       <div className={styles.auth}>
         <div className={styles.title}>
-          <Title size="mediumFontSize" textTop="Авторизуйтесь" />
+          <Title size="medium" textTop="Авторизуйтесь" />
         </div>
         <form className={styles.form}>
           <div className={styles.login}>

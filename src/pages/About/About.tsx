@@ -30,8 +30,8 @@ export const About: FC = () => {
         <HeroSection
           title="Бескровный Сергей"
           description="Личный сайт веб разработчика"
-          url={portfolio}
-          imgDescription="portfolio"
+          backgroundUrl={portfolio}
+          backgroundTitle="portfolio"
           size="high"
           scrollToSection={scrollToSection}
         />
@@ -52,14 +52,14 @@ export const About: FC = () => {
           </div>
           <div className={styles.title}>
             <div className={styles.titleLeft}>
-              <Title textTop="Обо мне" size="highFontSize" color="black" />
-              <BackgroundTitle url={about} imgDescription="about" />
+              <Title textTop="Обо мне" size="high" color="black" />
+              <BackgroundTitle backgroundUrl={about} backgroundTitle="about" />
             </div>
             <div className={styles.titleRight}>
               <Title
                 textTop="Чем я могу быть"
                 textBottom="Вам полезен"
-                size="mediumFontSize"
+                size="medium"
                 color="gray"
               />
             </div>

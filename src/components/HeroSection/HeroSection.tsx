@@ -10,8 +10,8 @@ import styles from "./HeroSection.module.scss";
 export const HeroSection: FC<HeroProps> = ({
   title,
   description,
-  url,
-  imgDescription,
+  backgroundUrl,
+  backgroundTitle,
   size,
   render,
   scrollToSection,
@@ -29,7 +29,11 @@ export const HeroSection: FC<HeroProps> = ({
         hahdleClickSetActiveClass={hahdleClickSetActiveClass}
       />
       <Person title={title} description={description} render={render} />
-      <BackgroundTitle url={url} imgDescription={imgDescription} size={size} />
+      <BackgroundTitle
+        backgroundUrl={backgroundUrl}
+        backgroundTitle={backgroundTitle}
+        size={size}
+      />
       <button type="button" className={styles.arrow} onClick={scrollToSection}>
         <Icon
           className={styles.down}
