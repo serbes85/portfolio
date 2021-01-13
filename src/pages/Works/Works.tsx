@@ -30,7 +30,7 @@ export const Works: FC = () => {
 
   const scrollToSection = () => {
     section.current?.scrollIntoView({
-      block: "center",
+      block: "start",
       behavior: "smooth",
     });
   };

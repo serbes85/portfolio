@@ -11,7 +11,8 @@ import classNames from "classnames/bind";
 //img__header
 import portfolio from "./assets/header/portfolio.svg";
 import about from "./assets/header/about.svg";
-
+//avatar
+import avatar from "./assets/avatar/MyAvatar.png";
 const cx = classNames.bind(styles);
 
 export const About: FC = () => {
@@ -19,7 +20,7 @@ export const About: FC = () => {
 
   const scrollToSection = () => {
     section.current?.scrollIntoView({
-      block: "center",
+      block: "start",
       behavior: "smooth",
     });
   };
@@ -64,8 +65,27 @@ export const About: FC = () => {
               />
             </div>
           </div>
-          <div className={styles.left}></div>
-          <div className={styles.right}></div>
+          <div className={styles.row}>
+            <div className={styles.left}>
+              <div className={styles.person}>
+                <div className={styles.avatarWrapper}>
+                  <img className={styles.avatar} src={avatar} alt="Сергей" />
+                </div>
+                <div className={styles.aboutTitle}>
+                  <Title textTop="Кто я" size="medium" color="gray" />
+                </div>
+                <div className={styles.description}>
+                  <p>
+                    Я веб разработчик из Москвы. Мне 35 лет. Я занимаюсь
+                    разработкой современных сайтов и приложений. Мне нравится
+                    разбираться в сложных вещах, разрабатывать логику и
+                    структуру приложения.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className={styles.right}></div>
+          </div>
         </section>
       </main>
       <Footer />
