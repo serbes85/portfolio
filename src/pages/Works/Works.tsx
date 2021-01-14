@@ -5,6 +5,7 @@ import { TriangleRight } from "../../components/TriangleRight/TriangleRight";
 import { Title } from "../../components/Title/Title";
 import { BackgroundTitle } from "../../components/BackgroundTitle/BackgroundTitle";
 import { Button } from "../../components/Button/Button";
+import { Slider } from "../../components/Slider/Slider";
 import { Comments } from "../../components/Comments/Comments";
 import { CardFeedback } from "../../components/CardFeedback/CardFeedback";
 import { Icon } from "../../components/Icon/Icon";
@@ -12,13 +13,12 @@ import { Footer } from "../../components/Footer/Footer";
 import styles from "./Works.module.scss";
 import classNames from "classnames/bind";
 
-import { comments } from "./constants";
+import { comments, images } from "./constants";
 //img__header
 import portfolio from "./assets/header/portfolio.svg";
 import works from "./assets/header/works.svg";
 import about from "./assets/header/about.svg";
-//img__prj
-import orderTaxi from "./assets/prj/orderTaxi.png";
+
 //background
 import bg from "./assets/bg/bg-about.png";
 import list2 from "./assets/bg/list2.png";
@@ -81,9 +81,7 @@ export const Works: FC = () => {
               <Button buttonText="Посмотреть cайт" appearance="view" />
             </div>
             <div className={styles.right}>
-              <div className={styles.imgWrapper}>
-                <img className={styles.img} src={orderTaxi} alt="Order taxi" />
-              </div>
+              <Slider images={images} />
             </div>
           </div>
         </section>
