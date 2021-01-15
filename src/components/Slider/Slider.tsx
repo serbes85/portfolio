@@ -15,35 +15,44 @@ const getListImg = (images: SliderData[]) => {
 
 export const Slider: FC<SliderProps> = ({ images }) => {
   const sliderList = useRef<null | HTMLUListElement>(null);
-  const step = 20;
+  const step = 100;
+  let slideIndex = 1;
   let currentX = 0;
 
-  const moveSliderRight = (e: any) => {
-    e.preventDefault();
+  const moveSlidesRight = () => {
+    const lengthSlider = sliderList.current!.childNodes.length + 1;
+    const slider = sliderList.current!;
+    slideIndex += 1;
 
-    if (currentX < 80) {
+    if (slideIndex < lengthSlider) {
       currentX += step;
 
-      sliderList.current!.style.transform = "translateX(-" + currentX + "%)";
-    } else if (currentX === 80) {
+      slider.style.transform = "translateX(-" + currentX + "%)";
+    } else if (slideIndex === lengthSlider) {
+      slideIndex = 1;
       currentX = 0;
 
-      sliderList.current!.style.transform = "translateX(-" + currentX + "%)";
+      slider.style.transform = "translateX(-" + currentX + "%)";
     }
   };
-  const moveSliderLeft = (e: any) => {
-    e.preventDefault();
+  const moveSlidesLeft = () => {
+    const lengthSlider = sliderList.current!.childNodes.length;
+    const slider = sliderList.current!;
 
-    if (currentX > 0) {
+    slideIndex -= 1;
+
+    if (slideIndex > 0) {
       currentX -= step;
 
-      sliderList.current!.style.transform = "translateX(-" + currentX + "%)";
-    } else if (currentX === 0) {
-      currentX = 80;
+      slider.style.transform = "translateX(-" + currentX + "%)";
+    } else if (slideIndex < 1) {
+      currentX = step * lengthSlider - step;
+      slideIndex = lengthSlider;
 
-      sliderList.current!.style.transform = "translateX(-" + currentX + "%)";
+      slider.style.transform = "translateX(-" + currentX + "%)";
     }
   };
+
   return (
     <div className={styles.slider}>
       <div className={styles.sliderContainer}>
@@ -51,7 +60,7 @@ export const Slider: FC<SliderProps> = ({ images }) => {
           <button
             type="button"
             className={styles.sliderArrow}
-            onClick={moveSliderLeft}
+            onClick={moveSlidesLeft}
           >
             <Icon
               className={styles.arrowLeft}
@@ -63,7 +72,7 @@ export const Slider: FC<SliderProps> = ({ images }) => {
           <button
             type="button"
             className={styles.sliderArrow}
-            onClick={moveSliderRight}
+            onClick={moveSlidesRight}
           >
             <Icon
               className={styles.arrowRight}

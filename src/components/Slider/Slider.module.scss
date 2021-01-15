@@ -18,6 +18,8 @@
   height: 100%;
   display: flex;
   overflow: hidden;
+
+  position: relative;
 }
 .sliderArrows {
   position: absolute;
@@ -36,16 +38,15 @@
     fill: #e1e4d7;
   }
 }
-
 .sliderList {
   display: flex;
-  flex-shrink: 0;
-  width: 500%;
+  width: 100%;
   transition: 0.5s;
 }
 .sliderItem {
   display: flex;
-  width: 20%;
+  flex-shrink: 0;
+  width: 100%;
 }
 .sliderImg {
   width: 100%;
