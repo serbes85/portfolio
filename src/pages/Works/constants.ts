@@ -30,21 +30,45 @@ export const comments = [
 export const sliderList = [
   {
     id: 0,
+    title: "Loft Taxi",
+    technologies: "React, Redux, Redux-Form, Redux-Saga, MaterialUI",
+    description:
+      `Клиентская часть для заказа такси. Пункты назначения 
+      предоставляются сервером. По двум точкам строится маршрут.`,
+    link: "https://github.com/serbes85/react-project-loftTaxi",
     imgUrl: work1,
     name: "Order taxi",
   },
   {
     id: 1,
+    title: "Фильтр друзей",
+    technologies: "HTML5, CSS3, JavaScript, HandleBars, VK-API",
+    description:
+      `Приложение с использованием API VК. С помощью приложения можно 
+      отфильтровать (добавить из одного списка в другой по клику по кнопке
+      "+" или с помощью "drag and drop") друзей ВКонтакте.`,
+    link: "https://github.com/serbes85/js-project-friendsFilter",
     imgUrl: work2,
     name: "Friends filter",
   },
   {
     id: 2,
+    title: "Геоотзывы",
+    technologies: "HTML5, CSS3, JavaScript, HandleBars, YandexMap",
+    description:
+      `Приложение с использованием API Яндекс карт. С помощью приложения 
+      можно добавить geo-отзывы на карту.`,
+    link: "https://github.com/serbes85/js-project-geoReviews",
     imgUrl: work3,
     name: "Geo reviews",
   },
   {
     id: 3,
+    title: "Бургер",
+    technologies: "HTML5, CSS3",
+    description:
+      `Проект лендинг-страницы по продаже бургеров.`,
+    link: "https://github.com/serbes85/hamburger",
     imgUrl: work4,
     name: "Hamburger",
   },
