@@ -53,7 +53,7 @@ export const Slider: FC<SliderProps> = ({ sliderList }) => {
               className={styles.arrowLeft}
               name="arrow-up"
               fill="white"
-              size="3rem"
+              size="2.5rem"
             />
           </button>
           <button
@@ -65,7 +65,7 @@ export const Slider: FC<SliderProps> = ({ sliderList }) => {
               className={styles.arrowRight}
               name="arrow-down"
               fill="white"
-              size="3rem"
+              size="2.5rem"
             />
           </button>
         </div>

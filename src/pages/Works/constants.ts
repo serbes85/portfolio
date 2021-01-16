@@ -2,8 +2,10 @@ import avatar1 from "./assets/avatars/Irina.png";
 import avatar2 from "./assets/avatars/Ivan.png";
 
 import work1 from "./assets/prj/orderTaxi.png";
-import work2 from "./assets/prj/geoReviews.png";
-import work3 from "./assets/prj/Hamburger.png";
+import work2 from "./assets/prj/friendsFilter.png";
+import work3 from "./assets/prj/geoReviews.png";
+import work4 from "./assets/prj/Hamburger.png";
+
 
 export const comments = [
   {
@@ -34,13 +36,16 @@ export const sliderList = [
   {
     id: 1,
     imgUrl: work2,
-    name: "Geo reviews",
-
+    name: "Friends filter",
   },
   {
     id: 2,
     imgUrl: work3,
+    name: "Geo reviews",
+  },
+  {
+    id: 3,
+    imgUrl: work4,
     name: "Hamburger",
-
   },
 ];
