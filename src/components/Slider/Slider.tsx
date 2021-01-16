@@ -1,10 +1,10 @@
-import React, { FC, useRef } from "react";
+import React, { FC, useState } from "react";
 import { Icon } from "../../components/Icon/Icon";
 import { SliderData, SliderProps } from "./interfaces";
 import styles from "./Slider.module.scss";
 
-const getListImg = (images: SliderData[]) => {
-  return images.map(({ id, name, imgUrl }) => {
+const getSliderList = (sliderList: SliderData[]) => {
+  return sliderList.map(({ id, name, imgUrl }) => {
     return (
       <li key={id} className={styles.sliderItem}>
         <img className={styles.sliderImg} src={imgUrl} alt={name} />
@@ -13,43 +13,30 @@ const getListImg = (images: SliderData[]) => {
   });
 };
 
-export const Slider: FC<SliderProps> = ({ images }) => {
-  const sliderList = useRef<null | HTMLUListElement>(null);
+export const Slider: FC<SliderProps> = ({ sliderList }) => {
+  const [currentX, setCurrentX] = useState(0);
+  const [index, setIndex] = useState(1);
+  const length = sliderList.length;
   const step = 100;
-  let slideIndex = 1;
-  let currentX = 0;
 
   const moveSlidesRight = () => {
-    const lengthSlider = sliderList.current!.childNodes.length + 1;
-    const slider = sliderList.current!;
-    slideIndex += 1;
+    setIndex(index + 1);
 
-    if (slideIndex < lengthSlider) {
-      currentX += step;
-
-      slider.style.transform = "translateX(-" + currentX + "%)";
-    } else if (slideIndex === lengthSlider) {
-      slideIndex = 1;
-      currentX = 0;
-
-      slider.style.transform = "translateX(-" + currentX + "%)";
+    if (index < length) {
+      setCurrentX(currentX + step);
+    } else if (index === length) {
+      setIndex(1);
+      setCurrentX(0);
     }
   };
   const moveSlidesLeft = () => {
-    const lengthSlider = sliderList.current!.childNodes.length;
-    const slider = sliderList.current!;
+    setIndex(index - 1);
 
-    slideIndex -= 1;
-
-    if (slideIndex > 0) {
-      currentX -= step;
-
-      slider.style.transform = "translateX(-" + currentX + "%)";
-    } else if (slideIndex < 1) {
-      currentX = step * lengthSlider - step;
-      slideIndex = lengthSlider;
-
-      slider.style.transform = "translateX(-" + currentX + "%)";
+    if (index > 1) {
+      setCurrentX(currentX - step);
+    } else if (index === 1) {
+      setIndex(length);
+      setCurrentX(step * length - step);
     }
   };
 
@@ -82,8 +69,11 @@ export const Slider: FC<SliderProps> = ({ images }) => {
             />
           </button>
         </div>
-        <ul className={styles.sliderList} ref={sliderList}>
-          {getListImg(images)}
+        <ul
+          className={styles.sliderList}
+          style={{ transform: "translateX(-" + currentX + "%)" }}
+        >
+          {getSliderList(sliderList)}
         </ul>
       </div>
     </div>

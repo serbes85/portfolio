@@ -5,5 +5,5 @@ export type SliderData = {
 }
 
 export interface SliderProps {
-    images: SliderData[];
+    sliderList: SliderData[];
 }

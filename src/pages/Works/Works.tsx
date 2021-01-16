@@ -13,7 +13,7 @@ import { Footer } from "../../components/Footer/Footer";
 import styles from "./Works.module.scss";
 import classNames from "classnames/bind";
 
-import { comments, images } from "./constants";
+import { comments, sliderList } from "./constants";
 //img__header
 import portfolio from "./assets/header/portfolio.svg";
 import works from "./assets/header/works.svg";
@@ -81,7 +81,7 @@ export const Works: FC = () => {
               <Button buttonText="Посмотреть cайт" appearance="view" />
             </div>
             <div className={styles.right}>
-              <Slider images={images} />
+              <Slider sliderList={sliderList} />
             </div>
           </div>
         </section>

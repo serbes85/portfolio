@@ -25,7 +25,7 @@ export const comments = [
   },
 ];
 
-export const images = [
+export const sliderList = [
   {
     id: 0,
     imgUrl: work1,
