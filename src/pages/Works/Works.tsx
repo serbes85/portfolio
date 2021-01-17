@@ -21,6 +21,7 @@ import about from "./assets/header/about.svg";
 //background
 import bg from "./assets/bg/bg-about.png";
 import list2 from "./assets/bg/list2.png";
+import list3 from "./assets/bg/list3.png";
 
 const cx = classNames.bind(styles);
 
@@ -71,7 +72,8 @@ export const Works: FC = () => {
         <section className={cx("section", "about")}>
           <div className={styles.background}>
             <img className={styles.imgBackground} src={bg} alt="background" />
-            <img src={list2} className={styles.elementBg} alt="list" />
+            <img src={list2} className={styles.list2} alt="list" />
+            <img src={list3} className={styles.list3} alt="list" />
           </div>
           <div className={styles.feedback}>
             <div className={styles.aboutTitle}>
