@@ -1,5 +1,5 @@
-import React, { FC, useState } from "react";
-import { Icon } from "../../components/Icon/Icon";
+import React, { FC, useState, useEffect } from "react";
+import { Icon } from "../Icon/Icon";
 import { SliderData, SliderProps } from "./interfaces";
 import styles from "./Slider.module.scss";
 
@@ -13,23 +13,27 @@ const getSliderList = (sliderList: SliderData[]) => {
   });
 };
 
-export const Slider: FC<SliderProps> = ({ sliderList }) => {
-  const [index, setIndex] = useState(1);
-  const length = sliderList.length;
+export const Slider: FC<SliderProps> = ({ sliderList, updateIndex }) => {
+  const [slideIndex, setSlideIndex] = useState(1);
+  const sliderLlength = sliderList.length;
   const step = 100;
 
-  const moveSlidesRight = () => {
-    setIndex(index + 1);
+  useEffect(() => {
+    updateIndex(slideIndex);
+  });
 
-    if (index === length) {
-      setIndex(1);
+  const moveSlidesRight = () => {
+    setSlideIndex(slideIndex + 1);
+
+    if (slideIndex === sliderLlength) {
+      setSlideIndex(1);
     }
   };
   const moveSlidesLeft = () => {
-    setIndex(index - 1);
+    setSlideIndex(slideIndex - 1);
 
-    if (index === 1) {
-      setIndex(length);
+    if (slideIndex === 1) {
+      setSlideIndex(sliderLlength);
     }
   };
 
@@ -64,7 +68,7 @@ export const Slider: FC<SliderProps> = ({ sliderList }) => {
         </div>
         <ul
           className={styles.sliderList}
-          style={{ transform: "translateX(-" + (index - 1) * step + "%)" }}
+          style={{ transform: "translateX(-" + (slideIndex - 1) * step + "%)" }}
         >
           {getSliderList(sliderList)}
         </ul>

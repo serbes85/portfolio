@@ -19,30 +19,6 @@
 .row {
   display: flex;
 }
-.left,
-.right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  flex-grow: 1;
-}
-.left {
-  background-color: #ebefe2;
-}
-.leftTitle {
-  margin-bottom: 2rem;
-}
-.description {
-  font-family: "Roboto";
-  color: #6a985a;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.right {
-  background-color: #e1e4d7;
-}
 //section__about
 .about {
   display: flex;

@@ -4,8 +4,7 @@ import { TriangleLeft } from "../../components/TriangleLeft/TriangleLeft";
 import { TriangleRight } from "../../components/TriangleRight/TriangleRight";
 import { Title } from "../../components/Title/Title";
 import { BackgroundTitle } from "../../components/BackgroundTitle/BackgroundTitle";
-import { Button } from "../../components/Button/Button";
-import { Slider } from "../../components/Slider/Slider";
+import { Projects } from "../../components/Projects/Projects";
 import { Comments } from "../../components/Comments/Comments";
 import { CardFeedback } from "../../components/CardFeedback/CardFeedback";
 import { Icon } from "../../components/Icon/Icon";
@@ -66,23 +65,7 @@ export const Works: FC = () => {
             <BackgroundTitle backgroundUrl={works} backgroundTitle="works" />
           </div>
           <div className={styles.row}>
-            <div className={styles.left}>
-              <div className={styles.leftTitle}>
-                <Title
-                  textTop="Приложение для заказа"
-                  textBottom="такси"
-                  size="medium"
-                  color="gray"
-                />
-              </div>
-              <span className={styles.description}>
-                React, Redux, Redux-Form, Redux-Saga, MaterialUI
-              </span>
-              <Button buttonText="Посмотреть cайт" appearance="view" />
-            </div>
-            <div className={styles.right}>
-              <Slider sliderList={sliderList} />
-            </div>
+            <Projects projects={sliderList} />
           </div>
         </section>
         <section className={cx("section", "about")}>

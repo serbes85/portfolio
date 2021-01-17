@@ -58,7 +58,7 @@ export const sliderList = [
   },
   {
     title: "Бургер",
-    technologies: "HTML5, CSS3",
+    technologies: "HTML5, CSS3, JavaScript",
     description:
       `Проект лендинг-страницы по продаже бургеров.`,
     link: "https://github.com/serbes85/hamburger",

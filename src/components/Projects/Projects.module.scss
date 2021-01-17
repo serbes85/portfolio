@@ -1,0 +1,47 @@
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  flex-grow: 1;
+}
+.left {
+  background-color: #ebefe2;
+}
+.title {
+  margin-bottom: 2rem;
+}
+.description {
+  font-family: "Roboto";
+  text-align: center;
+}
+.technologies {
+  color: #6a985a;
+}
+.text {
+  color: #5d5a55;
+  text-align: center;
+  line-height: 1.42;
+  margin: 5%;
+}
+.right {
+  background-color: #e1e4d7;
+}
+.linkImg {
+  display: flex;
+  align-items: center;
+}
+.linkIcon {
+  margin-right: 0.625rem;
+}
+.linkText {
+  color: #4a803a;
+  transition: all 0.3s;
+  border-bottom: 0.063rem solid transparent;
+
+  &:hover {
+    border-color: #4a803a;
+  }
+}

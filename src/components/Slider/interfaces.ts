@@ -5,4 +5,5 @@ export type SliderData = {
 
 export interface SliderProps {
     sliderList: SliderData[];
+    updateIndex(value: number): void;
 }
