@@ -1,7 +1,6 @@
 export type SliderData = {
-    id: number;
     imgUrl: string;
-    name: string;
+    title: string;
 }
 
 export interface SliderProps {
