@@ -19,17 +19,26 @@
   background-color: #fff;
   transition: 0.3s;
 }
+.line:hover {
+  background-color: #458829;
+}
 .line:before {
   position: absolute;
   top: 0.875rem;
   left: 0;
   content: "";
 }
+.line:hover:before {
+  background-color: #458829;
+}
 .line:after {
   position: absolute;
   bottom: 0.875rem;
   left: 0;
   content: "";
+}
+.line:hover:after {
+  background-color: #458829;
 }
 .button.active .line {
   background-color: transparent;
