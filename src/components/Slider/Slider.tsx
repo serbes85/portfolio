@@ -39,6 +39,7 @@ export const Slider: FC<SliderProps> = ({ sliderList, updateIndex }) => {
 
   return (
     <div className={styles.slider}>
+      <span className={styles.slideIndex}>{slideIndex}</span>
       <div className={styles.sliderContainer}>
         <div className={styles.sliderArrows}>
           <button
