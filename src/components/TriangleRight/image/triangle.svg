@@ -1,5 +1,11 @@
-<svg display="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <symbol  width="900.006px" height="1013.986px" id="bg-triangle" viewBox="0 0 900.006 1013.986">
+<svg display="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+    <symbol  
+        width="900.006px" 
+        height="1013.986px" 
+        id="bg-triangle" 
+        viewBox="0 0 900.006 1013.986" 
+        preserveaspectratio="none"
+    >
         <g>
 	        <path  d="M0.01,0l899.997,159.008v854.979H0L0.01,0z"/>
         </g>
