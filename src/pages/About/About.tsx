@@ -84,7 +84,18 @@ export const About: FC = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.right}></div>
+            <div className={styles.right}>
+              <div className={styles.skills}>
+                <div className={styles.description}>
+                  <p>
+                    Больше всего меня привлекает Frontend разработка. Имею опыт
+                    разработки web-приложений на React.js и Vue.js. К верстке
+                    отношусь нормально. Так же знаком и могу решать несложные
+                    задачи на Backend.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>

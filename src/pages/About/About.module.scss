@@ -29,12 +29,12 @@
 .right {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 50%;
   flex-grow: 1;
 }
 .left {
+  justify-content: center;
   background-color: #ebefe2;
 }
 .right {
@@ -64,4 +64,10 @@
   line-height: 1.42;
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+.skills {
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2%;
 }
