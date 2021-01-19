@@ -1,0 +1,21 @@
+.list {
+  padding: 2rem;
+}
+.item {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.link {
+  display: flex;
+  align-items: center;
+}
+.icon {
+  margin-right: 1rem;
+}
+.text {
+  font-family: "Roboto";
+  color: #5d5a55;
+}

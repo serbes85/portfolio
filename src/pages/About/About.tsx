@@ -5,11 +5,13 @@ import { TriangleRight } from "../../components/TriangleRight/TriangleRight";
 import { Title } from "../../components/Title/Title";
 import { BackgroundTitle } from "../../components/BackgroundTitle/BackgroundTitle";
 import { Skills } from "../../components/Skills/Skills";
+import { Map } from "../../components/Map/Map";
+import { Contacts } from "../../components/Contacts/Contacts";
 import { Footer } from "../../components/Footer/Footer";
 import styles from "./About.module.scss";
 import classNames from "classnames/bind";
 
-import { skillsList } from "./constants";
+import { skillsList, contacts } from "./constants";
 //img__header
 import portfolio from "./assets/header/portfolio.svg";
 import about from "./assets/header/about.svg";
@@ -100,6 +102,13 @@ export const About: FC = () => {
                 <Skills skillsList={skillsList} />
               </div>
             </div>
+          </div>
+        </section>
+        <section className={cx("section", "map")}>
+          <Map />
+          <div className={styles.contacts}>
+            <Title textTop="Контакты" size="medium" color="gray" />
+            <Contacts contactsList={contacts} />
           </div>
         </section>
       </main>

@@ -18,8 +18,8 @@ const getSkills = (skills: SkillsData[]) => {
   ));
 };
 const getSkillsList = (skillsList: SkillsListData[]) => {
-  return skillsList.map(({ title, skills }) => (
-    <li className={styles.skillsItem}>
+  return skillsList.map(({ title, skills }, index) => (
+    <li key={index} className={styles.skillsItem}>
       <div className={styles.skillsRow}>
         <h2 className={styles.skillsTitle}>{title}</h2>
         <ul className={styles.skillsRowList}>{getSkills(skills)}</ul>

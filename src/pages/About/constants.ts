@@ -60,3 +60,30 @@ export const skillsList = [
     ]
   }
 ]
+
+export const contacts = [
+  {
+    id: 0,
+    name: "skype",
+    text: "cobra_ssb",
+    link: 'skype: cobra_ssb',
+  },
+  {
+    id: 1,
+    name: "mail",
+    text: "beskrovnyisergei@mail.ru",
+    link: 'mailto: beskrovnyisergei@mail.ru',
+  },
+  {
+    id: 2,
+    name: "phone",
+    text: "+7 901 792 25 28",
+    link: 'tel: +79017922528',
+  },
+  {
+    id: 3,
+    name: "marker",
+    text: "Москва",
+    link: '#',
+  },
+];
