@@ -1,6 +1,28 @@
-.skills {
-  margin-top: 2%;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 2%;
+.skillsTitle {
+  color: #566358;
+}
+.skillsRowList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.skill {
+  position: relative;
+  text-align: center;
+}
+.skillsRowItem {
+  margin-left: 1rem;
+
+  &:first-child {
+    margin-left: 0rem;
+  }
+}
+.skillTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #639155;
 }

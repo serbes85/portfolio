@@ -1,10 +1,15 @@
-export type SkillsData = {
-    id: number;
-    name: string;
+export type SkillsListData = {
     title: string;
-    percents: number;
+    skills: SkillsData[];
+
 }
 
-export interface SkillsProps {
-    skills: SkillsData[];
+export type SkillsData = {
+    id: number;
+    percent: number;
+    title: string;
+}
+
+export interface SkillsListProps {
+    skillsList: SkillsListData[];
 }

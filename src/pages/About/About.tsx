@@ -4,15 +4,18 @@ import { TriangleLeft } from "../../components/TriangleLeft/TriangleLeft";
 import { TriangleRight } from "../../components/TriangleRight/TriangleRight";
 import { Title } from "../../components/Title/Title";
 import { BackgroundTitle } from "../../components/BackgroundTitle/BackgroundTitle";
+import { Skills } from "../../components/Skills/Skills";
 import { Footer } from "../../components/Footer/Footer";
 import styles from "./About.module.scss";
 import classNames from "classnames/bind";
 
+import { skillsList } from "./constants";
 //img__header
 import portfolio from "./assets/header/portfolio.svg";
 import about from "./assets/header/about.svg";
 //avatar
 import avatar from "./assets/avatar/MyAvatar.png";
+
 const cx = classNames.bind(styles);
 
 export const About: FC = () => {
@@ -94,6 +97,7 @@ export const About: FC = () => {
                     задачи на Backend.
                   </p>
                 </div>
+                <Skills skillsList={skillsList} />
               </div>
             </div>
           </div>
