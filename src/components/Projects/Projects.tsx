@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useCallback } from "react";
 import { ProjectsProps } from "./interfaces";
 import { Title } from "../Title/Title";
 import { Icon } from "../Icon/Icon";
@@ -9,9 +9,12 @@ export const Projects: FC<ProjectsProps> = ({ projects }) => {
   const [slideIndex, setSlideIndex] = useState(1);
   const { title, technologies, description, link } = projects[slideIndex - 1];
 
-  const updateIndex = (value: number) => {
-    setSlideIndex(value);
-  };
+  const updateIndex = useCallback(
+    (value: number) => {
+      setSlideIndex(value);
+    },
+    [setSlideIndex]
+  );
 
   return (
     <>

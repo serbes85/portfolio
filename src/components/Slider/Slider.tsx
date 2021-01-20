@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect, useCallback, memo } from "react";
 import { Icon } from "../Icon/Icon";
 import { SliderData, SliderProps } from "./interfaces";
 import styles from "./Slider.module.scss";
@@ -13,29 +13,30 @@ const getSliderList = (sliderList: SliderData[]) => {
   });
 };
 
-export const Slider: FC<SliderProps> = ({ sliderList, updateIndex }) => {
+export const Slider: FC<SliderProps> = memo(({ sliderList, updateIndex }) => {
   const [slideIndex, setSlideIndex] = useState(1);
-  const sliderLlength = sliderList.length;
+  const sliderLength = sliderList.length;
   const step = 100;
 
   useEffect(() => {
     updateIndex(slideIndex);
-  });
+  }, [slideIndex, updateIndex]);
 
-  const moveSlidesRight = () => {
+  const moveSlidesRight = useCallback(() => {
     setSlideIndex(slideIndex + 1);
 
-    if (slideIndex === sliderLlength) {
+    if (slideIndex === sliderLength) {
       setSlideIndex(1);
     }
-  };
-  const moveSlidesLeft = () => {
+  }, [setSlideIndex, slideIndex, sliderLength]);
+
+  const moveSlidesLeft = useCallback(() => {
     setSlideIndex(slideIndex - 1);
 
     if (slideIndex === 1) {
-      setSlideIndex(sliderLlength);
+      setSlideIndex(sliderLength);
     }
-  };
+  }, [setSlideIndex, slideIndex, sliderLength]);
 
   return (
     <div className={styles.slider}>
@@ -76,4 +77,4 @@ export const Slider: FC<SliderProps> = ({ sliderList, updateIndex }) => {
       </div>
     </div>
   );
-};
+});
