@@ -19,7 +19,6 @@
 .link {
   display: block;
   padding: 0.625rem 0;
-  font-family: "Roboto";
   transition: all 0.3s;
 }
 .hoverGreen:hover {
@@ -40,4 +39,7 @@
   &:last-child {
     margin-right: 0;
   }
+}
+.text {
+  font-family: "Roboto";
 }

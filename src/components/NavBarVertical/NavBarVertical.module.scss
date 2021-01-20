@@ -11,12 +11,11 @@
 }
 .link {
   display: block;
-  font-family: "Sansus-Webissimo";
-  font-size: 4rem;
-  font-weight: 400;
-  text-transform: uppercase;
 }
 .text {
+  font-family: "Sansus-Webissimo";
+  font-size: 4rem;
+  text-transform: uppercase;
   position: relative;
 
   &:hover:after {

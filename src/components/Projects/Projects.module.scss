@@ -2,7 +2,7 @@
 .right {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   width: 50%;
   flex-grow: 1;
@@ -22,7 +22,6 @@
 }
 .text {
   color: #5d5a55;
-  text-align: center;
   line-height: 1.42;
   margin: 5%;
 }
