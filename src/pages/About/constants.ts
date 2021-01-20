@@ -50,12 +50,17 @@ export const skillsList = [
       {
         "id": 8,
         "title": "Git",
-        "percent": 55
+        "percent": 50
       },
       {
         "id": 9,
         "title": "Terminal",
-        "percent": 55
+        "percent": 50
+      },
+      {
+        "id": 10,
+        "title": "Webpack",
+        "percent": 45
       }
     ]
   }
