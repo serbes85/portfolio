@@ -107,7 +107,9 @@ export const About: FC = () => {
         <section className={cx("section", "map")}>
           <Map />
           <div className={styles.contacts}>
-            <Title textTop="Контакты" size="medium" color="gray" />
+            <div className={styles.contactsTitle}>
+              <Title textTop="Контакты" size="medium" color="gray" />
+            </div>
             <Contacts contactsList={contacts} />
           </div>
         </section>
