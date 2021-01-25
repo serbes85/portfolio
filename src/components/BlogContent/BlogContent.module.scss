@@ -1,0 +1,25 @@
+.item {
+  margin-bottom: 1rem;
+  border-bottom: 0.25rem solid #ecebe4;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+.title {
+  font-family: "Sansus-Webissimo";
+  font-size: 2rem;
+  color: #566358;
+  padding-bottom: 1rem;
+}
+.date {
+  color: #6a985a;
+}
+.text {
+  font-family: "Roboto";
+  color: #5d5a55;
+  text-align: left;
+  line-height: 2em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}

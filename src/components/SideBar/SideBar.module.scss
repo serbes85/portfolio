@@ -1,0 +1,21 @@
+.list {
+  text-align: center;
+}
+.item {
+  color: #5d5a55;
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.link {
+  padding-right: 0.25rem;
+}
+.link:hover {
+  color: #6a985a;
+}
+.active {
+  color: #6a985a;
+  border-right: 0.125rem solid #6a985a;
+}

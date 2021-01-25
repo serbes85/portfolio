@@ -1,6 +1,5 @@
 .wrapper {
   display: flex;
-  flex: 1 1 auto;
   flex-flow: column nowrap;
   min-height: 100vh;
 }
@@ -8,5 +7,27 @@
   flex: 1 0 auto;
 }
 .blogTitle {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+.blog {
+  position: relative;
+  background-color: #faf8f0;
+}
+.triangles {
+  padding-bottom: 2rem;
+}
+.content {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+}
+.sidebar {
+  position: sticky;
+  top: 0;
+  width: 35%;
+  padding-top: 1rem;
+}
+.articles {
+  width: 65%;
+  padding: 2rem;
 }

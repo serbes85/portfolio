@@ -25,7 +25,7 @@ export const Title: React.FC<TitleProps> = ({
   return (
     <div className={title}>
       <h1 className={className}>{textTop}</h1>
-      <h1 className={className}>{textBottom}</h1>
+      {textBottom && <h1 className={className}>{textBottom}</h1>}
     </div>
   );
 };
