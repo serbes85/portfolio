@@ -6,10 +6,12 @@ export const BlogContent: FC<BlogContentProps> = ({
   articles,
   refsArticles,
 }) => {
+  const arrArticles = refsArticles?.current;
+
   return (
     <ul className={styles.list}>
       {articles.map(({ id, title, date, content }, index) => (
-        <li ref={refsArticles?.current[index]} key={id} className={styles.item}>
+        <li key={id} className={styles.item} ref={arrArticles[index]}>
           <article className={styles.article}>
             <h2 className={styles.title}>{title}</h2>
             <time className={styles.date}>{date}</time>

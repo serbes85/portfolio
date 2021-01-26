@@ -6,12 +6,13 @@ import classNames from "classnames/bind";
 const cx = classNames.bind(styles);
 
 export const SideBar: FC<SideBarProps> = ({ contentList, refsArticles }) => {
+  const arrArticles = refsArticles?.current;
   return (
     <ul className={styles.list}>
       {contentList.map(({ title, id }, index) => (
         <li
           onClick={() => {
-            refsArticles?.current?.[index]?.current.scrollIntoView({
+            arrArticles?.[index]?.current.scrollIntoView({
               block: "start",
               behavior: "smooth",
             });

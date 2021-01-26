@@ -1,3 +1,5 @@
+import { RefObject } from "react";
+
 export type SideBarData = {
     id: string;
     title: string;
@@ -5,5 +7,5 @@ export type SideBarData = {
 
 export interface SideBarProps {
     contentList: SideBarData[];
-    refsArticles: any;
+    refsArticles: RefObject<any> | null;
 }

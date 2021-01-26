@@ -1,3 +1,5 @@
+import { RefObject } from "react";
+
 export type BlogContentData = {
     id: string;
     title: string;
@@ -7,5 +9,5 @@ export type BlogContentData = {
 
 export interface BlogContentProps {
     articles: BlogContentData[];
-    refsArticles: any;
+    refsArticles: RefObject<any> | null;
 }
