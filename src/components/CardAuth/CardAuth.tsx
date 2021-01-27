@@ -49,6 +49,7 @@ export const CardAuth: React.FC<CardAuthProps> = ({
               id="user-password"
               type="password"
               placeholder="Пароль"
+              autocomplete="on"
             />
           </div>
           <div className={styles.control}>
@@ -87,7 +88,11 @@ export const CardAuth: React.FC<CardAuthProps> = ({
           appearance="borderRadiusLeft"
           onClick={handleClickFlippedFont}
         />
-        <Button buttonText="Войти" appearance="borderRadiusRight" />
+        <Button
+          buttonText="Войти"
+          appearance="borderRadiusRight"
+          type="submit"
+        />
       </nav>
     </div>
   );
