@@ -8,4 +8,5 @@ export type SideBarData = {
 export interface SideBarProps {
     contentList: SideBarData[];
     refsArticles: RefObject<any> | null;
+    activeArticleId: string;
 }

@@ -5,14 +5,19 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-export const SideBar: FC<SideBarProps> = ({ contentList, refsArticles }) => {
+export const SideBar: FC<SideBarProps> = ({
+  contentList,
+  refsArticles,
+  activeArticleId,
+}) => {
   const arrArticles = refsArticles?.current;
+
   return (
     <ul className={styles.list}>
       {contentList.map(({ title, id }, index) => (
         <li
           onClick={() => {
-            arrArticles?.[index]?.current.scrollIntoView({
+            arrArticles[index]?.current.scrollIntoView({
               block: "start",
               behavior: "smooth",
             });
@@ -20,12 +25,21 @@ export const SideBar: FC<SideBarProps> = ({ contentList, refsArticles }) => {
           key={id}
           className={styles.item}
         >
-          <a
-            href={`#article${index}`}
-            className={cx("link", { active: false })}
-          >
-            {title}
-          </a>
+          {activeArticleId === id ? (
+            <a
+              href={`#article${index}`}
+              className={cx("link", { active: true })}
+            >
+              {title}
+            </a>
+          ) : (
+            <a
+              href={`#article${index}`}
+              className={cx("link", { active: false })}
+            >
+              {title}
+            </a>
+          )}
         </li>
       ))}
     </ul>

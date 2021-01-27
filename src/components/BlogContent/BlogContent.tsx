@@ -11,7 +11,7 @@ export const BlogContent: FC<BlogContentProps> = ({
   return (
     <ul className={styles.list}>
       {articles.map(({ id, title, date, content }, index) => (
-        <li key={id} className={styles.item} ref={arrArticles[index]}>
+        <li key={id} id={id} className={styles.item} ref={arrArticles[index]}>
           <article className={styles.article}>
             <h2 className={styles.title}>{title}</h2>
             <time className={styles.date}>{date}</time>

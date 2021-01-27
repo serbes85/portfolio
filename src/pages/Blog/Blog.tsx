@@ -1,4 +1,4 @@
-import React, { FC, useRef, createRef } from "react";
+import React, { FC, useRef, createRef, useEffect, useState } from "react";
 import { HeroSection } from "../../components/HeroSection/HeroSection";
 import { Title } from "../../components/Title/Title";
 import { TriangleLeft } from "../../components/TriangleLeft/TriangleLeft";
@@ -14,12 +14,15 @@ import blog from "./assets/header/blog.svg";
 
 export const Blog: FC = () => {
   const section = useRef<null | HTMLElement>(null);
-  const articlesLength = articles.length;
   const refsArticles = useRef(
-    Array(articlesLength)
+    Array(articles.length)
       .fill(null)
       .map(() => createRef())
   );
+  const [activeArticleId, setActiveArticleId] = useState("0");
+  const observerOptions = {
+    rootMargin: "0px -50px -55% 0px",
+  };
 
   const renderProps = (title: string, description: string) => {
     return (
@@ -37,6 +40,26 @@ export const Blog: FC = () => {
       behavior: "smooth",
     });
   };
+  const observerCallback = (entries: any) => {
+    entries.forEach((entry: any) => {
+      if (entry.isIntersecting) {
+        const id = String(entry.target.id);
+
+        setActiveArticleId(id);
+      }
+    });
+  };
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+    refsArticles.current.forEach((refArticle: any) =>
+      observer.observe(refArticle.current)
+    );
+
+    return () => observer.disconnect();
+  }, [observerOptions, activeArticleId]);
 
   return (
     <div className={styles.wrapper}>
@@ -67,7 +90,11 @@ export const Blog: FC = () => {
           </div>
           <div className={styles.content}>
             <aside className={styles.sidebar}>
-              <SideBar contentList={articles} refsArticles={refsArticles} />
+              <SideBar
+                contentList={articles}
+                refsArticles={refsArticles}
+                activeArticleId={activeArticleId}
+              />
             </aside>
             <div className={styles.articles}>
               <BlogContent refsArticles={refsArticles} articles={articles} />
