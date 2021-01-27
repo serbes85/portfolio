@@ -1,5 +1,5 @@
 .list {
-  text-align: center;
+  text-align: left;
 }
 .item {
   color: #5d5a55;
@@ -10,7 +10,8 @@
   }
 }
 .link {
-  padding-right: 0.25rem;
+  display: block;
+  padding: 0.125rem;
 }
 .link:hover {
   color: #6a985a;
