@@ -30,7 +30,7 @@ export const Welcome: React.FC = () => {
         isFlipped={isFlipped}
         handleClickFlippedFont={handleClickFlippedFont}
       />
-      <Copyright text="© Бескровный Сергей | Личный сайт веб-разработчика | 2020" />
+      <Copyright text="© Бескровный Сергей | Личный сайт веб-разработчика | 2021" />
     </div>
   );
 };
