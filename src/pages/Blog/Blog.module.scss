@@ -29,10 +29,18 @@
   top: 1rem;
   width: 35%;
   margin-left: 3%;
+
+  @include phones {
+    display: none;
+  }
 }
 .articles {
   position: relative;
   width: 65%;
   margin-right: 3%;
   margin-left: 3%;
+
+  @include phones {
+    width: 100%;
+  }
 }
