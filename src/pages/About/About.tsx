@@ -43,35 +43,18 @@ export const About: FC = () => {
         />
         <section className={cx("section", "about")} ref={section}>
           <div className={styles.triangles}>
-            <TriangleLeft
-              name="triangle"
-              fill="#ebefe2"
-              width="100%"
-              height="120px"
-            />
-            <TriangleRight
-              name="triangle"
-              fill="#f4f5f0"
-              width="100%"
-              height="120px"
-            />
-          </div>
-          <div className={styles.title}>
-            <div className={styles.titleLeft}>
-              <Title textTop="Обо мне" size="high" color="black" />
-              <BackgroundTitle backgroundUrl={about} backgroundTitle="about" />
-            </div>
-            <div className={styles.titleRight}>
-              <Title
-                textTop="Чем я могу быть"
-                textBottom="Вам полезен"
-                size="medium"
-                color="gray"
-              />
-            </div>
+            <TriangleLeft name="triangle" fill="#ebefe2" width="100%" />
+            <TriangleRight name="triangle" fill="#f4f5f0" width="100%" />
           </div>
           <div className={styles.row}>
             <div className={styles.left}>
+              <div className={styles.titleLeft}>
+                <Title textTop="Обо мне" size="high" color="black" />
+                <BackgroundTitle
+                  backgroundUrl={about}
+                  backgroundTitle="about"
+                />
+              </div>
               <div className={styles.person}>
                 <div className={styles.avatarWrapper}>
                   <img className={styles.avatar} src={avatar} alt="Сергей" />
@@ -90,6 +73,14 @@ export const About: FC = () => {
               </div>
             </div>
             <div className={styles.right}>
+              <div className={styles.titleRight}>
+                <Title
+                  textTop="Чем я могу быть"
+                  textBottom="Вам полезен"
+                  size="medium"
+                  color="gray"
+                />
+              </div>
               <div className={styles.skills}>
                 <div className={styles.description}>
                   <p>

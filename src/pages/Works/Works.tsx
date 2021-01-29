@@ -48,18 +48,8 @@ export const Works: FC = () => {
         />
         <section className={cx("section", "works")} ref={section}>
           <div className={styles.triangles}>
-            <TriangleLeft
-              name="triangle"
-              fill="#f8f9f5"
-              width="100%"
-              height="120px"
-            />
-            <TriangleRight
-              name="triangle"
-              fill="#f8f9f5"
-              width="100%"
-              height="120px"
-            />
+            <TriangleLeft name="triangle" fill="#f8f9f5" width="100%" />
+            <TriangleRight name="triangle" fill="#f8f9f5" width="100%" />
           </div>
           <div className={styles.worksTitle}>
             <Title textTop="Мои работы" size="high" color="black" />

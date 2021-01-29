@@ -1,6 +1,14 @@
+@import "../../media.scss";
+
 .left {
   position: absolute;
-  top: -120px;
+  top: -145px;
   width: 50%;
+  height: 145px;
   left: 0;
+
+  @include phones {
+    top: -40px;
+    height: 40px;
+  }
 }

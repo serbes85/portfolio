@@ -1,11 +1,21 @@
+@import "../../media.scss";
+
 .list {
   display: flex;
+
+  @include phones {
+    flex-direction: column;
+  }
 }
 .item {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1;
+
+  @include phones {
+    margin-bottom: 1rem;
+  }
 }
 .comment {
   font-family: "Roboto-BoldItalic";

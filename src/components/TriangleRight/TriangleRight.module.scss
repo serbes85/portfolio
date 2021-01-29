@@ -1,7 +1,15 @@
+@import "../../media.scss";
+
 .right {
   position: absolute;
-  top: -120px;
+  top: -145px;
   width: 50%;
+  height: 145px;
   transform: rotateY(180deg);
   right: 0;
+
+  @include phones {
+    top: -40px;
+    height: 40px;
+  }
 }

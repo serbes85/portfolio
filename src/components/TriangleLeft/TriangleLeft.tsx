@@ -7,11 +7,10 @@ export const TriangleLeft: React.FC<TriangleLeftProps> = ({
   name,
   fill,
   width,
-  height,
 }) => {
   return (
     <div className={styles.left}>
-      <svg fill={fill} width={width} height={height}>
+      <svg fill={fill} width={width}>
         <use xlinkHref={`${sprite}#bg-${name}`} />
       </svg>
     </div>
