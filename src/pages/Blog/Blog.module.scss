@@ -1,3 +1,5 @@
+@import "../../media.scss";
+
 .wrapper {
   display: flex;
   flex-flow: column nowrap;
@@ -7,14 +9,15 @@
   flex: 1 0 auto;
 }
 .blogTitle {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
+.section {
+  min-height: rem(650px);
+}
+// blog
 .blog {
   position: relative;
   background-color: #faf8f0;
-}
-.triangles {
-  padding-bottom: 2rem;
 }
 .content {
   display: flex;
@@ -23,12 +26,13 @@
 }
 .sidebar {
   position: sticky;
-  top: 0;
+  top: 1rem;
   width: 35%;
-  padding-top: 1rem;
-  margin-left: 2rem;
+  margin-left: 3%;
 }
 .articles {
+  position: relative;
   width: 65%;
-  padding: 2rem;
+  margin-right: 3%;
+  margin-left: 3%;
 }

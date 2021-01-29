@@ -16,21 +16,23 @@ export const Welcome: React.FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.dummy} onClick={handleClickFlippedFont} />
-      <div className={styles.buttonAuth}>
-        {!isFlipped && (
-          <Button
-            buttonText="Авторизоваться"
-            appearance="authorize"
-            onClick={handleClickFlippedBack}
-          />
-        )}
+      <div className={styles.container}>
+        <div className={styles.dummy} onClick={handleClickFlippedFont} />
+        <div className={styles.buttonAuth}>
+          {!isFlipped && (
+            <Button
+              buttonText="Авторизоваться"
+              appearance="authorize"
+              onClick={handleClickFlippedBack}
+            />
+          )}
+        </div>
+        <FlipCard
+          isFlipped={isFlipped}
+          handleClickFlippedFont={handleClickFlippedFont}
+        />
+        <Copyright text="© Бескровный Сергей | Личный сайт веб-разработчика | 2021" />
       </div>
-      <FlipCard
-        isFlipped={isFlipped}
-        handleClickFlippedFont={handleClickFlippedFont}
-      />
-      <Copyright text="© Бескровный Сергей | Личный сайт веб-разработчика | 2021" />
     </div>
   );
 };

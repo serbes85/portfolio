@@ -1,3 +1,5 @@
+@import "../../media.scss";
+
 .footer {
   flex: 0 0 auto;
   background: rgba(#363d43, 0.8);
@@ -11,6 +13,11 @@
   &.backgroundGreen {
     background: #628c54;
   }
+
+  @include phones {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .left,
 .right {
@@ -18,12 +25,42 @@
   flex-direction: column;
   align-items: flex-start;
   flex: 1 1 50%;
-  padding: 0rem 2rem;
 }
 .left {
   border-right: 0.063rem solid white;
+
+  @include phones {
+    flex: 1;
+    align-items: center;
+    border-right: none;
+    border-bottom: 0.063rem solid white;
+    margin-bottom: 1rem;
+  }
+}
+.nav {
+  margin-bottom: 1rem;
+}
+.socials {
+  @include phones {
+    margin-bottom: 1rem;
+  }
 }
 .right {
+  margin-left: 1rem;
   font-family: "Roboto-BoldItalic";
   color: #9c9fa0;
+
+  @include phones {
+    flex: 1;
+    text-align: center;
+    margin-left: 0;
+  }
+}
+.text {
+  margin-bottom: 0.625rem;
+}
+.author {
+  @include phones {
+    align-self: center;
+  }
 }

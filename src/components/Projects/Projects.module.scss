@@ -1,14 +1,20 @@
+@import "../../media.scss";
+
 .left,
 .right {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 50%;
-  flex-grow: 1;
+
+  @include phones {
+    width: 100%;
+  }
 }
 .left {
   background-color: #ebefe2;
+  justify-content: center;
+  padding: 1rem;
 }
 .title {
   margin-bottom: 2rem;
@@ -27,6 +33,10 @@
 }
 .right {
   background-color: #e1e4d7;
+
+  @include phones {
+    order: -1;
+  }
 }
 .linkImg {
   display: flex;

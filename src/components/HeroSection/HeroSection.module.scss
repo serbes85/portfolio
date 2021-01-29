@@ -1,18 +1,32 @@
+@import "../../media.scss";
+
+.section {
+  min-height: rem(650px);
+}
 .hero {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
   box-shadow: inset 0 -2rem 2rem 0rem rgba(0, 0, 0, 0.7);
-  background: url("../../img/water.jpg") 0 0 no-repeat;
+  background: url("./assets/bg/water.jpg") 0 0 no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
 }
+.container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  @include phones {
+    width: 95%;
+  }
+}
 .arrow {
   background-color: transparent;
   border: none;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   z-index: 2;
 }
 .down {

@@ -7,10 +7,13 @@ import { SideBar } from "../../components/SideBar/SideBar";
 import { BlogContent } from "../../components/BlogContent/BlogContent";
 import { Footer } from "../../components/Footer/Footer";
 import styles from "./Blog.module.scss";
+import classNames from "classnames/bind";
 
 import { articles } from "./constants";
 //img__header
 import blog from "./assets/header/blog.svg";
+
+const cx = classNames.bind(styles);
 
 export const Blog: FC = () => {
   const section = useRef<null | HTMLElement>(null);
@@ -73,20 +76,10 @@ export const Blog: FC = () => {
           size="medium"
           scrollToSection={scrollToSection}
         />
-        <section className={styles.blog} ref={section}>
+        <section className={cx("section", "blog")} ref={section}>
           <div className={styles.triangles}>
-            <TriangleLeft
-              name="triangle"
-              fill="#faf8f0"
-              width="100%"
-              height="120px"
-            />
-            <TriangleRight
-              name="triangle"
-              fill="#faf8f0"
-              width="100%"
-              height="120px"
-            />
+            <TriangleLeft name="triangle" fill="#faf8f0" width="100%" />
+            <TriangleRight name="triangle" fill="#faf8f0" width="100%" />
           </div>
           <div className={styles.content}>
             <aside className={styles.sidebar}>

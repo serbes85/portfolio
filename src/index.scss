@@ -1,24 +1,37 @@
+// media
+@import "./media";
+
+// base
 * {
   margin: 0;
   padding: 0;
 }
-
 *,
 *:before,
 *:after {
   box-sizing: border-box;
 }
-
 html,
 body {
   width: 100%;
   height: 100%;
   line-height: 1.42;
 }
+html {
+  @include desktop {
+    font-size: 16px;
+  }
 
+  @include tablets {
+    font-size: 14px;
+  }
+
+  @include phones {
+    font-size: 13px;
+  }
+}
 body {
   font-family: "Roboto", Arial, sans-serif;
-  font-size: 16px;
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

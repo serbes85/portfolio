@@ -6,6 +6,9 @@ import { Icon } from "../Icon/Icon";
 import { ModalWindow } from "../ModalWindow/ModalWindow";
 import { HeroProps } from "./interfaces";
 import styles from "./HeroSection.module.scss";
+import classNames from "classnames/bind";
+
+const cx = classNames.bind(styles);
 
 export const HeroSection: FC<HeroProps> = ({
   title,
@@ -23,26 +26,32 @@ export const HeroSection: FC<HeroProps> = ({
   };
 
   return (
-    <section className={styles.hero}>
-      <Header
-        isActive={isActive}
-        hahdleClickSetActiveClass={hahdleClickSetActiveClass}
-      />
-      <Person title={title} description={description} render={render} />
-      <BackgroundTitle
-        backgroundUrl={backgroundUrl}
-        backgroundTitle={backgroundTitle}
-        size={size}
-      />
-      <button type="button" className={styles.arrow} onClick={scrollToSection}>
-        <Icon
-          className={styles.down}
-          name="arrow-down"
-          fill="white"
-          size="1.5625rem"
+    <section className={cx("section", "hero")}>
+      <div className={styles.container}>
+        <Header
+          isActive={isActive}
+          hahdleClickSetActiveClass={hahdleClickSetActiveClass}
         />
-      </button>
-      <ModalWindow isActive={isActive} />
+        <Person title={title} description={description} render={render} />
+        <BackgroundTitle
+          backgroundUrl={backgroundUrl}
+          backgroundTitle={backgroundTitle}
+          size={size}
+        />
+        <button
+          type="button"
+          className={styles.arrow}
+          onClick={scrollToSection}
+        >
+          <Icon
+            className={styles.down}
+            name="arrow-down"
+            fill="white"
+            size="1.5625rem"
+          />
+        </button>
+        <ModalWindow isActive={isActive} />
+      </div>
     </section>
   );
 };

@@ -1,3 +1,5 @@
+@import "../../media.scss";
+
 .title {
   font-family: "Sansus-Webissimo";
   text-align: center;
@@ -8,20 +10,32 @@
     display: block;
     margin: auto;
     width: 7rem;
-    border: 0.125rem solid;
+    border: 2px solid;
   }
 }
 //title__size
 .small {
-  font-size: 1.75rem;
+  font-size: rem(36px);
+
+  @include phones {
+    font-size: rem(24px);
+  }
 }
 .medium {
-  font-size: 2.25rem;
+  font-size: rem(32px);
   text-transform: uppercase;
+
+  @include phones {
+    font-size: rem(28px);
+  }
 }
 .high {
-  font-size: 4rem;
+  font-size: rem(64px);
   text-transform: uppercase;
+
+  @include phones {
+    font-size: rem(48px);
+  }
 }
 //title__color
 .black {

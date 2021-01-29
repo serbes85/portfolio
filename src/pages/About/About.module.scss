@@ -1,3 +1,5 @@
+@import "../../media.scss";
+
 .wrapper {
   display: flex;
   flex-flow: column nowrap;
@@ -10,20 +12,23 @@
 .about {
   position: relative;
 }
-.title {
-  display: flex;
-}
 .titleLeft {
   width: 100%;
-  background-color: #ebefe2;
   position: relative;
 }
 .titleRight {
   width: 100%;
-  background-color: #f4f5f0;
+
+  @include phones {
+    text-align: center;
+  }
 }
 .row {
   display: flex;
+
+  @include phones {
+    flex-direction: column;
+  }
 }
 .left,
 .right {
@@ -31,21 +36,29 @@
   flex-direction: column;
   align-items: center;
   width: 50%;
-  flex-grow: 1;
+
+  @include phones {
+    width: 100%;
+  }
 }
 .left {
-  justify-content: center;
   background-color: #ebefe2;
+  align-items: flex-start;
 }
 .right {
   flex-wrap: wrap;
   background-color: #f4f5f0;
+  justify-content: space-evenly;
 }
 .person {
   margin-top: 5%;
   margin-left: 15%;
   margin-right: 15%;
-  margin-bottom: 5%;
+
+  @include phones {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
 .avatarWrapper {
   width: 100%;

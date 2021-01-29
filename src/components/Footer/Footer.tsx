@@ -14,18 +14,24 @@ export const Footer: FC = () => {
     <footer className={styles.footer}>
       <div className={styles.row}>
         <div className={styles.left}>
-          <NavBarHorizontal
-            links={links}
-            appearance="withoutBackground"
-            border="withoutBorderRight"
-            hover="hoverGray"
-          />
-          <Socials hover="hoverWhite" />
+          <div className={styles.nav}>
+            <NavBarHorizontal
+              links={links}
+              appearance="withoutBackground"
+              border="withoutBorderRight"
+              hover="hoverGray"
+            />
+          </div>
+          <div className={styles.socials}>
+            <Socials hover="hoverWhite" />
+          </div>
         </div>
         <div className={styles.right}>
-          Всегда пишите код так, будто сопровождать его будет склонный к насилию
-          психопат, который знает, где вы живете.
-          <span>&mdash; Martin Golding</span>
+          <p className={styles.text}>
+            Всегда пишите код так, будто сопровождать его будет склонный к
+            насилию психопат, который знает, где вы живете.
+          </p>
+          <p className={styles.author}>&mdash; Martin Golding</p>
         </div>
       </div>
       <div className={cx("row", "backgroundGreen")}>
