@@ -2,13 +2,18 @@
 
 .left {
   position: absolute;
-  top: -145px;
+  top: rem(-145px);
   width: 50%;
-  height: 145px;
+  height: rem(145px);
   left: 0;
 
+  @include tablets {
+    top: rem(-80px);
+    height: rem(80px);
+  }
+
   @include phones {
-    top: -40px;
-    height: 40px;
+    top: rem(-55px);
+    height: rem(55px);
   }
 }

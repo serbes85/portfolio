@@ -3,6 +3,10 @@
 .skillsTitle {
   color: #566358;
 
+  @include tablets {
+    text-align: center;
+  }
+
   @include phones {
     text-align: center;
   }

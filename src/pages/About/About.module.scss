@@ -26,6 +26,10 @@
 .row {
   display: flex;
 
+  @include tablets {
+    flex-direction: column;
+  }
+
   @include phones {
     flex-direction: column;
   }
@@ -37,12 +41,17 @@
   align-items: center;
   width: 50%;
 
+  @include tablets {
+    width: 100%;
+  }
+
   @include phones {
     width: 100%;
   }
 }
 .left {
   background-color: #ebefe2;
+  position: relative;
   align-items: flex-start;
 }
 .right {
@@ -54,6 +63,11 @@
   margin-top: 5%;
   margin-left: 15%;
   margin-right: 15%;
+
+  @include tablets {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 
   @include phones {
     margin-left: 5%;

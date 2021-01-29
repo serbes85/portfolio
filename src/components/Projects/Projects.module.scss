@@ -7,6 +7,10 @@
   align-items: center;
   width: 50%;
 
+  @include tablets {
+    width: 100%;
+  }
+
   @include phones {
     width: 100%;
   }
@@ -33,6 +37,10 @@
 }
 .right {
   background-color: #e1e4d7;
+
+  @include tablets {
+    order: -1;
+  }
 
   @include phones {
     order: -1;

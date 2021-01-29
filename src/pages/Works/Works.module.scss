@@ -22,6 +22,10 @@
   display: flex;
   flex: 1;
 
+  @include tablets {
+    flex-direction: column;
+  }
+
   @include phones {
     flex-direction: column;
   }
@@ -75,6 +79,11 @@
   position: absolute;
   bottom: 35rem;
   right: 2rem;
+
+  @include tablets {
+    bottom: 30rem;
+    right: 10rem;
+  }
 }
 .comments {
   margin-left: 15%;
