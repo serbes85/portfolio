@@ -2,14 +2,19 @@
 
 .right {
   position: absolute;
-  top: -145px;
+  top: rem(-145px);
   width: 50%;
-  height: 145px;
+  height: rem(145px);
   transform: rotateY(180deg);
   right: 0;
 
+  @include tablets {
+    top: rem(-80px);
+    height: rem(80px);
+  }
+
   @include phones {
-    top: -30px;
-    height: 30px;
+    top: rem(-55px);
+    height: rem(55px);
   }
 }
