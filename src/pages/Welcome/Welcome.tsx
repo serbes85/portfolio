@@ -17,8 +17,7 @@ export const Welcome: React.FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <div className={styles.dummy} onClick={handleClickFlippedFont} />
-        <div className={styles.buttonAuth}>
+        <header className={styles.header}>
           {!isFlipped && (
             <Button
               buttonText="Авторизоваться"
@@ -26,13 +25,16 @@ export const Welcome: React.FC = () => {
               onClick={handleClickFlippedBack}
             />
           )}
-        </div>
+        </header>
+        <div className={styles.dummy} onClick={handleClickFlippedFont} />
         <FlipCard
           isFlipped={isFlipped}
           handleClickFlippedFont={handleClickFlippedFont}
         />
-        <Copyright text="© Бескровный Сергей | Личный сайт веб-разработчика | 2021" />
       </div>
+      <footer className={styles.footer}>
+        <Copyright text="© Бескровный Сергей | Личный сайт веб-разработчика | 2021" />
+      </footer>
     </div>
   );
 };

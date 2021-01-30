@@ -12,6 +12,11 @@
 .about {
   position: relative;
 }
+.triangleRight {
+  @include tablets {
+    fill: #ebefe2;
+  }
+}
 .titleLeft {
   width: 100%;
   position: relative;

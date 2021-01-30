@@ -2,26 +2,38 @@
 
 .wrapper {
   display: flex;
+  flex-flow: column nowrap;
   box-shadow: inset 0 -2rem 2rem 0rem rgba(0, 0, 0, 0.7);
   background: url("./assets/bg/water.jpg") 0 0 no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 .container {
   margin: 0 auto;
   width: 100%;
   display: flex;
+  flex: 1 0 auto;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 
-  @include tablets {
-    justify-content: space-between;
-    margin-bottom: 5rem;
-  }
   @include phones {
     width: 95%;
+    justify-content: space-evenly;
+  }
+}
+.header {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2rem;
+
+  @include phones {
+    position: static;
+    align-self: center;
+    padding: 0;
   }
 }
 .dummy {
@@ -31,17 +43,7 @@
   bottom: 0;
   right: 0;
 }
-.buttonAuth {
-  z-index: 2;
-  align-self: flex-end;
-  margin-right: 2rem;
-
-  @include tablets {
-    margin-top: 2rem;
-  }
-
-  @include phones {
-    align-self: center;
-    margin-right: 0;
-  }
+.footer {
+  flex: 0 0 auto;
+  padding: 2rem;
 }

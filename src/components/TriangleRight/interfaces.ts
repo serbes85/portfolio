@@ -3,4 +3,5 @@ export interface TriangleRightProps {
     width?: string;
     height?: string;
     fill?: string;
+    className?: string;
 }

@@ -8,10 +8,11 @@ export const TriangleRight: React.FC<TriangleRightProps> = ({
   fill,
   width,
   height,
+  className,
 }) => {
   return (
     <div className={styles.right}>
-      <svg fill={fill} width={width} height={height}>
+      <svg fill={fill} width={width} height={height} className={`${className}`}>
         <use xlinkHref={`${sprite}#bg-${name}`} />
       </svg>
     </div>

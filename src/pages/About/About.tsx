@@ -44,7 +44,12 @@ export const About: FC = () => {
         <section className={cx("section", "about")} ref={section}>
           <div className={styles.triangles}>
             <TriangleLeft name="triangle" fill="#ebefe2" width="100%" />
-            <TriangleRight name="triangle" fill="#f4f5f0" width="100%" />
+            <TriangleRight
+              name="triangle"
+              fill="#f4f5f0"
+              width="100%"
+              className={styles.triangleRight}
+            />
           </div>
           <div className={styles.row}>
             <div className={styles.left}>
