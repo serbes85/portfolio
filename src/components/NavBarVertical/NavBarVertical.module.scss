@@ -1,3 +1,5 @@
+@import "../../media.scss";
+
 .list {
   display: flex;
   flex-direction: column;
@@ -27,5 +29,9 @@
     margin: 3rem 0rem;
     width: 5.625rem;
     border: 2px solid;
+  }
+
+  @include phones {
+    font-size: 3.5rem;
   }
 }
