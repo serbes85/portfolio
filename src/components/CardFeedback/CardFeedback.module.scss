@@ -9,11 +9,8 @@
   backface-visibility: hidden;
   transition: all 0.3s;
 }
-.feedback {
-  padding: 1.25rem 1.5rem;
-}
 .title {
-  margin-bottom: 2rem;
+  padding: 1rem;
 }
 .form {
   display: flex;
@@ -21,9 +18,12 @@
   justify-content: center;
 }
 .name,
-.email {
+.email,
+.text {
   display: flex;
   justify-content: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
   margin-bottom: 1.25rem;
 }
 .controls {

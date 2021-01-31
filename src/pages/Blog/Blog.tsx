@@ -15,6 +15,11 @@ import blog from "./assets/header/blog.svg";
 
 const cx = classNames.bind(styles);
 
+const observerOptions = {
+  root: null,
+  threshold: 0.7,
+};
+
 export const Blog: FC = () => {
   const section = useRef<null | HTMLElement>(null);
   const refsArticles = useRef(
@@ -23,9 +28,6 @@ export const Blog: FC = () => {
       .map(() => createRef())
   );
   const [activeArticleId, setActiveArticleId] = useState("0");
-  const observerOptions = {
-    rootMargin: "0px -50px -55% 0px",
-  };
 
   const renderProps = (title: string, description: string) => {
     return (
@@ -62,7 +64,7 @@ export const Blog: FC = () => {
     );
 
     return () => observer.disconnect();
-  }, [observerOptions, activeArticleId]);
+  }, []);
 
   return (
     <div className={styles.wrapper}>

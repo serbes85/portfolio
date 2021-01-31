@@ -1,14 +1,15 @@
-import React, { FC, ChangeEvent, useState } from "react";
-import { InputFieldProps } from "./interfaces";
+import React, { FC } from "react";
+import { InputProps } from "./interfaces";
 import styles from "./InputField.module.scss";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-export const InputField: FC<InputFieldProps> = ({
-  htmlFor,
+export const InputField: FC<InputProps> = ({
+  label,
+  register,
+  required,
   id,
-  name,
   type,
   placeholder,
   autocomplete,
@@ -18,26 +19,18 @@ export const InputField: FC<InputFieldProps> = ({
     inputField: true,
     borderRadiusLeft: appearance === "borderRadiusLeft",
   });
-  const [inputValue, setInputValue] = useState("");
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-
-    setInputValue(value);
-  };
 
   return (
     <div className={styles.input}>
-      <label htmlFor={htmlFor}>
+      <label htmlFor={label}>
         <input
+          name={label}
+          ref={register({ required })}
           className={className}
           id={id}
-          name={name}
           type={type}
-          value={inputValue}
           placeholder={placeholder}
           autoComplete={autocomplete}
-          onChange={handleChange}
         />
       </label>
     </div>

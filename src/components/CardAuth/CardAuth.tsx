@@ -1,5 +1,6 @@
-import React from "react";
-import { CardAuthProps } from "./interfaces";
+import React, { FC } from "react";
+import { useForm } from "react-hook-form";
+import { CardAuthProps, InputFormValues } from "./interfaces";
 import { Title } from "../Title/Title";
 import { InputField } from "../InputField/InputField";
 import { Icon } from "../Icon/Icon";
@@ -11,14 +12,19 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-export const CardAuth: React.FC<CardAuthProps> = ({
+export const CardAuth: FC<CardAuthProps> = ({
   handleClickFlippedFont,
   isFlipped,
 }) => {
+  const { register, errors, handleSubmit } = useForm<InputFormValues>();
   const className = cx({
     cardAuth: true,
     flipped: isFlipped,
   });
+
+  const onSubmit = (data: InputFormValues) => {
+    console.log(data);
+  };
 
   return (
     <div className={className}>
@@ -26,31 +32,43 @@ export const CardAuth: React.FC<CardAuthProps> = ({
         <div className={styles.title}>
           <Title size="medium" textTop="Авторизуйтесь" />
         </div>
-        <form className={styles.form}>
-          <div className={styles.login}>
-            <div className={styles.icon}>
-              <Icon name="login" fill="#949f99" size="1.25rem" />
+        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+          <div className={styles.input}>
+            <div className={styles.login}>
+              <div className={styles.icon}>
+                <Icon name="login" fill="#949f99" size="1.25rem" />
+              </div>
+              <InputField
+                label="userName"
+                register={register}
+                required
+                id="user-name"
+                type="text"
+                placeholder="Логин"
+              />
             </div>
-            <InputField
-              htmlFor="userName"
-              name="userName"
-              id="user-name"
-              type="text"
-              placeholder="Логин"
-            />
+            <div className={styles.error}>
+              {errors.userName && "Введите логин"}
+            </div>
           </div>
-          <div className={styles.password}>
-            <div className={styles.icon}>
-              <Icon name="password" fill="#949f99" size="1.25rem" />
+          <div className={styles.input}>
+            <div className={styles.password}>
+              <div className={styles.icon}>
+                <Icon name="password" fill="#949f99" size="1.25rem" />
+              </div>
+              <InputField
+                label="userPassword"
+                register={register}
+                required
+                id="user-password"
+                type="password"
+                placeholder="Пароль"
+                autocomplete="on"
+              />
             </div>
-            <InputField
-              htmlFor="userPassword"
-              name="userPassword"
-              id="user-password"
-              type="password"
-              placeholder="Пароль"
-              autocomplete="on"
-            />
+            <div className={styles.error}>
+              {errors.userPassword && "Введите пароль"}
+            </div>
           </div>
           <div className={styles.control}>
             <div className={styles.controlButton}>
@@ -79,21 +97,21 @@ export const CardAuth: React.FC<CardAuthProps> = ({
               />
             </div>
           </div>
+          <div className={styles.controlButton}>
+            <Button
+              type="button"
+              buttonText="На главную"
+              appearance="borderRadiusLeft"
+              onClick={handleClickFlippedFont}
+            />
+            <Button
+              buttonText="Войти"
+              appearance="borderRadiusRight"
+              type="submit"
+            />
+          </div>
         </form>
       </div>
-      <nav className={styles.nav}>
-        <Button
-          type="button"
-          buttonText="На главную"
-          appearance="borderRadiusLeft"
-          onClick={handleClickFlippedFont}
-        />
-        <Button
-          buttonText="Войти"
-          appearance="borderRadiusRight"
-          type="submit"
-        />
-      </nav>
     </div>
   );
 };

@@ -1,4 +1,6 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import { InputFormValues } from "./interfaces";
 import { Title } from "../Title/Title";
 import { InputField } from "../InputField/InputField";
 import { TextArea } from "../TextArea/TextArea";
@@ -6,16 +8,24 @@ import { Button } from "../Button/Button";
 import styles from "./CardFeedback.module.scss";
 
 export const CardFeedback: React.FC = () => {
+  const { register, handleSubmit } = useForm<InputFormValues>();
+
+  const onSubmit = (data: InputFormValues) => {
+    console.log(data);
+  };
+
   return (
     <div className={styles.cardFeedback}>
       <div className={styles.feedback}>
         <div className={styles.title}>
           <Title size="medium" textTop="Связаться со мной" color="black" />
         </div>
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.name}>
             <InputField
-              htmlFor="userName"
+              label="userName"
+              register={register}
+              required
               name="userName"
               id="user-name"
               type="text"
@@ -25,7 +35,9 @@ export const CardFeedback: React.FC = () => {
           </div>
           <div className={styles.email}>
             <InputField
-              htmlFor="userEmail"
+              label="userEmail"
+              register={register}
+              required
               name="userEmail"
               id="user-email"
               type="text"
@@ -33,20 +45,26 @@ export const CardFeedback: React.FC = () => {
               appearance="borderRadiusLeft"
             />
           </div>
-          <TextArea id="message" name="message" placeholder="Ваше сообщение" />
+          <div className={styles.text}>
+            <TextArea
+              id="message"
+              name="message"
+              placeholder="Ваше сообщение"
+            />
+          </div>
+          <div className={styles.controls}>
+            <Button
+              type="submit"
+              buttonText="Отправить"
+              appearance="borderRadiusLeft"
+            />
+            <Button
+              type="reset"
+              buttonText="Очистить"
+              appearance="borderRadiusRight"
+            />
+          </div>
         </form>
-      </div>
-      <div className={styles.controls}>
-        <Button
-          type="submit"
-          buttonText="Отправить"
-          appearance="borderRadiusLeft"
-        />
-        <Button
-          type="reset"
-          buttonText="Очистить"
-          appearance="borderRadiusRight"
-        />
       </div>
     </div>
   );

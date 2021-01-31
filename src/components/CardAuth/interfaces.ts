@@ -1,4 +1,9 @@
-export interface CardAuthProps{
+export interface CardAuthProps {
     isFlipped?: boolean;
     handleClickFlippedFont?(): void;
+}
+
+export interface InputFormValues {
+    userName: string;
+    userPassword: string;
 }
