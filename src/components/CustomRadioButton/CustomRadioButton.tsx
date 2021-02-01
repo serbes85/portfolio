@@ -3,10 +3,12 @@ import { CustomRadioButtonProps } from "./interfaces";
 import styles from "./CustomRadioButton.module.scss";
 
 export const CustomRadioButton: FC<CustomRadioButtonProps> = ({
+  label,
+  register,
+  required,
   value,
   name,
   id,
-  htmlFor,
   text,
 }) => {
   return (
@@ -17,8 +19,9 @@ export const CustomRadioButton: FC<CustomRadioButtonProps> = ({
         name={name}
         id={id}
         className={styles.customRadio}
+        ref={register({ required })}
       />
-      <label htmlFor={htmlFor}>{text}</label>
+      <label htmlFor={label}>{text}</label>
     </>
   );
 };

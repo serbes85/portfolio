@@ -3,9 +3,11 @@ import { CustomCheckBoxProps } from "./interfaces";
 import styles from "./CustomCheckBox.module.scss";
 
 export const CustomCheckBox: FC<CustomCheckBoxProps> = ({
+  label,
+  register,
+  required,
   name,
   id,
-  htmlFor,
   text,
 }) => {
   return (
@@ -15,8 +17,9 @@ export const CustomCheckBox: FC<CustomCheckBoxProps> = ({
         name={name}
         id={id}
         className={styles.customCheckbox}
+        ref={register({ required })}
       />
-      <label htmlFor={htmlFor}>{text}</label>
+      <label htmlFor={label}>{text}</label>
     </>
   );
 };

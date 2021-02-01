@@ -25,7 +25,7 @@ export const CardAuth: FC<CardAuthProps> = ({
   });
 
   const onSubmit = (data: InputFormValues) => {
-    JSON.stringify(data);
+    console.log(JSON.stringify(data));
   };
 
   return (
@@ -80,27 +80,44 @@ export const CardAuth: FC<CardAuthProps> = ({
           </div>
           <div className={styles.control}>
             <div className={styles.controlButton}>
-              <CustomCheckBox
-                name="human"
-                id="human"
-                htmlFor="human"
-                text="Я человек"
-              />
+              <div className={styles.checkbox}>
+                <CustomCheckBox
+                  label="human"
+                  name="human"
+                  id="human"
+                  register={register}
+                  required
+                  text="Я человек"
+                />
+                <div className={styles.error}>
+                  {errors.human?.type === "required" && (
+                    <p>Роботам тут не место!</p>
+                  )}
+                </div>
+              </div>
             </div>
-            <span className={styles.controlText}>Вы точно не робот?</span>
+            {errors.answer?.type !== "required" ? (
+              <span className={styles.text}>Вы точно не робот?</span>
+            ) : (
+              <span className={cx("text", "error")}>Вы точно не робот?</span>
+            )}
             <div className={styles.controlButton}>
               <CustomRadioButton
+                label="yes"
+                register={register}
+                required
                 value="yes"
                 name="answer"
                 id="yes"
-                htmlFor="yes"
                 text="Да"
               />
               <CustomRadioButton
+                label="no"
+                register={register}
+                required
                 value="no"
                 name="answer"
                 id="no"
-                htmlFor="no"
                 text="Нет"
               />
             </div>

@@ -53,9 +53,7 @@
   align-items: center;
   margin-bottom: 1rem;
 }
-.controlText {
-  display: flex;
-  justify-content: center;
+.text {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -64,4 +62,8 @@
 }
 .controlButton {
   display: flex;
+}
+.checkbox,
+.radio {
+  text-align: center;
 }

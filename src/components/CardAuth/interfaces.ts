@@ -6,4 +6,6 @@ export interface CardAuthProps {
 export interface InputFormValues {
     userName: string;
     userPassword: string;
+    human: string;
+    answer: string;
 }
