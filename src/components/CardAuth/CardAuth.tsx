@@ -16,14 +16,16 @@ export const CardAuth: FC<CardAuthProps> = ({
   handleClickFlippedFont,
   isFlipped,
 }) => {
-  const { register, errors, handleSubmit } = useForm<InputFormValues>();
+  const { register, errors, handleSubmit } = useForm<InputFormValues>({
+    mode: "onBlur",
+  });
   const className = cx({
     cardAuth: true,
     flipped: isFlipped,
   });
 
   const onSubmit = (data: InputFormValues) => {
-    console.log(data);
+    JSON.stringify(data);
   };
 
   return (
@@ -60,6 +62,7 @@ export const CardAuth: FC<CardAuthProps> = ({
                 label="userPassword"
                 register={register}
                 required
+                minLength={8}
                 id="user-password"
                 type="password"
                 placeholder="Пароль"
@@ -67,7 +70,12 @@ export const CardAuth: FC<CardAuthProps> = ({
               />
             </div>
             <div className={styles.error}>
-              {errors.userPassword && "Введите пароль"}
+              {errors.userPassword?.type === "required" && (
+                <p>Введите пароль</p>
+              )}
+              {errors.userPassword?.type === "minLength" && (
+                <p>Пароль должен быть не менее 8 символов</p>
+              )}
             </div>
           </div>
           <div className={styles.control}>

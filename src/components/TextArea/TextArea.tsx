@@ -1,24 +1,25 @@
-import React, { FC, ChangeEvent, useState } from "react";
+import React, { FC } from "react";
 import { TextAreaProps } from "./interfaces";
 import styles from "./TextArea.module.scss";
 
-export const TextArea: FC<TextAreaProps> = ({ id, name, placeholder }) => {
-  const [textAreaValue, setTextAreaValue] = useState("");
-
-  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    const value = e.target.value;
-
-    setTextAreaValue(value);
-  };
-
+export const TextArea: FC<TextAreaProps> = ({
+  label,
+  register,
+  required,
+  id,
+  placeholder,
+}) => {
   return (
-    <textarea
-      className={styles.textArea}
-      id={id}
-      name={name}
-      placeholder={placeholder}
-      value={textAreaValue}
-      onChange={handleChange}
-    />
+    <div className={styles.input}>
+      <label htmlFor={label}>
+        <textarea
+          className={styles.textArea}
+          ref={register({ required })}
+          id={id}
+          name={label}
+          placeholder={placeholder}
+        />
+      </label>
+    </div>
   );
 };

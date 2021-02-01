@@ -8,10 +8,12 @@ import { Button } from "../Button/Button";
 import styles from "./CardFeedback.module.scss";
 
 export const CardFeedback: React.FC = () => {
-  const { register, handleSubmit } = useForm<InputFormValues>();
+  const { register, errors, handleSubmit } = useForm<InputFormValues>({
+    mode: "onBlur",
+  });
 
   const onSubmit = (data: InputFormValues) => {
-    console.log(data);
+    JSON.stringify(data);
   };
 
   return (
@@ -21,36 +23,53 @@ export const CardFeedback: React.FC = () => {
           <Title size="medium" textTop="Связаться со мной" color="black" />
         </div>
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-          <div className={styles.name}>
-            <InputField
-              label="userName"
-              register={register}
-              required
-              name="userName"
-              id="user-name"
-              type="text"
-              placeholder="Имя"
-              appearance="borderRadiusLeft"
-            />
+          <div className={styles.input}>
+            <div className={styles.name}>
+              <InputField
+                label="userName"
+                register={register}
+                required
+                name="userName"
+                id="user-name"
+                type="text"
+                placeholder="Имя"
+                appearance="borderRadiusLeft"
+              />
+            </div>
+            <div className={styles.error}>
+              {errors.userName && "Введите имя"}
+            </div>
           </div>
-          <div className={styles.email}>
-            <InputField
-              label="userEmail"
-              register={register}
-              required
-              name="userEmail"
-              id="user-email"
-              type="text"
-              placeholder="Email"
-              appearance="borderRadiusLeft"
-            />
+          <div className={styles.input}>
+            <div className={styles.email}>
+              <InputField
+                label="userEmail"
+                register={register}
+                required
+                name="userEmail"
+                id="user-email"
+                type="text"
+                placeholder="Email"
+                appearance="borderRadiusLeft"
+              />
+            </div>
+            <div className={styles.error}>
+              {errors.userEmail && "Введите email"}
+            </div>
           </div>
-          <div className={styles.text}>
-            <TextArea
-              id="message"
-              name="message"
-              placeholder="Ваше сообщение"
-            />
+          <div className={styles.input}>
+            <div className={styles.text}>
+              <TextArea
+                label="message"
+                register={register}
+                required
+                id="message"
+                placeholder="Ваше сообщение"
+              />
+            </div>
+            <div className={styles.error}>
+              {errors.message && "Введите сообщение"}
+            </div>
           </div>
           <div className={styles.controls}>
             <Button

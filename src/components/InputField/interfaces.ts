@@ -10,7 +10,7 @@ export type InputProps = React.DetailedHTMLProps<
     HTMLInputElement
 > & {
     label: string;
-    register: ({ required }: { required?: boolean }) => RefReturn;
+    register: ({ required, minLength }: { required?: boolean, minLength?: number }) => RefReturn;
     id?: string;
     type?: string;
     placeholder?: string;

@@ -9,6 +9,7 @@ export const InputField: FC<InputProps> = ({
   label,
   register,
   required,
+  minLength,
   id,
   type,
   placeholder,
@@ -25,7 +26,7 @@ export const InputField: FC<InputProps> = ({
       <label htmlFor={label}>
         <input
           name={label}
-          ref={register({ required })}
+          ref={register({ required, minLength })}
           className={className}
           id={id}
           type={type}
