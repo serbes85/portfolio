@@ -12,27 +12,12 @@
 .title {
   padding: 1rem;
 }
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.input {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  margin-bottom: 1.25rem;
+.feedback {
+  padding: 1.25rem 1.5rem;
 }
 .name,
-.email,
-.text {
-  display: flex;
-}
-.error {
-  align-self: center;
-  color: red;
+.email {
+  margin-bottom: 1rem;
 }
 .controls {
   display: flex;

@@ -1,39 +1,44 @@
-import React, { FC } from "react";
-import { InputProps } from "./interfaces";
+import React, { forwardRef } from "react";
+import { Icon } from "../Icon/Icon";
+import { InputElement, InputProps } from "./interfaces";
 import styles from "./InputField.module.scss";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-export const InputField: FC<InputProps> = ({
-  label,
-  register,
-  required,
-  minLength,
-  id,
-  type,
-  placeholder,
-  autocomplete,
-  appearance,
-}) => {
-  const className = cx({
-    inputField: true,
-    borderRadiusLeft: appearance === "borderRadiusLeft",
-  });
+export const InputField = forwardRef<InputElement, InputProps>(
+  (
+    { label, placeholder, errorMessage, appearance, withIcon, iconName },
+    ref
+  ) => {
+    const className = cx({
+      input: true,
+      borderRadiusLeft: appearance === "borderRadiusLeft",
+    });
+    const icon = cx({
+      icon: true,
+      withoutIcon: withIcon === "withoutIcon",
+    });
 
-  return (
-    <div className={styles.input}>
-      <label htmlFor={label}>
-        <input
-          name={label}
-          ref={register({ required, minLength })}
-          className={className}
-          id={id}
-          type={type}
-          placeholder={placeholder}
-          autoComplete={autocomplete}
-        />
-      </label>
-    </div>
-  );
-};
+    return (
+      <>
+        <div className={styles.inputField}>
+          <div className={icon}>
+            <Icon name={iconName} fill="#949f99" size="1rem" />
+          </div>
+          <div className={styles.field}>
+            <label htmlFor={label}>
+              <input
+                className={className}
+                name={label}
+                placeholder={placeholder}
+                ref={ref}
+              />
+            </label>
+          </div>
+        </div>
+        <div className={styles.error}>{errorMessage}</div>
+      </>
+    );
+  }
+);

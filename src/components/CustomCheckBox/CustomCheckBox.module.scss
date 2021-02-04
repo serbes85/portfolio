@@ -25,3 +25,8 @@
 .customCheckbox:checked + label::before {
   background-image: url(assets/check.svg);
 }
+.error {
+  font-weight: 600;
+  color: red;
+  text-align: center;
+}

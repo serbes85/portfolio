@@ -1,16 +1,11 @@
-type RefReturn =
-    | string
-    | ((instance: HTMLInputElement | null) => void)
-    | React.RefObject<HTMLInputElement>
-    | null
-    | undefined;
-
-export type CustomCheckBoxProps = React.DetailedHTMLProps<
+export type CustomCheckBoxElement = React.DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-> & {
+    HTMLInputElement> & HTMLInputElement;
+
+export interface CustomCheckBoxProps {
     label: string;
-    register: ({ required }: { required?: boolean }) => RefReturn;
+    name: string;
     id: string;
-    text?: string;
-};
+    text: string;
+    errorMessage?: string;
+}

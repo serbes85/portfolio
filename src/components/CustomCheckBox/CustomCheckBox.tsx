@@ -1,15 +1,11 @@
-import React, { FC } from "react";
-import { CustomCheckBoxProps } from "./interfaces";
+import React, { forwardRef } from "react";
+import { CustomCheckBoxElement, CustomCheckBoxProps } from "./interfaces";
 import styles from "./CustomCheckBox.module.scss";
 
-export const CustomCheckBox: FC<CustomCheckBoxProps> = ({
-  label,
-  register,
-  required,
-  name,
-  id,
-  text,
-}) => {
+export const CustomCheckBox = forwardRef<
+  CustomCheckBoxElement,
+  CustomCheckBoxProps
+>(({ label, name, id, text, errorMessage }, ref) => {
   return (
     <>
       <input
@@ -17,9 +13,10 @@ export const CustomCheckBox: FC<CustomCheckBoxProps> = ({
         name={name}
         id={id}
         className={styles.customCheckbox}
-        ref={register({ required })}
+        ref={ref}
       />
       <label htmlFor={label}>{text}</label>
+      <div className={styles.error}>{errorMessage}</div>
     </>
   );
-};
+});

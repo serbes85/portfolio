@@ -1,16 +1,11 @@
-import React, { FC } from "react";
-import { CustomRadioButtonProps } from "./interfaces";
+import React, { forwardRef } from "react";
+import { CustomRadioButtonElement, CustomRadioButtonProps } from "./interfaces";
 import styles from "./CustomRadioButton.module.scss";
 
-export const CustomRadioButton: FC<CustomRadioButtonProps> = ({
-  label,
-  register,
-  required,
-  value,
-  name,
-  id,
-  text,
-}) => {
+export const CustomRadioButton = forwardRef<
+  CustomRadioButtonElement,
+  CustomRadioButtonProps
+>(({ label, value, name, id, text }, ref) => {
   return (
     <>
       <input
@@ -19,9 +14,9 @@ export const CustomRadioButton: FC<CustomRadioButtonProps> = ({
         name={name}
         id={id}
         className={styles.customRadio}
-        ref={register({ required })}
+        ref={ref}
       />
       <label htmlFor={label}>{text}</label>
     </>
   );
-};
+});

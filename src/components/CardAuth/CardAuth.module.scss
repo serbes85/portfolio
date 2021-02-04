@@ -15,43 +15,24 @@
 }
 .title {
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.input {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  margin-bottom: 1.25rem;
+.auth {
+  padding: 1.25rem 1.5rem;
 }
 .login,
 .password {
-  display: flex;
-}
-.icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #eeebdf;
-  border-top-left-radius: 1.25rem;
-  border-bottom-left-radius: 1.25rem;
-  padding: 0.625rem 0.625rem;
+  margin-bottom: 1rem;
 }
 .error {
-  text-align: center;
+  font-weight: 600;
   color: red;
+  text-align: center;
 }
 .control {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 1rem;
 }
 .text {
   margin-top: 1rem;
@@ -62,6 +43,7 @@
 }
 .controlButton {
   display: flex;
+  justify-content: center;
 }
 .checkbox,
 .radio {

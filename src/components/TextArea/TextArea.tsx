@@ -1,25 +1,22 @@
-import React, { FC } from "react";
-import { TextAreaProps } from "./interfaces";
+import React, { forwardRef } from "react";
+import { TextAreaElement, TextAreaProps } from "./interfaces";
 import styles from "./TextArea.module.scss";
 
-export const TextArea: FC<TextAreaProps> = ({
-  label,
-  register,
-  required,
-  id,
-  placeholder,
-}) => {
-  return (
-    <div className={styles.input}>
-      <label htmlFor={label}>
-        <textarea
-          className={styles.textArea}
-          ref={register({ required })}
-          id={id}
-          name={label}
-          placeholder={placeholder}
-        />
-      </label>
-    </div>
-  );
-};
+export const TextArea = forwardRef<TextAreaElement, TextAreaProps>(
+  ({ label, errorMessage, id, placeholder }, ref) => {
+    return (
+      <div className={styles.input}>
+        <label htmlFor={label}>
+          <textarea
+            className={styles.textArea}
+            ref={ref}
+            id={id}
+            name={label}
+            placeholder={placeholder}
+          />
+        </label>
+        <div className={styles.error}>{errorMessage}</div>
+      </div>
+    );
+  }
+);

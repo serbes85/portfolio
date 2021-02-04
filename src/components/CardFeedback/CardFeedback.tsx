@@ -18,73 +18,60 @@ export const CardFeedback: React.FC = () => {
 
   return (
     <div className={styles.cardFeedback}>
-      <div className={styles.feedback}>
-        <div className={styles.title}>
-          <Title size="medium" textTop="Связаться со мной" color="black" />
-        </div>
-        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-          <div className={styles.input}>
-            <div className={styles.name}>
-              <InputField
-                label="userName"
-                register={register}
-                required
-                name="userName"
-                id="user-name"
-                type="text"
-                placeholder="Имя"
-                appearance="borderRadiusLeft"
-              />
-            </div>
-            <div className={styles.error}>
-              {errors.userName && "Введите имя"}
-            </div>
-          </div>
-          <div className={styles.input}>
-            <div className={styles.email}>
-              <InputField
-                label="userEmail"
-                register={register}
-                required
-                name="userEmail"
-                id="user-email"
-                type="text"
-                placeholder="Email"
-                appearance="borderRadiusLeft"
-              />
-            </div>
-            <div className={styles.error}>
-              {errors.userEmail && "Введите email"}
-            </div>
-          </div>
-          <div className={styles.input}>
-            <div className={styles.text}>
-              <TextArea
-                label="message"
-                register={register}
-                required
-                id="message"
-                placeholder="Ваше сообщение"
-              />
-            </div>
-            <div className={styles.error}>
-              {errors.message && "Введите сообщение"}
-            </div>
-          </div>
-          <div className={styles.controls}>
-            <Button
-              type="submit"
-              buttonText="Отправить"
-              appearance="borderRadiusLeft"
-            />
-            <Button
-              type="reset"
-              buttonText="Очистить"
-              appearance="borderRadiusRight"
-            />
-          </div>
-        </form>
+      <div className={styles.title}>
+        <Title size="medium" textTop="Связаться со мной" color="black" />
       </div>
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        <div className={styles.feedback}>
+          <div className={styles.name}>
+            <InputField
+              label="userName"
+              placeholder="Имя"
+              ref={register({
+                required: "Введите имя",
+              })}
+              errorMessage={errors.userName?.message}
+              appearance="borderRadiusLeft"
+              withIcon="withoutIcon"
+            />
+          </div>
+          <div className={styles.email}>
+            <InputField
+              label="userEmail"
+              placeholder="Email"
+              ref={register({
+                required: "Введите email",
+              })}
+              errorMessage={errors.userEmail?.message}
+              appearance="borderRadiusLeft"
+              withIcon="withoutIcon"
+            />
+          </div>
+          <div className={styles.text}>
+            <TextArea
+              label="message"
+              id="message"
+              placeholder="Ваше сообщение"
+              ref={register({
+                required: "Введите сообщение",
+              })}
+              errorMessage={errors.message?.message}
+            />
+          </div>
+        </div>
+        <div className={styles.controls}>
+          <Button
+            type="submit"
+            buttonText="Отправить"
+            appearance="borderRadiusLeft"
+          />
+          <Button
+            type="reset"
+            buttonText="Очистить"
+            appearance="borderRadiusRight"
+          />
+        </div>
+      </form>
     </div>
   );
 };

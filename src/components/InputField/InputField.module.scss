@@ -1,18 +1,37 @@
-.input {
+.inputField {
+  display: flex;
+}
+.icon {
+  display: flex;
+  align-items: center;
+  background-color: #eeebdf;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 10px;
+}
+.field {
   flex-grow: 1;
 }
-.inputField {
+.input {
   font-family: "Roboto";
-  border-top-right-radius: 1.25rem;
-  border-bottom-right-radius: 1.25rem;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   border-color: transparent;
   outline: none;
   background-color: #fff;
   color: #455a64;
+  padding: 10px;
   width: 100%;
-  padding: 0.625rem 1rem;
 }
 .borderRadiusLeft {
-  border-top-left-radius: 1.25rem;
-  border-bottom-left-radius: 1.25rem;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.withoutIcon {
+  display: none;
+}
+.error {
+  font-weight: 600;
+  color: red;
+  text-align: center;
 }

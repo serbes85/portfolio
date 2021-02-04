@@ -1,17 +1,11 @@
-type RefReturn =
-    | string
-    | ((instance: HTMLTextAreaElement | null) => void)
-    | React.RefObject<HTMLTextAreaElement>
-    | null
-    | undefined;
-
-export type TextAreaProps = React.DetailedHTMLProps<
+export type TextAreaElement = React.DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLTextAreaElement>,
     HTMLTextAreaElement
-> & {
+> & HTMLTextAreaElement;
+
+export interface TextAreaProps {
     label: string;
-    register: ({ required }: { required?: boolean }) => RefReturn;
-    id?: string;
-    type?: string;
-    placeholder?: string;
-};
+    errorMessage?: string;
+    id: string;
+    placeholder: string;
+}
