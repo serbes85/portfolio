@@ -13,6 +13,7 @@ export const InputField = forwardRef<InputElement, InputProps>(
   ) => {
     const className = cx({
       input: true,
+      borderRadius: appearance === "borderRadius",
       borderRadiusLeft: appearance === "borderRadiusLeft",
     });
     const icon = cx({

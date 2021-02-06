@@ -7,7 +7,7 @@ export interface InputProps {
     label: string;
     placeholder?: string;
     errorMessage?: string;
-    appearance?: "borderRadiusLeft";
+    appearance?: "borderRadius" | "borderRadiusLeft";
     withIcon?: "withoutIcon";
     iconSize?: string;
     iconName?: string;

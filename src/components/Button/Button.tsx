@@ -13,6 +13,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const className = cx({
     link: true,
+    borderRadius: appearance === "borderRadius",
     borderRadiusLeft: appearance === "borderRadiusLeft",
     borderRadiusRight: appearance === "borderRadiusRight",
     borderRight: appearance === "borderRight",

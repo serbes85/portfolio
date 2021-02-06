@@ -8,11 +8,11 @@ const cx = classNames.bind(styles);
 
 const getLinkList = (
   links: LinkData[],
-  withoutBorder: string,
+  isBorder: string,
   withHover: string
 ) => {
   return links.map(({ id, path, name }) => (
-    <li key={id} className={withoutBorder}>
+    <li key={id} className={isBorder}>
       <Link to={path} className={withHover}>
         <span className={styles.text}>{name}</span>
       </Link>
@@ -25,24 +25,26 @@ export const NavBarHorizontal: FC<NavBarHorizontalProps> = ({
   appearance,
   border,
   hover,
+  color,
 }) => {
   const className = cx({
     list: true,
     withoutBackground: appearance === "withoutBackground",
+    colorGray: color === "colorGray",
   });
-  const withoutBorder = cx({
+  const isBorder = cx({
     item: true,
+    borderRightWhite: border === "borderRightWhite",
     withoutBorderRight: border === "withoutBorderRight",
   });
   const withHover = cx({
     link: true,
     hoverGreen: hover === "hoverGreen",
     hoverGray: hover === "hoverGray",
+    hoverWhite: hover === "hoverWhite",
   });
 
   return (
-    <ul className={className}>
-      {getLinkList(links, withoutBorder, withHover)}
-    </ul>
+    <ul className={className}>{getLinkList(links, isBorder, withHover)}</ul>
   );
 };

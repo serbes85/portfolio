@@ -3,10 +3,11 @@ export type LinkData = {
     path: string;
     name: string;
 };
- 
+
 export interface NavBarHorizontalProps {
     links: LinkData[];
     appearance?: "withoutBackground";
-    border?: "withoutBorderRight";
-    hover?:"hoverGreen" | "hoverGray";
-} 
+    border?: "withoutBorderRight" | "borderRightWhite";
+    hover?: "hoverGreen" | "hoverGray" | "hoverWhite";
+    color?: "colorGray";
+}

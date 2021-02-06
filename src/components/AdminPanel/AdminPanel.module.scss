@@ -1,0 +1,60 @@
+@import "../../media.scss";
+
+.section {
+  min-height: rem(650px);
+}
+.admin {
+  background: url("./assets/bg/water.jpg") 0 0 no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: #6c9c5a;
+  padding: 2rem;
+
+  @include phones {
+    flex-direction: column;
+  }
+}
+.title {
+  font-family: "Roboto";
+  text-align: center;
+  color: #fff;
+}
+.headerRight {
+  color: #fff;
+
+  @include phones {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+}
+.linkText {
+  transition: all 0.3s;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-color: #fff;
+  }
+}
+.nav {
+  font-size: 1.5rem;
+  background-color: #f0efe9;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(226, 231, 225, 0.7);
+  height: 100%;
+  padding: 4%;
+
+  @include tablets {
+    justify-content: start;
+  }
+}

@@ -1,0 +1,25 @@
+@import "../../../media.scss";
+
+.title {
+  font-size: 1.75rem;
+  font-family: "Roboto";
+  color: #566358;
+  margin-bottom: 2rem;
+}
+.text {
+  font-family: "Roboto";
+  color: #566358;
+}
+.input {
+  width: 25%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  @include tablets {
+    width: 50%;
+  }
+
+  @include phones {
+    width: 100%;
+  }
+}

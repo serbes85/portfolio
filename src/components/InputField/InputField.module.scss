@@ -20,8 +20,11 @@
   outline: none;
   background-color: #fff;
   color: #455a64;
-  padding: 10px;
   width: 100%;
+  padding: 10px;
+}
+.borderRadius {
+  border-radius: 10px;
 }
 .borderRadiusLeft {
   border-top-left-radius: 20px;
