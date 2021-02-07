@@ -1,14 +1,5 @@
 @import "../../media.scss";
 
-.section {
-  min-height: rem(650px);
-}
-.admin {
-  background: url("./assets/bg/water.jpg") 0 0 no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-}
 .header {
   display: flex;
   align-items: center;
@@ -51,7 +42,7 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: rgba(226, 231, 225, 0.7);
-  height: 100%;
+  min-height: 100vh;
   padding: 4%;
 
   @include tablets {

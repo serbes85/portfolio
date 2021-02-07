@@ -1,0 +1,13 @@
+@import "../../media.scss";
+
+.wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  background: url("./assets/bg/water.jpg") 0 0 no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+.main {
+  flex: 1 0 auto;
+}

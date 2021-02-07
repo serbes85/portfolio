@@ -33,9 +33,9 @@ export const AdminPanel: FC = () => {
       </div>
       <div className={styles.content}>
         <Switch>
-          <Route path="/adminWorks" component={AdminWorks} />
-          <Route path="/adminSkills" component={AdminAbout} />
-          <Route path="/adminBlog" component={AdminBlog} />
+          <Route path="/admin/adminWorks" component={AdminWorks} />
+          <Route path="/admin/adminSkills" component={AdminAbout} />
+          <Route path="/admin/adminBlog" component={AdminBlog} />
         </Switch>
       </div>
     </section>
