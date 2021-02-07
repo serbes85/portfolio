@@ -1,12 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React, { StrictMode } from "react";
+import { render } from "react-dom";
 import "@csstools/normalize.css";
 import "./index.scss";
 import App from "./App";
+import { Provider } from "react-redux";
+import createStore from "./store";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+const store = createStore();
+
+render(
+  <StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </StrictMode>,
+
   document.getElementById("root")
 );
