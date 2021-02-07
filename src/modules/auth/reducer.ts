@@ -11,4 +11,12 @@ const isAuthorized = handleActions(
     false,
 );
 
-export default combineReducers({ isAuthorized });
+const error = handleActions(
+    {
+        [loginRequest.toString()]: () => null,
+        [loginSuccess.toString()]: () => null,
+        [loginFailure.toString()]: (_state, action) => action.payload,
+    },
+    null
+);
+export default combineReducers({ isAuthorized, error });

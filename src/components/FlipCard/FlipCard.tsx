@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { CardPerson } from "../CardPerson/CardPerson";
-import { CardAuth } from "../CardAuth/CardAuth";
+import CardAuth from "../CardAuth/CardAuth";
 import { FlipCardProps } from "./interfaces";
 import styles from "./FlipCard.module.scss";
 

@@ -1,6 +1,7 @@
 export interface CardAuthProps {
     isFlipped?: boolean;
     handleClickFlippedFont?(): void;
+    loginRequest: any;
 }
 
 export interface InputFormValues {

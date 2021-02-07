@@ -8,12 +8,15 @@ import { CustomRadioButton } from "../CustomRadioButton/CustomRadioButton";
 import { Button } from "../Button/Button";
 import styles from "./CardAuth.module.scss";
 import classNames from "classnames/bind";
+import { connect } from "react-redux";
+import { loginRequest, getError, getIsAuthorized } from "../../modules/auth";
 
 const cx = classNames.bind(styles);
 
-export const CardAuth: FC<CardAuthProps> = ({
+const CardAuth: FC<CardAuthProps> = ({
   handleClickFlippedFont,
   isFlipped,
+  loginRequest,
 }) => {
   const { register, errors, handleSubmit } = useForm<InputFormValues>({
     mode: "onBlur",
@@ -24,7 +27,9 @@ export const CardAuth: FC<CardAuthProps> = ({
   });
 
   const onSubmit = (data: InputFormValues) => {
-    JSON.stringify(data);
+    const { userName, userPassword } = data;
+
+    loginRequest({ userName, userPassword });
   };
 
   return (
@@ -123,3 +128,11 @@ export const CardAuth: FC<CardAuthProps> = ({
     </div>
   );
 };
+
+const mapStateToProps = (state: any) => ({
+  isAuthorized: getIsAuthorized(state),
+  error: getError(state),
+});
+const mapDispatchToProps = { loginRequest };
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardAuth);
