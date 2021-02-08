@@ -1,14 +1,8 @@
 import React, { FC } from "react";
 import { Route, Redirect } from "react-router-dom";
-import { RouteComponentProps } from "react-router";
+import { PrivateRouteProps } from "./interfaces";
 import { getIsAuthorized } from "../../modules/auth";
 import { connect } from "react-redux";
-
-interface PrivateRouteProps {
-  path: string;
-  isAuthorized: boolean;
-  component: FC<RouteComponentProps>;
-}
 
 const PrivateRoute: FC<PrivateRouteProps> = ({
   isAuthorized,
