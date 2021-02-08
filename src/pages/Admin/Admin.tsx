@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { AdminPanel } from "../../components/AdminPanel/AdminPanel";
 import styles from "./Admin.module.scss";
+import { connect } from "react-redux";
 
 export const Admin: FC = () => {
   return (
@@ -11,3 +12,5 @@ export const Admin: FC = () => {
     </div>
   );
 };
+
+export default connect()(Admin);

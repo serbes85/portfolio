@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { Redirect } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { CardAuthProps, InputFormValues } from "./interfaces";
 import { Title } from "../Title/Title";
@@ -9,14 +10,21 @@ import { Button } from "../Button/Button";
 import styles from "./CardAuth.module.scss";
 import classNames from "classnames/bind";
 import { connect } from "react-redux";
-import { loginRequest, getError, getIsAuthorized } from "../../modules/auth";
+import {
+  loginRequest,
+  loginSuccess,
+  getError,
+  getIsAuthorized,
+} from "../../modules/auth";
 
 const cx = classNames.bind(styles);
 
 const CardAuth: FC<CardAuthProps> = ({
   handleClickFlippedFont,
   isFlipped,
+  isAuthorized,
   loginRequest,
+  error,
 }) => {
   const { register, errors, handleSubmit } = useForm<InputFormValues>({
     mode: "onBlur",
@@ -31,6 +39,9 @@ const CardAuth: FC<CardAuthProps> = ({
 
     loginRequest({ userName, userPassword });
   };
+
+  if (isAuthorized) return <Redirect to="/admin" />;
+  if (error) return <p>Произошла ошибка</p>;
 
   return (
     <div className={className}>
@@ -133,6 +144,6 @@ const mapStateToProps = (state: any) => ({
   isAuthorized: getIsAuthorized(state),
   error: getError(state),
 });
-const mapDispatchToProps = { loginRequest };
+const mapDispatchToProps = { loginRequest, loginSuccess };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardAuth);
