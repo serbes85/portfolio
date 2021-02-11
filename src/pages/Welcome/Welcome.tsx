@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
+import { WelcomePageProps } from "./interfaces";
 import { FlipCard } from "../../components/FlipCard/FlipCard";
 import { Button } from "../../components/Button/Button";
 import { Copyright } from "../../components/Copyright/Copyright";
+import { connect } from "react-redux";
+import { getError } from "../../modules/auth";
 import styles from "./Welcome.module.scss";
 
-export const Welcome: React.FC = () => {
+const Welcome: FC<WelcomePageProps> = ({ error }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClickFlippedBack = () => {
@@ -17,6 +20,7 @@ export const Welcome: React.FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
+        {error && <div className={styles.errorAuth}>Failed to fetch</div>}
         <header className={styles.header}>
           {!isFlipped && (
             <Button
@@ -38,3 +42,9 @@ export const Welcome: React.FC = () => {
     </div>
   );
 };
+
+const mapStateToProps = (state: boolean) => ({
+  error: getError(state),
+});
+
+export default connect(mapStateToProps)(Welcome);

@@ -7,15 +7,10 @@ import { InputField } from "../InputField/InputField";
 import { CustomCheckBox } from "../CustomCheckBox/CustomCheckBox";
 import { CustomRadioButton } from "../CustomRadioButton/CustomRadioButton";
 import { Button } from "../Button/Button";
+import { connect } from "react-redux";
+import { loginRequest, getError, getIsAuthorized } from "../../modules/auth";
 import styles from "./CardAuth.module.scss";
 import classNames from "classnames/bind";
-import { connect } from "react-redux";
-import {
-  loginRequest,
-  loginSuccess,
-  getError,
-  getIsAuthorized,
-} from "../../modules/auth";
 
 const cx = classNames.bind(styles);
 
@@ -24,7 +19,6 @@ const CardAuth: FC<CardAuthProps> = ({
   isFlipped,
   isAuthorized,
   loginRequest,
-  error,
 }) => {
   const { register, errors, handleSubmit } = useForm<InputFormValues>({
     mode: "onBlur",
@@ -41,7 +35,6 @@ const CardAuth: FC<CardAuthProps> = ({
   };
 
   if (isAuthorized) return <Redirect to="/admin" />;
-  if (error) return <p>Произошла ошибка</p>;
 
   return (
     <div className={className}>
@@ -91,7 +84,8 @@ const CardAuth: FC<CardAuthProps> = ({
                 />
               </div>
             </div>
-            {errors.answer?.type !== "required" ? (
+            {errors.answer?.type !== "required" &&
+            errors.answer?.ref?.value !== "no" ? (
               <span className={styles.text}>Вы точно не робот?</span>
             ) : (
               <span className={cx("text", "error")}>
@@ -140,10 +134,10 @@ const CardAuth: FC<CardAuthProps> = ({
   );
 };
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: boolean) => ({
   isAuthorized: getIsAuthorized(state),
   error: getError(state),
 });
-const mapDispatchToProps = { loginRequest, loginSuccess };
+const mapDispatchToProps = { loginRequest };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardAuth);

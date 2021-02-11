@@ -2,7 +2,6 @@ export interface CardAuthProps {
     isFlipped?: boolean;
     handleClickFlippedFont?(): void;
     isAuthorized: boolean;
-    error: boolean;
     loginRequest: any;
 }
 
