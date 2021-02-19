@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { FlipCard } from "../../components/FlipCard/FlipCard";
 import { Button } from "../../components/Button/Button";
 import { Copyright } from "../../components/Copyright/Copyright";
 import styles from "./Welcome.module.scss";
 
-export const Welcome: React.FC = () => {
+export const Welcome: FC = () => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClickFlippedBack = () => {
