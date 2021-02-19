@@ -1,4 +1,5 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
+import { Redirect } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { CardAuthProps, InputFormValues } from "./interfaces";
 import { Title } from "../Title/Title";
@@ -8,13 +9,15 @@ import { CustomRadioButton } from "../CustomRadioButton/CustomRadioButton";
 import { Button } from "../Button/Button";
 import styles from "./CardAuth.module.scss";
 import classNames from "classnames/bind";
+import { observer } from "mobx-react";
+import AuthStore from "../../stories/AuthStore";
 
 const cx = classNames.bind(styles);
 
-export const CardAuth: FC<CardAuthProps> = ({
-  handleClickFlippedFont,
-  isFlipped,
-}) => {
+const CardAuth: FC<CardAuthProps> = ({ handleClickFlippedFont, isFlipped }) => {
+  const authStore = useContext(AuthStore);
+  const { isAuthorized } = authStore;
+
   const { register, errors, handleSubmit } = useForm<InputFormValues>({
     mode: "onBlur",
   });
@@ -25,7 +28,11 @@ export const CardAuth: FC<CardAuthProps> = ({
 
   const onSubmit = (data: InputFormValues) => {
     JSON.stringify(data);
+
+    authStore.loginSuccess();
   };
+
+  if (isAuthorized) return <Redirect to="/admin" />;
 
   return (
     <div className={className}>
@@ -123,3 +130,5 @@ export const CardAuth: FC<CardAuthProps> = ({
     </div>
   );
 };
+
+export default observer(CardAuth);

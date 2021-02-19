@@ -1,5 +1,10 @@
 @import "../../media.scss";
 
+.admin {
+  background: url("./assets/bg/water.jpg") 0 0 no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 .header {
   display: flex;
   align-items: center;
@@ -25,7 +30,18 @@
     margin-bottom: 1rem;
   }
 }
-.linkText {
+.button {
+  background: none;
+  border: transparent;
+  outline-color: transparent;
+  outline: none;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s;
+  font-family: "Roboto";
+  font-size: 1rem;
+}
+.buttonText {
   transition: all 0.3s;
   border-bottom: 1px solid transparent;
 

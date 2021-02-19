@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { AdminPanel } from "../../components/AdminPanel/AdminPanel";
+import AdminPanel from "../../components/AdminPanel/AdminPanel";
 
-export const About: FC = () => {
+export const Admin: FC = () => {
   return <AdminPanel />;
 };
